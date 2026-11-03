@@ -1,98 +1,88 @@
 {
-  "created": "2026-11-03T15:57:04Z",
-  "sourceBase": "/mnt/workspace/src",
-  "targetBase": "/mnt/workspace/src/moovv-fit/repos",
-  "kiroBase": "/mnt/workspace/tooling/.kiro",
+  "version": "1.0",
+  "created": "2026-11-03",
+  "description": "Moovv repos migration: flat structure to domain-based submodules with Kiro session migration",
   "repos": [
     {
-      "name": "moovv-fit-backend-node",
-      "remoteUrl": "git@github.com:moovv-fit/moovv-fit-backend-node.git",
-      "oldPath": "/mnt/workspace/src/moovv-fit-backend-node",
-      "newPath": "/mnt/workspace/src/moovv-fit/repos/moovv-fit-backend-node",
-      "oldKiroHash": "6d63e27902af92ae",
-      "newKiroHash": "6a5e78edfccca437",
-      "submoduleStatus": "pending",
-      "migrationStatus": "pending"
-    },
-    {
-      "name": "moovv-fit-design-system",
-      "remoteUrl": "git@github.com:moovv-fit/moovv-fit-design-system.git",
-      "oldPath": "/mnt/workspace/src/moovv-fit-design-system",
-      "newPath": "/mnt/workspace/src/moovv-fit/repos/moovv-fit-design-system",
-      "oldKiroHash": "76e5773478e836ec",
-      "newKiroHash": "7368b6f067e72717",
-      "submoduleStatus": "pending",
-      "migrationStatus": "pending"
-    },
-    {
-      "name": "moovv-fit-docs",
-      "remoteUrl": "git@github.com:moovv-fit/moovv-fit-docs.git",
-      "oldPath": "/mnt/workspace/src/moovv-fit-docs",
-      "newPath": "/mnt/workspace/src/moovv-fit/repos/moovv-fit-docs",
-      "oldKiroHash": "27f77b7281631156",
-      "newKiroHash": "c3a3bafa20c63cc4",
-      "submoduleStatus": "pending",
-      "migrationStatus": "pending"
-    },
-    {
-      "name": "moovv-fit-infra",
-      "remoteUrl": "git@github.com:moovv-fit/moovv-fit-infra.git",
-      "oldPath": "/mnt/workspace/src/moovv-fit-infra",
-      "newPath": "/mnt/workspace/src/moovv-fit/repos/moovv-fit-infra",
-      "oldKiroHash": "31eed21ccccb15ca",
-      "newKiroHash": "2fba65d1526ece5a",
-      "submoduleStatus": "pending",
-      "migrationStatus": "pending"
-    },
-    {
-      "name": "moovv-fit-landing",
-      "remoteUrl": "git@github.com:moovv-fit/moovv-fit-landing.git",
-      "oldPath": "/mnt/workspace/src/moovv-fit-landing",
-      "newPath": "/mnt/workspace/src/moovv-fit/repos/moovv-fit-landing",
-      "oldKiroHash": "7422fa893b321688",
-      "newKiroHash": "7883d7326b887b92",
-      "submoduleStatus": "pending",
-      "migrationStatus": "pending"
-    },
-    {
       "name": "moovv-fit-mobile",
-      "remoteUrl": "git@github.com:moovv-fit/moovv-fit-mobile.git",
       "oldPath": "/mnt/workspace/src/moovv-fit-mobile",
-      "newPath": "/mnt/workspace/src/moovv-fit/repos/moovv-fit-mobile",
-      "oldKiroHash": "4fa87e73af887d4d",
-      "newKiroHash": "05449f3118440372",
-      "submoduleStatus": "pending",
-      "migrationStatus": "pending"
-    },
-    {
-      "name": "moovv-fit-product",
-      "remoteUrl": "git@github.com:moovv-fit/moovv-fit-product.git",
-      "oldPath": "/mnt/workspace/src/moovv-fit-product",
-      "newPath": "/mnt/workspace/src/moovv-fit/repos/moovv-fit-product",
-      "oldKiroHash": "bb7aff8286e3cb5e",
-      "newKiroHash": "d1ce5d706cc138e9",
-      "submoduleStatus": "pending",
-      "migrationStatus": "pending"
-    },
-    {
-      "name": "moovv-fit-simulator",
-      "remoteUrl": "git@github.com:moovv-fit/moovv-fit-simulator.git",
-      "oldPath": "/mnt/workspace/src/moovv-fit-simulator",
-      "newPath": "/mnt/workspace/src/moovv-fit/repos/moovv-fit-simulator",
-      "oldKiroHash": "a367c50b18f03bdc",
-      "newKiroHash": "33059f0eacb925d8",
-      "submoduleStatus": "pending",
-      "migrationStatus": "pending"
+      "newPath": "/mnt/workspace/src/moovv-fit/repos/apps/mobile",
+      "remote": "git@github.com:moovv-fit/moovv-fit-mobile.git",
+      "submoduleStatus": "registered",
+      "sessionMigrationStatus": "migrated",
+      "antigravitySessionMigrationStatus": "migrated"
     },
     {
       "name": "moovv-fit-web",
-      "remoteUrl": "git@github.com:moovv-fit/moovv-fit-web.git",
       "oldPath": "/mnt/workspace/src/moovv-fit-web",
-      "newPath": "/mnt/workspace/src/moovv-fit/repos/moovv-fit-web",
-      "oldKiroHash": "86d81727282cd499",
-      "newKiroHash": "c87127e47279b8e9",
-      "submoduleStatus": "pending",
-      "migrationStatus": "pending"
+      "newPath": "/mnt/workspace/src/moovv-fit/repos/apps/web",
+      "remote": "git@github.com:moovv-fit/moovv-fit-web.git",
+      "submoduleStatus": "registered",
+      "sessionMigrationStatus": "migrated",
+      "antigravitySessionMigrationStatus": "migrated"
+    },
+    {
+      "name": "moovv-fit-landing",
+      "oldPath": "/mnt/workspace/src/moovv-fit-landing",
+      "newPath": "/mnt/workspace/src/moovv-fit/repos/apps/landing",
+      "remote": "git@github.com:moovv-fit/moovv-fit-landing.git",
+      "submoduleStatus": "registered",
+      "sessionMigrationStatus": "migrated",
+      "antigravitySessionMigrationStatus": "migrated"
+    },
+    {
+      "name": "moovv-fit-backend-node",
+      "oldPath": "/mnt/workspace/src/moovv-fit-backend-node",
+      "newPath": "/mnt/workspace/src/moovv-fit/repos/backend/node",
+      "remote": "git@github.com:moovv-fit/moovv-fit-backend-node.git",
+      "submoduleStatus": "registered",
+      "sessionMigrationStatus": "migrated",
+      "antigravitySessionMigrationStatus": "migrated"
+    },
+    {
+      "name": "moovv-fit-infra",
+      "oldPath": "/mnt/workspace/src/moovv-fit-infra",
+      "newPath": "/mnt/workspace/src/moovv-fit/repos/infra/cdk",
+      "remote": "git@github.com:moovv-fit/moovv-fit-infra.git",
+      "submoduleStatus": "registered",
+      "sessionMigrationStatus": "migrated",
+      "antigravitySessionMigrationStatus": "migrated"
+    },
+    {
+      "name": "moovv-fit-design-system",
+      "oldPath": "/mnt/workspace/src/moovv-fit-design-system",
+      "newPath": "/mnt/workspace/src/moovv-fit/repos/platform/design-system",
+      "remote": "git@github.com:moovv-fit/moovv-fit-design-system.git",
+      "submoduleStatus": "registered",
+      "sessionMigrationStatus": "migrated",
+      "antigravitySessionMigrationStatus": "migrated"
+    },
+    {
+      "name": "moovv-fit-simulator",
+      "oldPath": "/mnt/workspace/src/moovv-fit-simulator",
+      "newPath": "/mnt/workspace/src/moovv-fit/repos/platform/simulator",
+      "remote": "git@github.com:moovv-fit/moovv-fit-simulator.git",
+      "submoduleStatus": "registered",
+      "sessionMigrationStatus": "migrated",
+      "antigravitySessionMigrationStatus": "migrated"
+    },
+    {
+      "name": "moovv-fit-docs",
+      "oldPath": "/mnt/workspace/src/moovv-fit-docs",
+      "newPath": "/mnt/workspace/src/moovv-fit/repos/docs/technical",
+      "remote": "git@github.com:moovv-fit/moovv-fit-docs.git",
+      "submoduleStatus": "registered",
+      "sessionMigrationStatus": "migrated",
+      "antigravitySessionMigrationStatus": "migrated"
+    },
+    {
+      "name": "moovv-fit-product",
+      "oldPath": "/mnt/workspace/src/moovv-fit-product",
+      "newPath": "/mnt/workspace/src/moovv-fit/repos/docs/product",
+      "remote": "git@github.com:moovv-fit/moovv-fit-product.git",
+      "submoduleStatus": "registered",
+      "sessionMigrationStatus": "migrated",
+      "antigravitySessionMigrationStatus": "migrated"
     }
   ]
 }

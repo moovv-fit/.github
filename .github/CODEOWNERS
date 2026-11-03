@@ -1,0 +1,18 @@
+# CODEOWNERS for moovv-fit master repo
+# These owners will be requested for review on PRs
+
+# Default owner for everything
+* @moovv-fit/core
+
+# Submodule pointer updates (cross-repo coordination)
+repos/ @moovv-fit/core
+
+# Platform documentation and architecture
+docs/ @moovv-fit/core
+AGENTS.md @moovv-fit/core
+
+# Scripts and tooling
+scripts/ @moovv-fit/core
+
+# GitHub org profile
+profile/ @moovv-fit/core

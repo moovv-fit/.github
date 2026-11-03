@@ -1,0 +1,30 @@
+# OS
+.DS_Store
+Thumbs.db
+*.tmp
+*.temp
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*.bak
+
+# Agent session data (local only)
+.agents/sessions/
+.agents/tasks/
+.agents/shared
+
+# Logs
+*.log
+
+# Node (if any scripts need deps)
+node_modules/
+
+# Backups
+*.backup
+*.bak
+
+# Local dev
+.local/

@@ -1,0 +1,27 @@
+[submodule "repos/apps/mobile"]
+	path = repos/apps/mobile
+	url = git@github.com:moovv-fit/moovv-fit-mobile.git
+[submodule "repos/backend/node"]
+	path = repos/backend/node
+	url = git@github.com:moovv-fit/moovv-fit-backend-node.git
+[submodule "repos/platform/simulator"]
+	path = repos/platform/simulator
+	url = git@github.com:moovv-fit/moovv-fit-simulator.git
+[submodule "repos/apps/landing"]
+	path = repos/apps/landing
+	url = git@github.com:moovv-fit/moovv-fit-landing.git
+[submodule "repos/platform/design-system"]
+	path = repos/platform/design-system
+	url = git@github.com:moovv-fit/moovv-fit-design-system.git
+[submodule "repos/docs/product"]
+	path = repos/docs/product
+	url = git@github.com:moovv-fit/moovv-fit-product.git
+[submodule "repos/apps/web"]
+	path = repos/apps/web
+	url = git@github.com:moovv-fit/moovv-fit-web.git
+[submodule "repos/docs/technical"]
+	path = repos/docs/technical
+	url = git@github.com:moovv-fit/moovv-fit-docs.git
+[submodule "repos/infra/cdk"]
+	path = repos/infra/cdk
+	url = git@github.com:moovv-fit/moovv-fit-infra.git

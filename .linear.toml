@@ -1,0 +1,6 @@
+# Linear CLI configuration for moovv-fit (master repo)
+# Docs: https://github.com/schpet/linear-cli
+
+team_id = "CORE"
+workspace = "moovv-fit"
+issue_sort = "priority"

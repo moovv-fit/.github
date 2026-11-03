@@ -1,0 +1,16 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Submodule Freshness Check",
+      "trigger": "UserPromptSubmit",
+      "description": "Checks if submodules have unpushed changes when discussing repos",
+      "matcher": "(repos|submodule|backend|mobile|web|landing|infra|design-system|simulator)",
+      "action": {
+        "type": "command",
+        "command": "cd /mnt/workspace/src/moovv-fit && git submodule summary 2>/dev/null | head -10 || echo \"Submodules up to date\"",
+        "timeout": 10
+      }
+    }
+  ]
+}

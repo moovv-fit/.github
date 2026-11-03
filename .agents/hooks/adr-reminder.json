@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "ADR Reminder for Architecture Changes",
+      "trigger": "PostFileSave",
+      "description": "Reminds to document architecture decisions when editing submodule source",
+      "matcher": "repos/.*/src/",
+      "action": {
+        "type": "agent",
+        "prompt": "A source file in a submodule was modified. If this change affects architecture patterns, API contracts, or cross-repo dependencies, consider creating or updating an ADR in docs/architecture/adr/."
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Submodule Status on Session Start",
+      "trigger": "SessionStart",
+      "description": "Shows submodule status when starting a session in the master repo",
+      "action": {
+        "type": "command",
+        "command": "cd /mnt/workspace/src/moovv-fit && echo \"=== Submodule Status ===\" && git submodule status --recursive 2>/dev/null | head -15",
+        "timeout": 10
+      }
+    }
+  ]
+}
