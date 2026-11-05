@@ -40,7 +40,7 @@
   </a>
 </p>
 
-Start your **free trial** and experience personalized mobility coaching.
+Get started today with free access to clinician-verified mobility coaching routines.
 
 ---
 

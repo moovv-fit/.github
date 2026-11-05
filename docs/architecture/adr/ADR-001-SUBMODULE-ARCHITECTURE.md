@@ -5,7 +5,7 @@
 
 ## Context
 
-The Moovv Fit platform consists of 9 repositories spanning backend, mobile, web, infrastructure, and documentation. Managing these as independent repos created challenges:
+The Moovv Fit platform consists of 11 repositories spanning backend, mobile, web, infrastructure, and documentation. Managing these as independent repos created challenges:
 
 - **Context switching**: Opening each repo separately fragmented AI agent context
 - **Cross-repo visibility**: Difficult to understand dependencies and make coordinated changes

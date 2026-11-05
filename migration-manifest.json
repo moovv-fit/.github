@@ -83,6 +83,24 @@
       "submoduleStatus": "registered",
       "sessionMigrationStatus": "migrated",
       "antigravitySessionMigrationStatus": "migrated"
+    },
+    {
+      "name": "moovvfit-recommendation-engine",
+      "oldPath": "/mnt/workspace/src/moovvfit-recommendation-engine",
+      "newPath": "/mnt/workspace/src/moovv-fit/repos/backend/moovvfit-recommendation-engine",
+      "remote": "git@github.com:moovv-fit/moovvfit-recommendation-engine.git",
+      "submoduleStatus": "registered",
+      "sessionMigrationStatus": "migrated",
+      "antigravitySessionMigrationStatus": "migrated"
+    },
+    {
+      "name": "exercise_canonical_analysis",
+      "oldPath": "/mnt/workspace/src/exercise_canonical_analysis",
+      "newPath": "/mnt/workspace/src/moovv-fit/repos/backend/exercise-canonical-analysis",
+      "remote": "git@github.com:moovv-fit/exercise_canonical_analysis.git",
+      "submoduleStatus": "registered",
+      "sessionMigrationStatus": "migrated",
+      "antigravitySessionMigrationStatus": "migrated"
     }
   ]
 }
