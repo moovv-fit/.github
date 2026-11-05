@@ -1,0 +1,27 @@
+{
+  "git-safety": {
+    "enabled": true,
+    "PreToolUse": [
+      {
+        "matcher": "run_command",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 .agents/hooks/git-safety.py",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  },
+  "session-start": {
+    "enabled": true,
+    "SessionStart": [
+      {
+        "type": "command",
+        "command": "echo '{\"injectSteps\": [{\"systemMessage\": {\"systemMessage\": \"Moovv Orchestrator Active. Submodules: '\"$(git submodule status | wc -l)\"' registered.\"}}]}'",
+        "timeout": 5
+      }
+    ]
+  }
+}
