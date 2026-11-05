@@ -13,8 +13,8 @@ description: "Quick reference for navigating to the right submodule for any task
 | Need | Go to | Command |
 |------|-------|---------|
 | Backend API | `repos/backend/node` | `cd repos/backend/node` |
-| Recommendation Engine | `repos/backend/moovvfit-recommendation-engine` | `cd repos/backend/moovvfit-recommendation-engine` |
-| Canonical Analysis & Embeddings | `repos/backend/exercise-canonical-analysis` | `cd repos/backend/exercise-canonical-analysis` |
+| Recommendation Engine | `repos/backend/engine` | `cd repos/backend/engine` |
+| Canonical Analysis & Embeddings | `repos/backend/analysis` | `cd repos/backend/analysis` |
 | Mobile app | `repos/apps/mobile` | `cd repos/apps/mobile` |
 | Web dashboard | `repos/apps/web` | `cd repos/apps/web` |
 | Landing page | `repos/apps/landing` | `cd repos/apps/landing` |
@@ -29,8 +29,8 @@ description: "Quick reference for navigating to the right submodule for any task
 | Repo | Language | Framework | Package Manager |
 |------|----------|-----------|-----------------|
 | `backend/node` | TypeScript | Node 22 / Lambda / Prisma / CDK | pnpm |
-| `backend/moovvfit-recommendation-engine` | Python 3.12 | Flask / Lambda | pip |
-| `backend/exercise-canonical-analysis` | Python 3.12 | sentence-transformers / PostgreSQL | pip |
+| `backend/engine` | Python 3.12 | Flask / Lambda | pip |
+| `backend/analysis` | Python 3.12 | sentence-transformers / PostgreSQL | pip |
 | `apps/mobile` | Dart | Flutter 3.x / Riverpod / Go Router | flutter pub |
 | `apps/web` | TypeScript | React 19 / Vite / Tailwind v4 | pnpm |
 | `apps/landing` | JavaScript / HTML / CSS | Vanilla JS / CloudFront | - |
@@ -46,8 +46,8 @@ Each submodule has its own agent configuration:
 
 ```
 repos/backend/node/AGENTS.md                          # Core API patterns
-repos/backend/moovvfit-recommendation-engine/AGENTS.md # Recommendation engine patterns
-repos/backend/exercise-canonical-analysis/AGENTS.md    # Canonical curation & embeddings
+repos/backend/engine/AGENTS.md                        # Recommendation engine patterns
+repos/backend/analysis/AGENTS.md                      # Canonical curation & embeddings
 repos/apps/mobile/AGENTS.md                           # Mobile Flutter patterns
 repos/apps/web/AGENTS.md                              # Web React 19 patterns
 repos/apps/landing/AGENTS.md                          # Landing HTML5 patterns

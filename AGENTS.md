@@ -45,8 +45,8 @@ When working in a submodule (e.g., `repos/backend/node`), the agent follows that
 | Domain | Path | Stack | Purpose |
 |--------|------|-------|---------|
 | **Backend (Core API)** | `repos/backend/node` | Node 22 / TypeScript / Lambda / Prisma / CDK | Main API, auth, business logic |
-| **Backend (Engine)** | `repos/backend/moovvfit-recommendation-engine` | Python 3.12 / Flask / Lambda | Clinical exercise recommendation service |
-| **Backend (Analysis)** | `repos/backend/exercise-canonical-analysis` | Python 3.12 / sentence-transformers / PostgreSQL | Semantic embeddings & curation pipeline |
+| **Backend (Engine)** | `repos/backend/engine` | Python 3.12 / Flask / Lambda | Clinical exercise recommendation service |
+| **Backend (Analysis)** | `repos/backend/analysis` | Python 3.12 / sentence-transformers / PostgreSQL | Semantic embeddings & curation pipeline |
 | **Mobile** | `repos/apps/mobile` | Flutter 3.x / Dart / Riverpod / Go Router | iOS/Android rehabilitation application |
 | **Web** | `repos/apps/web` | React 19 / Vite / Tailwind v4 / Zustand / React Query | Clinical (`/physio`, `/clinic`) & Admin portals |
 | **Landing** | `repos/apps/landing` | HTML5 / CSS3 / Vanilla JS / CloudFront | Marketing sites & patient lead acquisition |

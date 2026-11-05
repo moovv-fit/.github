@@ -21,8 +21,8 @@ repos/
 │   └── landing/            # HTML5 / CSS3 marketing site
 ├── backend/
 │   ├── node/               # Primary Node/Lambda API (Prisma/Sequelize/CDK)
-│   ├── moovvfit-recommendation-engine/ # Python 3.12 Flask recommendation engine
-│   └── exercise-canonical-analysis/    # Python 3.12 semantic matching & embeddings
+│   ├── engine/             # Python 3.12 Flask recommendation engine
+│   └── analysis/           # Python 3.12 semantic matching & embeddings
 ├── infra/
 │   └── cdk/                # Shared AWS CDK v2 constructs
 ├── platform/

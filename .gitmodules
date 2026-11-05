@@ -25,9 +25,9 @@
 [submodule "repos/infra/cdk"]
 	path = repos/infra/cdk
 	url = git@github.com:moovv-fit/moovv-fit-infra.git
-[submodule "repos/backend/moovvfit-recommendation-engine"]
-	path = repos/backend/moovvfit-recommendation-engine
+[submodule "repos/backend/engine"]
+	path = repos/backend/engine
 	url = git@github.com:moovv-fit/moovvfit-recommendation-engine.git
-[submodule "repos/backend/exercise-canonical-analysis"]
-	path = repos/backend/exercise-canonical-analysis
+[submodule "repos/backend/analysis"]
+	path = repos/backend/analysis
 	url = git@github.com:moovv-fit/exercise_canonical_analysis.git

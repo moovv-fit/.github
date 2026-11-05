@@ -24,8 +24,8 @@ repos/
 │   └── landing/    # HTML5 / CSS3 marketing site
 ├── backend/        # Server-side services
 │   ├── node/       # Primary Lambda API (Node 22 / Prisma / CDK)
-│   ├── moovvfit-recommendation-engine/ # Python recommendation engine
-│   └── exercise-canonical-analysis/    # Python semantic embeddings
+│   ├── engine/     # Python recommendation engine
+│   └── analysis/   # Python semantic embeddings
 ├── infra/          # Infrastructure
 │   └── cdk/        # Shared CDK constructs
 ├── platform/       # Shared platform components
