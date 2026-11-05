@@ -44,15 +44,17 @@ When working in a submodule (e.g., `repos/backend/node`), the agent follows that
 
 | Domain | Path | Stack | Purpose |
 |--------|------|-------|---------|
-| **Backend** | `repos/backend/node` | Node/Lambda/CDK | API, business logic |
-| **Mobile** | `repos/apps/mobile` | React Native/Expo | iOS/Android app |
-| **Web** | `repos/apps/web` | Next.js | Web dashboard |
-| **Landing** | `repos/apps/landing` | Astro | Marketing site |
-| **Infra** | `repos/infra/cdk` | CDK | Shared constructs |
-| **Design** | `repos/platform/design-system` | Svelte | UI components |
-| **Simulator** | `repos/platform/simulator` | - | Test harness |
-| **Docs** | `repos/docs/technical` | - | Technical docs |
-| **Product** | `repos/docs/product` | - | Product specs |
+| **Backend (Core API)** | `repos/backend/node` | Node 22 / TypeScript / Lambda / Prisma / CDK | Main API, auth, business logic |
+| **Backend (Engine)** | `repos/backend/moovvfit-recommendation-engine` | Python 3.12 / Flask / Lambda | Clinical exercise recommendation service |
+| **Backend (Analysis)** | `repos/backend/exercise-canonical-analysis` | Python 3.12 / sentence-transformers / PostgreSQL | Semantic embeddings & curation pipeline |
+| **Mobile** | `repos/apps/mobile` | Flutter 3.x / Dart / Riverpod / Go Router | iOS/Android rehabilitation application |
+| **Web** | `repos/apps/web` | React 19 / Vite / Tailwind v4 / Zustand / React Query | Clinical (`/physio`, `/clinic`) & Admin portals |
+| **Landing** | `repos/apps/landing` | HTML5 / CSS3 / Vanilla JS / CloudFront | Marketing sites & patient lead acquisition |
+| **Infra** | `repos/infra/cdk` | AWS CDK v2 / TypeScript / Docker Compose | Shared cloud infrastructure & telemetry |
+| **Design** | `repos/platform/design-system` | Svelte 5 (Runes) / Tailwind v4 / bits-ui | Canonical design tokens & UI library |
+| **Simulator** | `repos/platform/simulator` | Node 22 / TypeScript / Zod / undici / ws | Autonomous multi-persona E2E test harness |
+| **Docs (Technical)** | `repos/docs/technical` | SvelteKit 2 / Svelte 5 / Tailwind v4 / CDK | Partner developer documentation portal |
+| **Docs (Product)** | `repos/docs/product` | Markdown / PDRs / Clinical Invariants | Product source of truth & compliance specs |
 
 ## 🔀 Cross-Repo Operations
 

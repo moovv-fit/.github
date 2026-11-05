@@ -13,6 +13,8 @@ description: "Quick reference for navigating to the right submodule for any task
 | Need | Go to | Command |
 |------|-------|---------|
 | Backend API | `repos/backend/node` | `cd repos/backend/node` |
+| Recommendation Engine | `repos/backend/moovvfit-recommendation-engine` | `cd repos/backend/moovvfit-recommendation-engine` |
+| Canonical Analysis & Embeddings | `repos/backend/exercise-canonical-analysis` | `cd repos/backend/exercise-canonical-analysis` |
 | Mobile app | `repos/apps/mobile` | `cd repos/apps/mobile` |
 | Web dashboard | `repos/apps/web` | `cd repos/apps/web` |
 | Landing page | `repos/apps/landing` | `cd repos/apps/landing` |
@@ -26,28 +28,34 @@ description: "Quick reference for navigating to the right submodule for any task
 
 | Repo | Language | Framework | Package Manager |
 |------|----------|-----------|-----------------|
-| `backend/node` | TypeScript | Lambda/CDK | pnpm |
-| `apps/mobile` | TypeScript | React Native/Expo | pnpm |
-| `apps/web` | TypeScript | Next.js | pnpm |
-| `apps/landing` | TypeScript | Astro | pnpm |
-| `infra/cdk` | TypeScript | CDK | pnpm |
-| `platform/design-system` | TypeScript | Svelte | pnpm |
-| `platform/simulator` | TypeScript | - | pnpm |
-| `docs/technical` | Markdown | - | - |
-| `docs/product` | Markdown | - | - |
+| `backend/node` | TypeScript | Node 22 / Lambda / Prisma / CDK | pnpm |
+| `backend/moovvfit-recommendation-engine` | Python 3.12 | Flask / Lambda | pip |
+| `backend/exercise-canonical-analysis` | Python 3.12 | sentence-transformers / PostgreSQL | pip |
+| `apps/mobile` | Dart | Flutter 3.x / Riverpod / Go Router | flutter pub |
+| `apps/web` | TypeScript | React 19 / Vite / Tailwind v4 | pnpm |
+| `apps/landing` | JavaScript / HTML / CSS | Vanilla JS / CloudFront | - |
+| `infra/cdk` | TypeScript | AWS CDK v2 | pnpm |
+| `platform/design-system` | TypeScript | Svelte 5 (Runes) / Tailwind v4 | pnpm |
+| `platform/simulator` | TypeScript | Node 22 / Zod / undici / ws | pnpm |
+| `docs/technical` | TypeScript | SvelteKit 2 / Svelte 5 / Tailwind v4 | pnpm |
+| `docs/product` | Markdown | PDRs / Clinical Invariants | - |
 
 ## Submodule AGENTS.md Locations
 
 Each submodule has its own agent configuration:
 
 ```
-repos/backend/node/AGENTS.md          # Backend patterns
-repos/apps/mobile/AGENTS.md           # Mobile patterns
-repos/apps/web/AGENTS.md              # Web patterns
-repos/apps/landing/AGENTS.md          # Landing patterns
-repos/infra/cdk/AGENTS.md             # Infra patterns
-repos/platform/design-system/AGENTS.md # Design system patterns
-repos/platform/simulator/AGENTS.md    # Simulator patterns
+repos/backend/node/AGENTS.md                          # Core API patterns
+repos/backend/moovvfit-recommendation-engine/AGENTS.md # Recommendation engine patterns
+repos/backend/exercise-canonical-analysis/AGENTS.md    # Canonical curation & embeddings
+repos/apps/mobile/AGENTS.md                           # Mobile Flutter patterns
+repos/apps/web/AGENTS.md                              # Web React 19 patterns
+repos/apps/landing/AGENTS.md                          # Landing HTML5 patterns
+repos/infra/cdk/AGENTS.md                             # Infra CDK patterns
+repos/platform/design-system/AGENTS.md                 # Design system Svelte 5 patterns
+repos/platform/simulator/AGENTS.md                    # Simulator E2E patterns
+repos/docs/technical/AGENTS.md                        # Technical documentation patterns
+repos/docs/product/AGENTS.md                          # Product context & clinical invariants
 ```
 
 ## Common Operations

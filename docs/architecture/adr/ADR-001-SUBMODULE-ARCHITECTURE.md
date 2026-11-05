@@ -19,19 +19,21 @@ Consolidate all Moovv repositories under a single **master orchestration repo** 
 ```
 repos/
 ├── apps/           # User-facing applications
-│   ├── mobile/     # React Native app
-│   ├── web/        # Next.js dashboard
-│   └── landing/    # Astro marketing site
+│   ├── mobile/     # Flutter iOS/Android app
+│   ├── web/        # React 19 / Vite portals
+│   └── landing/    # HTML5 / CSS3 marketing site
 ├── backend/        # Server-side services
-│   └── node/       # Lambda API (primary backend)
+│   ├── node/       # Primary Lambda API (Node 22 / Prisma / CDK)
+│   ├── moovvfit-recommendation-engine/ # Python recommendation engine
+│   └── exercise-canonical-analysis/    # Python semantic embeddings
 ├── infra/          # Infrastructure
 │   └── cdk/        # Shared CDK constructs
 ├── platform/       # Shared platform components
-│   ├── design-system/  # Svelte component library
+│   ├── design-system/  # Svelte 5 component library
 │   └── simulator/      # E2E test harness
 └── docs/           # Documentation
-    ├── technical/  # Technical docs
-    └── product/    # Product specifications
+    ├── technical/  # Technical developer docs (SvelteKit)
+    └── product/    # Product specifications & clinical invariants
 ```
 
 ### Submodule Registration (Not Clone)

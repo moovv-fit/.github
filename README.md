@@ -16,19 +16,21 @@ This repository serves as:
 ```
 repos/
 ├── apps/                   # User-facing applications
-│   ├── mobile/             # React Native/Expo app
-│   ├── web/                # Next.js dashboard
-│   └── landing/            # Astro marketing site
+│   ├── mobile/             # Flutter (iOS/Android) app
+│   ├── web/                # React 19 / Vite portals (/physio, /clinic, /admin)
+│   └── landing/            # HTML5 / CSS3 marketing site
 ├── backend/
-│   └── node/               # Lambda/CDK API
+│   ├── node/               # Primary Node/Lambda API (Prisma/Sequelize/CDK)
+│   ├── moovvfit-recommendation-engine/ # Python 3.12 Flask recommendation engine
+│   └── exercise-canonical-analysis/    # Python 3.12 semantic matching & embeddings
 ├── infra/
-│   └── cdk/                # Shared CDK constructs
+│   └── cdk/                # Shared AWS CDK v2 constructs
 ├── platform/
-│   ├── design-system/      # Svelte component library
-│   └── simulator/          # E2E test harness
+│   ├── design-system/      # Svelte 5 component library & design tokens
+│   └── simulator/          # Autonomous multi-persona E2E test harness
 └── docs/
-    ├── technical/          # Technical documentation
-    └── product/            # Product specifications
+    ├── technical/          # Partner SDK technical docs (SvelteKit)
+    └── product/            # Product specifications & clinical invariants
 ```
 
 ## Getting Started
@@ -65,12 +67,15 @@ git push origin feature/my-feature
 
 | Component | Technology |
 |-----------|------------|
-| Backend | Node.js, TypeScript, Lambda, CDK |
-| Mobile | React Native, Expo |
-| Web | Next.js |
-| Landing | Astro |
-| Design System | Svelte |
-| Infrastructure | AWS CDK |
+| Backend (Node API) | Node.js 22, TypeScript, Lambda, Prisma, Sequelize, CDK |
+| Backend (Engines) | Python 3.12, Flask, sentence-transformers, PostgreSQL |
+| Mobile | Flutter 3.x, Dart, Riverpod, Go Router, Freezed |
+| Web | React 19, TypeScript, Vite, Tailwind CSS v4, Zustand |
+| Landing | HTML5, CSS3, Vanilla JS, CloudFront |
+| Design System | Svelte 5 (Runes), Tailwind CSS v4, bits-ui |
+| Simulator | Node.js 22, TypeScript, Zod, undici, ws |
+| Documentation | SvelteKit 2, Svelte 5, AWS CDK |
+| Infrastructure | AWS CDK v2, TypeScript, Docker Compose |
 
 ## License
 
