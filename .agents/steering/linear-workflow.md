@@ -81,6 +81,23 @@ At the conclusion of a work stream or when significant progress was made:
 2. Add commit hashes and affected repositories in the issue comments/description.
 3. If temporary bridges were introduced (e.g. feature flags, review bypasses, mock data), create a follow-up ticket in `Backlog` so it is never forgotten.
 
+### Pattern 4: Interactive Review Previews & CDN Hosting Standard
+For any issue requiring executive, clinical, or growth sign-off (e.g. copy, funnel flows, pricing, interactive widgets):
+1. **Never build multi-tab or bloated umbrella pages**: Create a **single-purpose, zero-tab simulator** dedicated strictly to that ticket's review scope.
+2. **Repository Location**: Commit the source file under `docs/previews/<ticket-id>-<slug>.html` within the affected repository. This provides full **Git version history**, commit diffs, and pull request tracking.
+3. **CDN Hosting Location**:
+   - Upload to: `s3://moovv-fit-content-staging/previews/<ticket-id>-<slug>.html`
+   - Access URL: `https://content.staging.moovv.fit/previews/<ticket-id>-<slug>.html`
+   - **Isolation Guarantee**: Stored outside `web/landing` and `web/*` so it is never deleted by landing/web `aws s3 sync ... --delete` deployment pipelines.
+4. **Object Versioning & Historical Revisions**:
+   - **S3 Bucket Versioning**: `moovv-fit-content-staging` and `moovv-fit-content-production` have S3 Object Versioning **Enabled**. Every upload automatically preserves historical versions with unique `VersionId`s.
+   - **Versioned URL Convention (Optional for major revisions)**: For immutable point-in-time review snapshots across design rounds, upload as `.../previews/<ticket-id>-<slug>-v<N>.html` while maintaining the root `<ticket-id>-<slug>.html` as the floating latest.
+   - **CDN Invalidation**: When updating the floating latest, run `aws cloudfront create-invalidation --distribution-id E2N6CYC2PTUSQY --paths "/previews/*"` to ensure edge cache freshness.
+5. **Linear Linking**: Embed the preview prominently at the top of the Linear issue description:
+   ```markdown
+   > 🌐 **Live Interactive Preview:** [https://content.staging.moovv.fit/previews/<ticket-id>-<slug>.html](https://content.staging.moovv.fit/previews/<ticket-id>-<slug>.html)
+   ```
+
 ---
 
 ## 📋 Mandatory Rich Card Template for Issue Descriptions
@@ -90,6 +107,8 @@ Every Linear ticket created or detailed by an agent must follow this rich schema
 ```markdown
 ## 🎯 Overview & Context
 [1-2 sentences summarizing the business/product problem, referencing parent PDR/initiative]
+
+> 🌐 **Live Interactive Preview:** [https://content.staging.moovv.fit/previews/<ticket-id>-<slug>.html](https://content.staging.moovv.fit/previews/<ticket-id>-<slug>.html)
 
 ---
 
