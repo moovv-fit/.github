@@ -8,7 +8,7 @@ try:
     cmd = args.get("CommandLine", "")
     
     # Destructive git commands check
-    destructive_pattern = r"\bgit\s+(push\s+.*(--force|-f\b)|reset\s+--hard|clean\s+-[a-zA-Z]*f\b|branch\s+-D\b)"
+    destructive_pattern = r"git\s+(push\s+.*(--force|-f)|reset\s+--hard|clean\s+-[a-zA-Z]*f|branch\s+-D)"
     if re.search(destructive_pattern, cmd):
         print(json.dumps({
             "decision": "ask",
