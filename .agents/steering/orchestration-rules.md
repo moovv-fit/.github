@@ -35,9 +35,10 @@ When a change spans multiple repos:
 
 1. **Plan first**: Document which repos are affected
 2. **Parallel work**: Make changes in each submodule
-3. **Atomic commits**: Each submodule gets its own commit
+3. **Atomic commits**: Each submodule gets its own commit tagged with its specific Linear issue
 4. **Update parent**: Commit submodule pointer updates together
 5. **Link PRs**: Reference related PRs across repos
+6. **Linear Sync**: Close finished issues and record follow-ups in Backlog via the `linear` CLI
 
 ### Example: New API + Mobile Feature
 
@@ -58,6 +59,7 @@ When a change spans multiple repos:
 |--------------|-----|---------|
 | Write app code | Wrong scope | Work in submodule |
 | Duplicate steering | Maintenance burden | Reference submodule steering |
+| Hijack unrelated Linear issues | Muddles project tracking & changelogs | Mint a new issue with `linear issue create` or commit cleanly |
 | Store secrets | Security risk | Use AWS SSM / Secrets Manager |
 | Heavy builds | Slow, unnecessary | Build in submodules |
 

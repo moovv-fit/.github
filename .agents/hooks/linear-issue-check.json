@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Linear Issue Verification on Commit",
+      "trigger": "PreToolUse",
+      "description": "Verifies that git commit messages reference an accurate, non-hijacked Linear issue or prompts the agent to mint one via the linear CLI",
+      "matcher": "execute_bash",
+      "action": {
+        "type": "agent",
+        "prompt": "LINEAR COMMIT CHECK: If this command is committing code, ensure the commit message references an issue matching this exact work (CORE-XXX or CLINIC-XXX). If no issue exists for this scope, do not borrow an unrelated issue; run 'linear issue create' to create one, or commit without an issue tag."
+      }
+    }
+  ]
+}

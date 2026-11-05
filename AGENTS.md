@@ -36,6 +36,7 @@ When working from this master repo, the agent acts as an **orchestrator**:
 - Routes tasks to appropriate submodule repos
 - Coordinates cross-repo changes
 - Maintains platform-level documentation
+- Manages Linear issue tracking autonomously via the `linear` CLI (on-the-fly backlog capture, pre-commit ticket minting, and retrospective status sync)
 
 ### Submodule Mode
 When working in a submodule (e.g., `repos/backend/node`), the agent follows that repo's `AGENTS.md` and steering files.
@@ -89,6 +90,7 @@ When a change spans multiple repos:
 |------|---------|
 | `orchestration-rules.md` | Cross-repo coordination patterns |
 | `submodule-routing.md` | Task routing to submodules |
+| `linear-workflow.md` | Linear issue tracking & agent CLI workflow |
 
 ## 📚 ADRs
 Platform-level architecture decisions live in `docs/architecture/adr/`.
