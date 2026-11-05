@@ -11,8 +11,13 @@ description: "Guidelines and CLI automation patterns for tracking tasks, capturi
 The user ideates and directs at high velocity ("thinking on the fly"). The agent's responsibility is to **eliminate issue tracking friction** by managing Linear autonomously via the CLI:
 1. **Never stall flow**: Never ask the user to leave the conversation or click around in the Linear web UI to create tickets.
 2. **Never hijack unrelated tickets**: Do not tag commits with an unrelated issue ID (e.g., re-using a CI/Docs ticket for UX or infra fixes) just to satisfy commit linters.
-3. **Capture on the fly**: When new work, deferred ideas, or edge cases emerge in chat, log them to Linear immediately.
-4. **Reconcile at completion**: Close completed work and record follow-ups as explicit backlog items.
+3. **Default to Rich Cards & Checklists**: Never post bare, one-line descriptions or raw local file paths (`repos/...`) that non-technical founders cannot read. Every ticket must be a self-contained, beautifully formatted proposal with context, options tables, and interactive review checklists.
+4. **Tag Team Members Directly**: Tag relevant stakeholders so issues ping their native Linear inbox:
+   - **Pawan Deshmukh (Clinical & Product Lead)**: `https://linear.app/moovv-fit/profiles/p`
+   - **Rahul Jain (Growth & Commercial Strategy)**: `https://linear.app/moovv-fit/profiles/r`
+   - **Ujwal Parker (Engineering & Architecture)**: `https://linear.app/moovv-fit/profiles/u`
+5. **Capture on the fly**: When new work, deferred ideas, or edge cases emerge in chat, log them to Linear immediately.
+6. **Reconcile at completion**: Close completed work and record follow-ups as explicit backlog items.
 
 ---
 
@@ -75,3 +80,37 @@ At the conclusion of a work stream or when significant progress was made:
 1. Move the corresponding Linear issues to `Done` via `linear issue update <ID> --state Done`.
 2. Add commit hashes and affected repositories in the issue comments/description.
 3. If temporary bridges were introduced (e.g. feature flags, review bypasses, mock data), create a follow-up ticket in `Backlog` so it is never forgotten.
+
+---
+
+## 📋 Mandatory Rich Card Template for Issue Descriptions
+
+Every Linear ticket created or detailed by an agent must follow this rich schema:
+
+```markdown
+## 🎯 Overview & Context
+[1-2 sentences summarizing the business/product problem, referencing parent PDR/initiative]
+
+---
+
+## 📝 Specifications / Options / Architecture
+[Visual comparison tables for copy/pricing, mermaid diagrams, or API schemas]
+
+---
+
+## ✅ Sign-Off & Approval Checklist
+- [ ] https://linear.app/moovv-fit/profiles/p **(Clinical / Product Review):** [Specific clinical confirmation or disclaimer check]
+- [ ] https://linear.app/moovv-fit/profiles/r **(Commercial / Growth Review):** [Specific decision point or option selection]
+- [ ] https://linear.app/moovv-fit/profiles/u **(Architecture / DevOps Review):** [Implementation approval]
+
+---
+
++++ [Full Technical Details]
+### Invariants & Edge Cases
+- [Key technical / regulatory invariants]
+
+### Full Spec Document
+[Clickable HTTPS link to GitHub spec file in the repository]
++++
+```
+
