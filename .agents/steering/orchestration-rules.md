@@ -74,6 +74,3 @@ When a change spans multiple repos:
 
 - `#[[file:AGENTS.md]]`
 - `#[[file:docs/architecture/adr/ADR-001-SUBMODULE-ARCHITECTURE.md]]`
-- `#[[file:migration-manifest.json]]`
-- `#[[file:scripts/migrate-antigravity-sessions.py]]`
-- `#[[file:scripts/migrate-kiro-sessions.sh]]`

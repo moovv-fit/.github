@@ -44,11 +44,11 @@ Repos were **physically moved** into the master repo structure, then registered 
 - Local branches
 - Git history
 
-### Session Migration
+### Session Migration (Completed)
 
-Session migration tools ensure historical chat sessions appear when opening repos from new paths:
-- **Kiro Sessions**: `scripts/migrate-kiro-sessions.sh` updates Kiro workspace hashes, session paths, and index files in `~/.kiro/`.
-- **Antigravity Sessions**: `scripts/migrate-antigravity-sessions.py` updates the conversation summaries database (`~/.gemini/antigravity/conversation_summaries.db`) and FTS tables, re-linking historical conversations to the master workspace project ID (`moovv-fit`) and new submodule URIs.
+Historical chat sessions were migrated into the master workspace:
+- **Kiro Sessions**: Updated Kiro workspace hashes, session paths, and index files in `~/.kiro/`.
+- **Antigravity Sessions**: Updated the conversation summaries database (`~/.gemini/antigravity/conversation_summaries.db`) and FTS tables, re-linking historical conversations to the master workspace project ID (`moovv-fit`) and new submodule URIs.
 
 ## Consequences
 
@@ -83,7 +83,7 @@ Kiro uses SHA256(path)[0:16] to map workspaces to session storage:
 echo -n "/mnt/workspace/src/moovv-fit/repos/backend/node" | sha256sum | cut -c1-16
 ```
 
-Migration script updates:
+The Kiro session migration process:
 1. `~/.kiro/sessions/<hash>/` — session data directories
 2. `~/.kiro/workspace-roots/<hash>/` — workspace metadata
 3. `~/.kiro/session-index/<hash>.jsonl` — session lookup index
@@ -97,9 +97,9 @@ Antigravity stores conversation state and metadata in SQLite databases:
 - **Project Definitions**: `~/.gemini/config/projects/<project_id>.json`
 
 The UI queries `conversation_summaries.db` matching the active `project_id` and `workspace_uris`.
-The migration script (`scripts/migrate-antigravity-sessions.py`):
+The Antigravity session migration process:
 1. Creates a backup of `conversation_summaries.db`.
-2. Matches sessions by `oldPath` defined in `migration-manifest.json`.
+2. Matches sessions by legacy repository paths.
 3. Updates `project_id` to the master repo's project ID (`7bd47f1a-f76e-4b87-b0e6-b85d1e6acce4`).
 4. Updates `workspace_uris` to include both the master workspace URI and the new submodule URI.
 5. Updates the full-text search table `conversations_fts` so searches find sessions under `moovv-fit`.
@@ -128,6 +128,4 @@ git commit -m "chore: update backend to include feature/x"
 ## References
 
 - `#[[file:AGENTS.md]]` — Master repo agent configuration
-- `#[[file:migration-manifest.json]]` — Repo migration tracking
-- `#[[file:scripts/migrate-kiro-sessions.sh]]` — Kiro session migration script
-- `#[[file:scripts/migrate-antigravity-sessions.py]]` — Antigravity session migration script
+- `#[[file:docs/architecture/adr/README.md]]` — Architecture Decision Records

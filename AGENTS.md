@@ -96,6 +96,3 @@ Repo-specific ADRs live in each submodule.
 
 ## 🔗 References
 - `#[[file:docs/architecture/adr/ADR-001-SUBMODULE-ARCHITECTURE.md]]`
-- `#[[file:migration-manifest.json]]`
-- `#[[file:scripts/migrate-antigravity-sessions.py]]`
-- `#[[file:scripts/migrate-kiro-sessions.sh]]`
