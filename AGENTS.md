@@ -26,6 +26,7 @@ moovv-fit/
 │       └── product/        → moovv-fit-product
 ├── profile/                # GitHub org profile (README.md)
 ├── scripts/                # Cross-repo tooling
+├── BACKLOG.md              # Canonical cross-repo backlog mirror (Linear sync)
 └── docs/architecture/adr/  # Platform-level ADRs
 ```
 
