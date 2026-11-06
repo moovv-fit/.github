@@ -95,6 +95,10 @@ def generate_markdown(issues, output_path):
         lbl_nodes = issue.get("labels", {}).get("nodes", [])
         repo_labels = [l["name"].replace("repo:", "") for l in lbl_nodes if l["name"].startswith("repo:")]
         repo_key = repo_labels[0] if repo_labels else "cross-repo / platform"
+        if repo_key in ("infra", "cdk"):
+            repo_key = "cross-repo / platform"
+        elif repo_key == "engine":
+            repo_key = "backend"
 
         prio_label = issue.get("priorityLabel", "None")
         by_repo.setdefault(repo_key, []).append({
@@ -232,6 +236,10 @@ def main():
         lbl_nodes = issue.get("labels", {}).get("nodes", [])
         repo_labels = [l["name"].replace("repo:", "") for l in lbl_nodes if l["name"].startswith("repo:")]
         repo = repo_labels[0] if repo_labels else "cross-repo / platform"
+        if repo in ("infra", "cdk"):
+            repo = "cross-repo / platform"
+        elif repo == "engine":
+            repo = "backend"
 
         if args.repo and args.repo.lower() not in repo.lower():
             continue
