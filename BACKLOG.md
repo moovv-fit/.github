@@ -209,4 +209,97 @@ When pair-programming with Antigravity or Kiro, you don't need to leave chat:
 | [CLINIC-41](https://linear.app/moovv-fit/issue/CLINIC-41/kineticage-partner-integration-source-documents) | `No priority` | KineticAge Partner Integration — Source Documents | `CLINIC` |
 
 ---
+
+## 🛠️ Kiro Spec Implementation Roadmap
+
+> **Prioritized implementation order** for all Kiro-format specs across the platform.  
+> Dependencies are explicit — downstream specs should not start until their upstream dependencies complete.
+
+### Implementation Phases
+
+#### Phase 1: Revenue & Payment Foundation (Weeks 1-3)
+*Critical path for international expansion and financial compliance.*
+
+| Order | Spec | Repo | Dependencies | Effort | Notes |
+|:---:|---|---|---|:---:|---|
+| 1.1 | **[payment-gateway-abstraction](repos/backend/node/.agents/specs/payment-gateway-abstraction/)** | `backend/node` | — | `L` | Adapter pattern for Razorpay International + future Stripe/PayPal |
+| 1.2 | **[financial-ledger](repos/backend/node/.agents/specs/financial-ledger/)** | `backend/node` | `payment-gateway-abstraction` | `XL` | Double-entry ledger with Prisma, Zoho sync, payment order migration |
+
+#### Phase 2: Global Auth & Partner Platform (Weeks 2-4)
+*Enables multi-country expansion and B2B video SDK revenue.*
+
+| Order | Spec | Repo | Dependencies | Effort | Notes |
+|:---:|---|---|---|:---:|---|
+| 2.1 | **[global-auth-channels](repos/backend/node/.agents/specs/global-auth-channels/)** | `backend/node` | — | `M` | E.164 phone support, multi-country Cognito pools |
+| 2.2 | **[partner-video-sdk](repos/backend/node/.agents/specs/partner-video-sdk/)** | `backend/node` | — | `L` | B2B headless video streaming API (already Kiro format) |
+
+#### Phase 3: CRM & Marketing Infrastructure (Weeks 4-6)
+*Backend services must complete before mobile/web consumers.*
+
+| Order | Spec | Repo | Dependencies | Effort | Notes |
+|:---:|---|---|---|:---:|---|
+| 3.1 | **[crm-gateway-zoho](repos/backend/node/.agents/specs/crm-gateway-zoho/)** | `backend/node` | — | `M` | Zoho CRM integration layer, webhook pipelines |
+| 3.2 | **[marketing-infra-backend](repos/backend/node/.agents/specs/marketing-infra-backend/)** | `backend/node` | `crm-gateway-zoho` | `M` | Campaign service, Customer.io, attribution tracking |
+| 3.3 | **[marketing-infra](repos/apps/mobile/.agents/specs/marketing-infra/)** | `apps/mobile` | `marketing-infra-backend` | `S` | Mobile SDK for campaign ingress, deep links |
+
+#### Phase 4: Free Content & Engagement (Weeks 5-7)
+*Growth lever — backend before mobile consumer.*
+
+| Order | Spec | Repo | Dependencies | Effort | Notes |
+|:---:|---|---|---|:---:|---|
+| 4.1 | **[free-content-backend](repos/backend/node/.agents/specs/free-content-backend/)** | `backend/node` | — | `M` | Content catalog API, entitlement rules, streaming auth |
+| 4.2 | **[free-content-mobile](repos/apps/mobile/.agents/specs/free-content-mobile/)** | `apps/mobile` | `free-content-backend` | `M` | Free exercise streaming UI, upsell flows |
+
+#### Phase 5: Platform Quality & Testing (Ongoing)
+*Horizontal capabilities that support all other specs.*
+
+| Order | Spec | Repo | Dependencies | Effort | Notes |
+|:---:|---|---|---|:---:|---|
+| 5.1 | **[e2e-simulation-platform](repos/platform/simulator/.agents/specs/e2e-simulation-platform/)** | `platform/simulator` | — | `L` | Multi-persona autonomous test harness |
+| 5.2 | **[ios-release-pipeline](repos/apps/mobile/.agents/specs/ios-release-pipeline/)** | `apps/mobile` | — | `M` | Automated TestFlight & App Store submission |
+
+### Dependency Graph
+
+```
+payment-gateway-abstraction ──► financial-ledger
+                                     │
+crm-gateway-zoho ──► marketing-infra-backend ──► marketing-infra (mobile)
+                                     │
+free-content-backend ──────────────► free-content-mobile
+
+global-auth-channels ──► (enables all international features)
+partner-video-sdk ──► (standalone B2B revenue)
+e2e-simulation-platform ──► (validates all specs)
+```
+
+### Effort Key
+
+| Size | Estimate | Typical Scope |
+|:---:|:---:|---|
+| `S` | 1-2 days | Single service, <5 files |
+| `M` | 3-5 days | Multi-file, requires integration testing |
+| `L` | 1-2 weeks | Cross-cutting, multiple services, DB migrations |
+| `XL` | 2-3 weeks | Major architectural change, data migration |
+
+### Spec Locations Quick Reference
+
+```
+repos/
+├── backend/node/.agents/specs/
+│   ├── crm-gateway-zoho/
+│   ├── financial-ledger/
+│   ├── free-content-backend/
+│   ├── global-auth-channels/
+│   ├── marketing-infra-backend/
+│   ├── partner-video-sdk/
+│   └── payment-gateway-abstraction/
+├── apps/mobile/.agents/specs/
+│   ├── free-content-mobile/
+│   ├── ios-release-pipeline/
+│   └── marketing-infra/
+└── platform/simulator/.agents/specs/
+    └── e2e-simulation-platform/
+```
+
+---
 *Generated automatically via `scripts/linear-backlog.py --sync` on 2026-11-06 11:53 UTC.*
