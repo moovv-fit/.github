@@ -100,3 +100,23 @@ gh run view <RUN_ID> --repo moovv-fit/moovv-fit-backend-node --log-failed
 * **GitHub Summary**: Detailed Markdown summary in `$GITHUB_STEP_SUMMARY`.
 * **JUnit Reports**: Populated under the GitHub Checks tab.
 * **Artifacts**: S3 sync for failed HTML reports (`s3://moovv-fit-release-assets/ci/e2e-reports/`).
+
+---
+
+## 🛡️ Sentry CI/CD & Production Observability
+
+1. **Organization-Level Configuration**:
+   - `SENTRY_AUTH_TOKEN`: Injected into GitHub Org secrets across all `moovv-fit` repositories.
+   - `SENTRY_ORG`: `moovv-fit` configured as org-level variable.
+2. **Automated Source Maps (Web)**:
+   - During `pnpm build`, `@sentry/vite-plugin` automatically uploads source maps to Sentry for the corresponding portal (`moovv-fit-physio-pwa`, `moovv-fit-clinic-pwa`, `moovv-fit-admin-pwa`).
+   - `sourcemaps.filesToDeleteAfterUpload` deletes `.map` files before S3 sync so they are never exposed publicly.
+3. **Debug Symbol Uploads (Mobile)**:
+   - `deploy-android`: Uploads ProGuard obfuscation mapping files to `moovv-fit-patient-mobile-android`.
+   - `deploy-ios`: Uploads dSYM archives to `moovv-fit-patient-mobile-ios`.
+4. **Release & Deployment Tracking**:
+   - Every deploy to Staging or Production registers a release and deployment marker via `@sentry/cli`.
+   - Stack traces correlate with git commits, identifying "Suspect Commits" automatically.
+   - Backend API: `moovv-fit-backend-node` (DSN in SSM Parameter `/moovv-fit/shared/sentry/backend-node-dsn`).
+
+
