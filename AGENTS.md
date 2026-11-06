@@ -92,6 +92,7 @@ When a change spans multiple repos:
 | `orchestration-rules.md` | Cross-repo coordination patterns |
 | `submodule-routing.md` | Task routing to submodules |
 | `linear-workflow.md` | Linear issue tracking & agent CLI workflow |
+| `ci-cd-spot-runner-playbook.md` | Ephemeral Spot runner CI/CD & on-demand test execution |
 
 ## 📚 ADRs
 Platform-level architecture decisions live in `docs/architecture/adr/`.
