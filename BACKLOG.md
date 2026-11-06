@@ -1,7 +1,7 @@
 # 📋 Moovv Fit — Master Cross-Repo Backlog
 
 > **Canonical Backlog Mirror** synchronized with Linear (`moovv-fit` workspace).  
-> **Last Synced:** `2026-11-06 16:36 UTC` • **Total Open Backlog Issues:** `93`  
+> **Last Synced:** `2026-11-06 16:53 UTC` • **Total Open Backlog Issues:** `97`  
 > *To refresh this document automatically, run: `./scripts/linear-backlog.py --sync`*
 
 ---
@@ -54,13 +54,13 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 | Domain | Submodule Path | Issues | Primary Focus |
 |---|---|:---:|---|
 | **📱 Mobile (iOS & Android)** | [`repos/apps/mobile`](repos/apps/mobile) | **15** | Flutter rehabilitation app, assessment engine, routine player, and pain tracking. |
-| **⚙️ Backend Core API & Database** | [`repos/backend/node`](repos/backend/node) | **13** | Node/TypeScript Lambda API, Prisma ORM, Cognito auth, and clinical data models. |
+| **⚙️ Backend Core API & Database** | [`repos/backend/node`](repos/backend/node) | **14** | Node/TypeScript Lambda API, Prisma ORM, Cognito auth, and clinical data models. |
 | **🌐 Web Portals (Clinic OS & Admin)** | [`repos/apps/web`](repos/apps/web) | **6** | React 19 clinical portal, appointment booking, patient queue, and chat. |
 | **🚀 Landing & Patient Acquisition** | [`repos/apps/landing`](repos/apps/landing) | **3** | Static marketing sites, physician lead funnels, and store/PWA onboarding. |
 | **🧪 Autonomous Simulator & Test Harness** | [`repos/platform/simulator`](repos/platform/simulator) | **2** | E2E multi-persona automated test harness, websocket synthetic testing. |
 | **🎨 Design System Tokens & UI** | [`repos/platform/design-system`](repos/platform/design-system) | **1** | Svelte 5 / Tailwind v4 canonical components and tokens. |
 | **📚 Documentation Portals** | [`repos/docs/technical`](repos/docs/technical) | **1** | Partner developer documentation and clinical specifications. |
-| **☁️ Platform Infrastructure & Cross-Repo** | [`repos/infra/cdk`](repos/infra/cdk) | **52** | Shared CDK stacks, CloudFront routing, DNS, auth pools, and cross-cutting platform epics. |
+| **☁️ Platform Infrastructure & Cross-Repo** | [`repos/infra/cdk`](repos/infra/cdk) | **55** | Shared CDK stacks, CloudFront routing, DNS, auth pools, and cross-cutting platform epics. |
 
 ---
 
@@ -88,12 +88,13 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 | [CORE-89](https://linear.app/moovv-fit/issue/CORE-89/mobile-audit-and-modernize-github-actions-workflows) | `High` | [Mobile] Audit & modernize GitHub Actions workflows | `CORE` |
 | [CORE-94](https://linear.app/moovv-fit/issue/CORE-94/mobile-post-launch-framework-and-dependency-upgrades) | `Medium` | [Mobile] Post-Launch Framework & Dependency Upgrades | `CORE` |
 
-### ⚙️ Backend Core API & Database (13 issues)
+### ⚙️ Backend Core API & Database (14 issues)
 **Path:** [`repos/backend/node`](repos/backend/node)  
 *Node/TypeScript Lambda API, Prisma ORM, Cognito auth, and clinical data models.*
 
 | ID | Priority | Title | Team |
 |---|:---:|---|:---:|
+| [CORE-143](https://linear.app/moovv-fit/issue/CORE-143/infrabackend-add-allowdocscloudfrontoac-to-moovv-fit-content-bucket) | `Urgent` | [Infra/Backend] Add AllowDocsCloudFrontOAC to moovv-fit-content bucket policy for docs.moovv.fit | `CORE` |
 | [CORE-113](https://linear.app/moovv-fit/issue/CORE-113/implement-plan-review-status-state-machine-unreviewed-pending-physio) | `Urgent` | Implement plan review status state machine (UNREVIEWED, PENDING_PHYSIO_REVIEW, APPROVED_BY_PHYSIO) | `CORE` |
 | [CORE-112](https://linear.app/moovv-fit/issue/CORE-112/implement-dual-queue-triage-dispatch-pain-clinical-queue-vs-wellness) | `Urgent` | Implement dual-queue triage dispatch (PAIN_CLINICAL_QUEUE vs WELLNESS_PERFORMANCE_QUEUE) | `CORE` |
 | [CORE-111](https://linear.app/moovv-fit/issue/CORE-111/implement-razorpay-order-creation-and-webhook-verification-for-indian) | `Urgent` | Implement Razorpay order creation and webhook verification for ₹499/₹299 review package | `CORE` |
@@ -156,7 +157,7 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 |---|:---:|---|:---:|
 | [CORE-92](https://linear.app/moovv-fit/issue/CORE-92/docs-modernize-documentation-ci-workflows) | `High` | [Docs] Modernize documentation CI workflows | `CORE` |
 
-### ☁️ Platform Infrastructure & Cross-Repo (52 issues)
+### ☁️ Platform Infrastructure & Cross-Repo (55 issues)
 **Path:** [`repos/infra/cdk`](repos/infra/cdk)  
 *Shared CDK stacks, CloudFront routing, DNS, auth pools, and cross-cutting platform epics.*
 
@@ -168,6 +169,8 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 | [CLINIC-2](https://linear.app/moovv-fit/issue/CLINIC-2/headless-video-player-sdk-and-streaming-endpoints) | `Urgent` | Headless Video Player SDK & Streaming Endpoints | `CLINIC` |
 | [CORE-11](https://linear.app/moovv-fit/issue/CORE-11/enforce-o1-bodypartactiveplan-laterality-lock) | `Urgent` | Enforce O(1) BodyPartActivePlan Laterality Lock | `CORE` |
 | [CORE-9](https://linear.app/moovv-fit/issue/CORE-9/implement-production-pgbouncer-rds-proxy-connection-pooling) | `Urgent` | Implement Production PgBouncer / RDS Proxy Connection Pooling | `CORE` |
+| [CORE-142](https://linear.app/moovv-fit/issue/CORE-142/tech-debt-fix-auth-handler-references-in-global-auth-channels-spec) | `High` | [Tech Debt] Fix auth handler references in global-auth-channels spec | `CORE` |
+| [CORE-141](https://linear.app/moovv-fit/issue/CORE-141/tech-debt-fix-users-vs-user-profile-table-references-in-specs) | `High` | [Tech Debt] Fix users vs user_profile table references in specs | `CORE` |
 | [CORE-139](https://linear.app/moovv-fit/issue/CORE-139/spec-e2e-simulation-platform-multi-persona-test-harness) | `High` | [Spec] E2E Simulation Platform: Multi-Persona Test Harness | `CORE` |
 | [CORE-137](https://linear.app/moovv-fit/issue/CORE-137/spec-free-content-mobile-exercise-streaming-ui-and-upsell-flows) | `High` | [Spec] Free Content Mobile: Exercise Streaming UI & Upsell Flows | `CORE` |
 | [CORE-136](https://linear.app/moovv-fit/issue/CORE-136/spec-free-content-backend-exercise-streaming-and-entitlements) | `High` | [Spec] Free Content Backend: Exercise Streaming & Entitlements | `CORE` |
@@ -186,6 +189,7 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 | [CORE-13](https://linear.app/moovv-fit/issue/CORE-13/human-in-the-loop-hitl-verification-queue-and-48h-sla-escalation) | `High` | Human-in-the-Loop (HITL) Verification Queue & 48h SLA Escalation | `CORE` |
 | [CORE-12](https://linear.app/moovv-fit/issue/CORE-12/decouple-four-bucket-entitlement-engine) | `High` | Decouple Four-Bucket Entitlement Engine | `CORE` |
 | [CORE-8](https://linear.app/moovv-fit/issue/CORE-8/consolidate-170-sam-lambdas-to-ecs-fargate-fastifynode-20) | `High` | Consolidate 170+ SAM Lambdas to ECS Fargate (Fastify/Node 20) | `CORE` |
+| [CORE-140](https://linear.app/moovv-fit/issue/CORE-140/tech-debt-rename-adr-025-to-adr-027-third-party-integration) | `Medium` | [Tech Debt] Rename ADR-025 to ADR-027 (Third-Party Integration Abstraction) | `CORE` |
 | [CORE-138](https://linear.app/moovv-fit/issue/CORE-138/spec-ios-release-pipeline-automated-testflight-and-app-store) | `Medium` | [Spec] iOS Release Pipeline: Automated TestFlight & App Store Submission | `CORE` |
 | [CORE-134](https://linear.app/moovv-fit/issue/CORE-134/infra-codify-iam-release-roles-github-oidc-and-shared-storage-stacks) | `Medium` | [Infra] Codify IAM Release Roles, GitHub OIDC & Shared Storage Stacks | `CORE` |
 | [CORE-82](https://linear.app/moovv-fit/issue/CORE-82/content-gap-50-exercises-from-ka-mapping-have-no-video-equivalent) | `Medium` | Content Gap: 50 exercises from KA mapping have no video equivalent | `CORE` |
@@ -216,4 +220,4 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 | [CLINIC-41](https://linear.app/moovv-fit/issue/CLINIC-41/kineticage-partner-integration-source-documents) | `No priority` | KineticAge Partner Integration — Source Documents | `CLINIC` |
 
 ---
-*Generated automatically via `scripts/linear-backlog.py --sync` on 2026-11-06 16:36 UTC.*
+*Generated automatically via `scripts/linear-backlog.py --sync` on 2026-11-06 16:53 UTC.*
