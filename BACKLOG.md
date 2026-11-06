@@ -1,7 +1,7 @@
 # 📋 Moovv Fit — Master Cross-Repo Backlog
 
 > **Canonical Backlog Mirror** synchronized with Linear (`moovv-fit` workspace).  
-> **Last Synced:** `2026-11-06 10:21 UTC` • **Total Open Backlog Issues:** `83`  
+> **Last Synced:** `2026-11-06 11:53 UTC` • **Total Open Backlog Issues:** `89`  
 > *To refresh this document automatically, run: `./scripts/linear-backlog.py --sync`*
 
 ---
@@ -51,13 +51,13 @@ When pair-programming with Antigravity or Kiro, you don't need to leave chat:
 | Domain | Submodule Path | Issues | Primary Focus |
 |---|---|:---:|---|
 | **📱 Mobile (iOS & Android)** | [`repos/apps/mobile`](repos/apps/mobile) | **15** | Flutter rehabilitation app, assessment engine, routine player, and pain tracking. |
-| **⚙️ Backend Core API & Database** | [`repos/backend/node`](repos/backend/node) | **12** | Node/TypeScript Lambda API, Prisma ORM, Cognito auth, and clinical data models. |
+| **⚙️ Backend Core API & Database** | [`repos/backend/node`](repos/backend/node) | **13** | Node/TypeScript Lambda API, Prisma ORM, Cognito auth, and clinical data models. |
 | **🌐 Web Portals (Clinic OS & Admin)** | [`repos/apps/web`](repos/apps/web) | **6** | React 19 clinical portal, appointment booking, patient queue, and chat. |
 | **🚀 Landing & Patient Acquisition** | [`repos/apps/landing`](repos/apps/landing) | **4** | Static marketing sites, physician lead funnels, and store/PWA onboarding. |
 | **🧪 Autonomous Simulator & Test Harness** | [`repos/platform/simulator`](repos/platform/simulator) | **2** | E2E multi-persona automated test harness, websocket synthetic testing. |
 | **🎨 Design System Tokens & UI** | [`repos/platform/design-system`](repos/platform/design-system) | **1** | Svelte 5 / Tailwind v4 canonical components and tokens. |
 | **📚 Documentation Portals** | [`repos/docs/technical`](repos/docs/technical) | **1** | Partner developer documentation and clinical specifications. |
-| **☁️ Platform Infrastructure & Cross-Repo** | [`repos/infra/cdk`](repos/infra/cdk) | **42** | Shared CDK stacks, CloudFront routing, DNS, auth pools, and cross-cutting platform epics. |
+| **☁️ Platform Infrastructure & Cross-Repo** | [`repos/infra/cdk`](repos/infra/cdk) | **47** | Shared CDK stacks, CloudFront routing, DNS, auth pools, and cross-cutting platform epics. |
 
 ---
 
@@ -85,7 +85,7 @@ When pair-programming with Antigravity or Kiro, you don't need to leave chat:
 | [CORE-89](https://linear.app/moovv-fit/issue/CORE-89/mobile-audit-and-modernize-github-actions-workflows) | `High` | [Mobile] Audit & modernize GitHub Actions workflows | `CORE` |
 | [CORE-94](https://linear.app/moovv-fit/issue/CORE-94/mobile-post-launch-framework-and-dependency-upgrades) | `Medium` | [Mobile] Post-Launch Framework & Dependency Upgrades | `CORE` |
 
-### ⚙️ Backend Core API & Database (12 issues)
+### ⚙️ Backend Core API & Database (13 issues)
 **Path:** [`repos/backend/node`](repos/backend/node)  
 *Node/TypeScript Lambda API, Prisma ORM, Cognito auth, and clinical data models.*
 
@@ -102,6 +102,7 @@ When pair-programming with Antigravity or Kiro, you don't need to leave chat:
 | [CORE-110](https://linear.app/moovv-fit/issue/CORE-110/implement-max-free-active-plans-2-validation-in-plan-activation) | `High` | Implement MAX_FREE_ACTIVE_PLANS = 2 validation in plan activation service | `CORE` |
 | [CORE-96](https://linear.app/moovv-fit/issue/CORE-96/backend-re-enable-and-validate-platform-e2e-tests-on-staging) | `High` | [Backend] Re-enable & Validate Platform E2E Tests on Staging | `CORE` |
 | [CORE-95](https://linear.app/moovv-fit/issue/CORE-95/backend-expand-unit-and-integration-test-coverage-to-80percent) | `High` | [Backend] Expand Unit & Integration Test Coverage to 80% | `CORE` |
+| [CORE-131](https://linear.app/moovv-fit/issue/CORE-131/engine-codify-recommendation-engine-ecr-and-lambda-infrastructure-into) | `Medium` | [Engine] Codify Recommendation Engine ECR and Lambda Infrastructure into CDK | `CORE` |
 | [CORE-97](https://linear.app/moovv-fit/issue/CORE-97/backend-implement-unified-v1-api-versioning-strategy-adr-014) | `Medium` | [Backend] Implement Unified /v1/ API Versioning Strategy (ADR-014) | `CORE` |
 
 ### 🌐 Web Portals (Clinic OS & Admin) (6 issues)
@@ -153,7 +154,7 @@ When pair-programming with Antigravity or Kiro, you don't need to leave chat:
 |---|:---:|---|:---:|
 | [CORE-92](https://linear.app/moovv-fit/issue/CORE-92/docs-modernize-documentation-ci-workflows) | `High` | [Docs] Modernize documentation CI workflows | `CORE` |
 
-### ☁️ Platform Infrastructure & Cross-Repo (42 issues)
+### ☁️ Platform Infrastructure & Cross-Repo (47 issues)
 **Path:** [`repos/infra/cdk`](repos/infra/cdk)  
 *Shared CDK stacks, CloudFront routing, DNS, auth pools, and cross-cutting platform epics.*
 
@@ -165,6 +166,10 @@ When pair-programming with Antigravity or Kiro, you don't need to leave chat:
 | [CLINIC-2](https://linear.app/moovv-fit/issue/CLINIC-2/headless-video-player-sdk-and-streaming-endpoints) | `Urgent` | Headless Video Player SDK & Streaming Endpoints | `CLINIC` |
 | [CORE-11](https://linear.app/moovv-fit/issue/CORE-11/enforce-o1-bodypartactiveplan-laterality-lock) | `Urgent` | Enforce O(1) BodyPartActivePlan Laterality Lock | `CORE` |
 | [CORE-9](https://linear.app/moovv-fit/issue/CORE-9/implement-production-pgbouncer-rds-proxy-connection-pooling) | `Urgent` | Implement Production PgBouncer / RDS Proxy Connection Pooling | `CORE` |
+| [CORE-133](https://linear.app/moovv-fit/issue/CORE-133/infra-codify-shared-data-layer-and-rds-database-stack) | `High` | [Infra] Codify Shared Data Layer & RDS Database Stack | `CORE` |
+| [CORE-132](https://linear.app/moovv-fit/issue/CORE-132/infra-codify-shared-network-stack-vpc-subnets-security-groups) | `High` | [Infra] Codify Shared Network Stack (VPC, Subnets, Security Groups) | `CORE` |
+| [CORE-130](https://linear.app/moovv-fit/issue/CORE-130/infra-adopt-legacy-cognito-mobile-pool-a-via-cdk-import) | `High` | [Infra] Adopt Legacy Cognito Mobile Pool A via cdk import | `CORE` |
+| [CORE-129](https://linear.app/moovv-fit/issue/CORE-129/infra-unmanaged-cloud-infrastructure-adoption-and-migration-adr-001) | `High` | [Infra] Unmanaged Cloud Infrastructure Adoption & Migration (ADR-001) | `CORE` |
 | [CORE-87](https://linear.app/moovv-fit/issue/CORE-87/cross-repo-cicd-and-github-actions-modernization-and-dual-org) | `High` | [Cross-Repo] CI/CD & GitHub Actions Modernization and Dual-Org Deployment Alignment | `CORE` |
 | [CORE-84](https://linear.app/moovv-fit/issue/CORE-84/abr-add-multi-rendition-hls-output-sdhdfull-hd) | `High` | ABR: Add multi-rendition HLS output (SD/HD/FULL_HD) | `CORE` |
 | [CLINIC-5](https://linear.app/moovv-fit/issue/CLINIC-5/whatsapp-adherence-tracking-and-care-plan-recall-workflows) | `High` | WhatsApp Adherence Tracking & Care Plan Recall Workflows | `CLINIC` |
@@ -175,6 +180,7 @@ When pair-programming with Antigravity or Kiro, you don't need to leave chat:
 | [CORE-13](https://linear.app/moovv-fit/issue/CORE-13/human-in-the-loop-hitl-verification-queue-and-48h-sla-escalation) | `High` | Human-in-the-Loop (HITL) Verification Queue & 48h SLA Escalation | `CORE` |
 | [CORE-12](https://linear.app/moovv-fit/issue/CORE-12/decouple-four-bucket-entitlement-engine) | `High` | Decouple Four-Bucket Entitlement Engine | `CORE` |
 | [CORE-8](https://linear.app/moovv-fit/issue/CORE-8/consolidate-170-sam-lambdas-to-ecs-fargate-fastifynode-20) | `High` | Consolidate 170+ SAM Lambdas to ECS Fargate (Fastify/Node 20) | `CORE` |
+| [CORE-134](https://linear.app/moovv-fit/issue/CORE-134/infra-codify-iam-release-roles-github-oidc-and-shared-storage-stacks) | `Medium` | [Infra] Codify IAM Release Roles, GitHub OIDC & Shared Storage Stacks | `CORE` |
 | [CORE-82](https://linear.app/moovv-fit/issue/CORE-82/content-gap-50-exercises-from-ka-mapping-have-no-video-equivalent) | `Medium` | Content Gap: 50 exercises from KA mapping have no video equivalent | `CORE` |
 | [CORE-81](https://linear.app/moovv-fit/issue/CORE-81/crashlytics-test-healthcheck) | `Medium` | [Crashlytics] Test Healthcheck | `CORE` |
 | [CORE-60](https://linear.app/moovv-fit/issue/CORE-60/qa-knee-to-wall-ankle-test-option-3-clinical-pose-inaccuracy) | `Medium` | [QA] Knee-to-Wall Ankle Test - Option 3: Clinical / Pose Inaccuracy | `CORE` |
@@ -203,4 +209,4 @@ When pair-programming with Antigravity or Kiro, you don't need to leave chat:
 | [CLINIC-41](https://linear.app/moovv-fit/issue/CLINIC-41/kineticage-partner-integration-source-documents) | `No priority` | KineticAge Partner Integration — Source Documents | `CLINIC` |
 
 ---
-*Generated automatically via `scripts/linear-backlog.py --sync` on 2026-11-06 10:21 UTC.*
+*Generated automatically via `scripts/linear-backlog.py --sync` on 2026-11-06 11:53 UTC.*
