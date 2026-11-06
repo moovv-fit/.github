@@ -1,7 +1,7 @@
 # 📋 Moovv Fit — Master Cross-Repo Backlog
 
 > **Canonical Backlog Mirror** synchronized with Linear (`moovv-fit` workspace).  
-> **Last Synced:** `2026-11-05 15:17 UTC` • **Total Open Backlog Issues:** `83`  
+> **Last Synced:** `2026-11-06 10:21 UTC` • **Total Open Backlog Issues:** `83`  
 > *To refresh this document automatically, run: `./scripts/linear-backlog.py --sync`*
 
 ---
@@ -203,4 +203,4 @@ When pair-programming with Antigravity or Kiro, you don't need to leave chat:
 | [CLINIC-41](https://linear.app/moovv-fit/issue/CLINIC-41/kineticage-partner-integration-source-documents) | `No priority` | KineticAge Partner Integration — Source Documents | `CLINIC` |
 
 ---
-*Generated automatically via `scripts/linear-backlog.py --sync` on 2026-11-05 15:17 UTC.*
+*Generated automatically via `scripts/linear-backlog.py --sync` on 2026-11-06 10:21 UTC.*
