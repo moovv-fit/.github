@@ -1,7 +1,7 @@
 # 📋 Moovv Fit — Master Cross-Repo Backlog
 
 > **Canonical Backlog Mirror** synchronized with Linear (`moovv-fit` workspace).  
-> **Last Synced:** `2026-11-06 11:53 UTC` • **Total Open Backlog Issues:** `89`  
+> **Last Synced:** `2026-11-06 16:36 UTC` • **Total Open Backlog Issues:** `93`  
 > *To refresh this document automatically, run: `./scripts/linear-backlog.py --sync`*
 
 ---
@@ -44,6 +44,9 @@ When pair-programming with Antigravity or Kiro, you don't need to leave chat:
 - **Periodic Snapshot Updates**:
   - *"Update the master BACKLOG.md snapshot"* → The agent runs the sync command and updates this file.
 
+### 🛠️ Spec Implementation Roadmap
+For prioritized implementation order of Kiro specs with dependency tracking, see **[docs/SPEC-ROADMAP.md](docs/SPEC-ROADMAP.md)**.
+
 ---
 
 ## 📊 Backlog Summary by Repository
@@ -53,11 +56,11 @@ When pair-programming with Antigravity or Kiro, you don't need to leave chat:
 | **📱 Mobile (iOS & Android)** | [`repos/apps/mobile`](repos/apps/mobile) | **15** | Flutter rehabilitation app, assessment engine, routine player, and pain tracking. |
 | **⚙️ Backend Core API & Database** | [`repos/backend/node`](repos/backend/node) | **13** | Node/TypeScript Lambda API, Prisma ORM, Cognito auth, and clinical data models. |
 | **🌐 Web Portals (Clinic OS & Admin)** | [`repos/apps/web`](repos/apps/web) | **6** | React 19 clinical portal, appointment booking, patient queue, and chat. |
-| **🚀 Landing & Patient Acquisition** | [`repos/apps/landing`](repos/apps/landing) | **4** | Static marketing sites, physician lead funnels, and store/PWA onboarding. |
+| **🚀 Landing & Patient Acquisition** | [`repos/apps/landing`](repos/apps/landing) | **3** | Static marketing sites, physician lead funnels, and store/PWA onboarding. |
 | **🧪 Autonomous Simulator & Test Harness** | [`repos/platform/simulator`](repos/platform/simulator) | **2** | E2E multi-persona automated test harness, websocket synthetic testing. |
 | **🎨 Design System Tokens & UI** | [`repos/platform/design-system`](repos/platform/design-system) | **1** | Svelte 5 / Tailwind v4 canonical components and tokens. |
 | **📚 Documentation Portals** | [`repos/docs/technical`](repos/docs/technical) | **1** | Partner developer documentation and clinical specifications. |
-| **☁️ Platform Infrastructure & Cross-Repo** | [`repos/infra/cdk`](repos/infra/cdk) | **47** | Shared CDK stacks, CloudFront routing, DNS, auth pools, and cross-cutting platform epics. |
+| **☁️ Platform Infrastructure & Cross-Repo** | [`repos/infra/cdk`](repos/infra/cdk) | **52** | Shared CDK stacks, CloudFront routing, DNS, auth pools, and cross-cutting platform epics. |
 
 ---
 
@@ -118,14 +121,13 @@ When pair-programming with Antigravity or Kiro, you don't need to leave chat:
 | [CLINIC-44](https://linear.app/moovv-fit/issue/CLINIC-44/implement-duty-physiotherapist-teleconsultation-timeslot-availability) | `High` | Implement duty physiotherapist teleconsultation timeslot availability and calendar scheduling | `CLINIC` |
 | [CORE-99](https://linear.app/moovv-fit/issue/CORE-99/web-evaluate-and-extract-shared-ui-components-to-moovvdesign-system) | `Medium` | [Web] Evaluate and extract shared UI components to @moovv/design-system | `CORE` |
 
-### 🚀 Landing & Patient Acquisition (4 issues)
+### 🚀 Landing & Patient Acquisition (3 issues)
 **Path:** [`repos/apps/landing`](repos/apps/landing)  
 *Static marketing sites, physician lead funnels, and store/PWA onboarding.*
 
 | ID | Priority | Title | Team |
 |---|:---:|---|:---:|
 | [CORE-126](https://linear.app/moovv-fit/issue/CORE-126/release-revert-apple-review-pending-flag-in-store-linksjs-once-app) | `High` | [Release] Revert APPLE_REVIEW_PENDING flag in store-links.js once App Store approves new bundle ID | `CORE` |
-| [CORE-88](https://linear.app/moovv-fit/issue/CORE-88/landing-align-github-actions-with-canonical-actions-and-tag-dispatch) | `High` | [Landing] Align GitHub Actions with canonical actions & tag dispatch | `CORE` |
 | [CORE-115](https://linear.app/moovv-fit/issue/CORE-115/implement-in-home-consultation-lead-routing-webhook-and-ops) | `Medium` | Implement in-home consultation lead routing webhook and ops notification | `CORE` |
 | [CORE-114](https://linear.app/moovv-fit/issue/CORE-114/update-landing-page-hero-copy-for-free-exercise-streaming-and-paid) | `Medium` | Update landing page hero copy for free exercise streaming and paid physio review | `CORE` |
 
@@ -154,7 +156,7 @@ When pair-programming with Antigravity or Kiro, you don't need to leave chat:
 |---|:---:|---|:---:|
 | [CORE-92](https://linear.app/moovv-fit/issue/CORE-92/docs-modernize-documentation-ci-workflows) | `High` | [Docs] Modernize documentation CI workflows | `CORE` |
 
-### ☁️ Platform Infrastructure & Cross-Repo (47 issues)
+### ☁️ Platform Infrastructure & Cross-Repo (52 issues)
 **Path:** [`repos/infra/cdk`](repos/infra/cdk)  
 *Shared CDK stacks, CloudFront routing, DNS, auth pools, and cross-cutting platform epics.*
 
@@ -166,6 +168,10 @@ When pair-programming with Antigravity or Kiro, you don't need to leave chat:
 | [CLINIC-2](https://linear.app/moovv-fit/issue/CLINIC-2/headless-video-player-sdk-and-streaming-endpoints) | `Urgent` | Headless Video Player SDK & Streaming Endpoints | `CLINIC` |
 | [CORE-11](https://linear.app/moovv-fit/issue/CORE-11/enforce-o1-bodypartactiveplan-laterality-lock) | `Urgent` | Enforce O(1) BodyPartActivePlan Laterality Lock | `CORE` |
 | [CORE-9](https://linear.app/moovv-fit/issue/CORE-9/implement-production-pgbouncer-rds-proxy-connection-pooling) | `Urgent` | Implement Production PgBouncer / RDS Proxy Connection Pooling | `CORE` |
+| [CORE-139](https://linear.app/moovv-fit/issue/CORE-139/spec-e2e-simulation-platform-multi-persona-test-harness) | `High` | [Spec] E2E Simulation Platform: Multi-Persona Test Harness | `CORE` |
+| [CORE-137](https://linear.app/moovv-fit/issue/CORE-137/spec-free-content-mobile-exercise-streaming-ui-and-upsell-flows) | `High` | [Spec] Free Content Mobile: Exercise Streaming UI & Upsell Flows | `CORE` |
+| [CORE-136](https://linear.app/moovv-fit/issue/CORE-136/spec-free-content-backend-exercise-streaming-and-entitlements) | `High` | [Spec] Free Content Backend: Exercise Streaming & Entitlements | `CORE` |
+| [CORE-135](https://linear.app/moovv-fit/issue/CORE-135/spec-financial-ledger-double-entry-accounting-system) | `High` | [Spec] Financial Ledger: Double-Entry Accounting System | `CORE` |
 | [CORE-133](https://linear.app/moovv-fit/issue/CORE-133/infra-codify-shared-data-layer-and-rds-database-stack) | `High` | [Infra] Codify Shared Data Layer & RDS Database Stack | `CORE` |
 | [CORE-132](https://linear.app/moovv-fit/issue/CORE-132/infra-codify-shared-network-stack-vpc-subnets-security-groups) | `High` | [Infra] Codify Shared Network Stack (VPC, Subnets, Security Groups) | `CORE` |
 | [CORE-130](https://linear.app/moovv-fit/issue/CORE-130/infra-adopt-legacy-cognito-mobile-pool-a-via-cdk-import) | `High` | [Infra] Adopt Legacy Cognito Mobile Pool A via cdk import | `CORE` |
@@ -180,6 +186,7 @@ When pair-programming with Antigravity or Kiro, you don't need to leave chat:
 | [CORE-13](https://linear.app/moovv-fit/issue/CORE-13/human-in-the-loop-hitl-verification-queue-and-48h-sla-escalation) | `High` | Human-in-the-Loop (HITL) Verification Queue & 48h SLA Escalation | `CORE` |
 | [CORE-12](https://linear.app/moovv-fit/issue/CORE-12/decouple-four-bucket-entitlement-engine) | `High` | Decouple Four-Bucket Entitlement Engine | `CORE` |
 | [CORE-8](https://linear.app/moovv-fit/issue/CORE-8/consolidate-170-sam-lambdas-to-ecs-fargate-fastifynode-20) | `High` | Consolidate 170+ SAM Lambdas to ECS Fargate (Fastify/Node 20) | `CORE` |
+| [CORE-138](https://linear.app/moovv-fit/issue/CORE-138/spec-ios-release-pipeline-automated-testflight-and-app-store) | `Medium` | [Spec] iOS Release Pipeline: Automated TestFlight & App Store Submission | `CORE` |
 | [CORE-134](https://linear.app/moovv-fit/issue/CORE-134/infra-codify-iam-release-roles-github-oidc-and-shared-storage-stacks) | `Medium` | [Infra] Codify IAM Release Roles, GitHub OIDC & Shared Storage Stacks | `CORE` |
 | [CORE-82](https://linear.app/moovv-fit/issue/CORE-82/content-gap-50-exercises-from-ka-mapping-have-no-video-equivalent) | `Medium` | Content Gap: 50 exercises from KA mapping have no video equivalent | `CORE` |
 | [CORE-81](https://linear.app/moovv-fit/issue/CORE-81/crashlytics-test-healthcheck) | `Medium` | [Crashlytics] Test Healthcheck | `CORE` |
@@ -209,97 +216,4 @@ When pair-programming with Antigravity or Kiro, you don't need to leave chat:
 | [CLINIC-41](https://linear.app/moovv-fit/issue/CLINIC-41/kineticage-partner-integration-source-documents) | `No priority` | KineticAge Partner Integration — Source Documents | `CLINIC` |
 
 ---
-
-## 🛠️ Kiro Spec Implementation Roadmap
-
-> **Prioritized implementation order** for all Kiro-format specs across the platform.  
-> Dependencies are explicit — downstream specs should not start until their upstream dependencies complete.
-
-### Implementation Phases
-
-#### Phase 1: Revenue & Payment Foundation (Weeks 1-3)
-*Critical path for international expansion and financial compliance.*
-
-| Order | Spec | Repo | Dependencies | Effort | Notes |
-|:---:|---|---|---|:---:|---|
-| 1.1 | **[payment-gateway-abstraction](repos/backend/node/.agents/specs/payment-gateway-abstraction/)** | `backend/node` | — | `L` | Adapter pattern for Razorpay International + future Stripe/PayPal |
-| 1.2 | **[financial-ledger](repos/backend/node/.agents/specs/financial-ledger/)** | `backend/node` | `payment-gateway-abstraction` | `XL` | Double-entry ledger with Prisma, Zoho sync, payment order migration |
-
-#### Phase 2: Global Auth & Partner Platform (Weeks 2-4)
-*Enables multi-country expansion and B2B video SDK revenue.*
-
-| Order | Spec | Repo | Dependencies | Effort | Notes |
-|:---:|---|---|---|:---:|---|
-| 2.1 | **[global-auth-channels](repos/backend/node/.agents/specs/global-auth-channels/)** | `backend/node` | — | `M` | E.164 phone support, multi-country Cognito pools |
-| 2.2 | **[partner-video-sdk](repos/backend/node/.agents/specs/partner-video-sdk/)** | `backend/node` | — | `L` | B2B headless video streaming API (already Kiro format) |
-
-#### Phase 3: CRM & Marketing Infrastructure (Weeks 4-6)
-*Backend services must complete before mobile/web consumers.*
-
-| Order | Spec | Repo | Dependencies | Effort | Notes |
-|:---:|---|---|---|:---:|---|
-| 3.1 | **[crm-gateway-zoho](repos/backend/node/.agents/specs/crm-gateway-zoho/)** | `backend/node` | — | `M` | Zoho CRM integration layer, webhook pipelines |
-| 3.2 | **[marketing-infra-backend](repos/backend/node/.agents/specs/marketing-infra-backend/)** | `backend/node` | `crm-gateway-zoho` | `M` | Campaign service, Customer.io, attribution tracking |
-| 3.3 | **[marketing-infra](repos/apps/mobile/.agents/specs/marketing-infra/)** | `apps/mobile` | `marketing-infra-backend` | `S` | Mobile SDK for campaign ingress, deep links |
-
-#### Phase 4: Free Content & Engagement (Weeks 5-7)
-*Growth lever — backend before mobile consumer.*
-
-| Order | Spec | Repo | Dependencies | Effort | Notes |
-|:---:|---|---|---|:---:|---|
-| 4.1 | **[free-content-backend](repos/backend/node/.agents/specs/free-content-backend/)** | `backend/node` | — | `M` | Content catalog API, entitlement rules, streaming auth |
-| 4.2 | **[free-content-mobile](repos/apps/mobile/.agents/specs/free-content-mobile/)** | `apps/mobile` | `free-content-backend` | `M` | Free exercise streaming UI, upsell flows |
-
-#### Phase 5: Platform Quality & Testing (Ongoing)
-*Horizontal capabilities that support all other specs.*
-
-| Order | Spec | Repo | Dependencies | Effort | Notes |
-|:---:|---|---|---|:---:|---|
-| 5.1 | **[e2e-simulation-platform](repos/platform/simulator/.agents/specs/e2e-simulation-platform/)** | `platform/simulator` | — | `L` | Multi-persona autonomous test harness |
-| 5.2 | **[ios-release-pipeline](repos/apps/mobile/.agents/specs/ios-release-pipeline/)** | `apps/mobile` | — | `M` | Automated TestFlight & App Store submission |
-
-### Dependency Graph
-
-```
-payment-gateway-abstraction ──► financial-ledger
-                                     │
-crm-gateway-zoho ──► marketing-infra-backend ──► marketing-infra (mobile)
-                                     │
-free-content-backend ──────────────► free-content-mobile
-
-global-auth-channels ──► (enables all international features)
-partner-video-sdk ──► (standalone B2B revenue)
-e2e-simulation-platform ──► (validates all specs)
-```
-
-### Effort Key
-
-| Size | Estimate | Typical Scope |
-|:---:|:---:|---|
-| `S` | 1-2 days | Single service, <5 files |
-| `M` | 3-5 days | Multi-file, requires integration testing |
-| `L` | 1-2 weeks | Cross-cutting, multiple services, DB migrations |
-| `XL` | 2-3 weeks | Major architectural change, data migration |
-
-### Spec Locations Quick Reference
-
-```
-repos/
-├── backend/node/.agents/specs/
-│   ├── crm-gateway-zoho/
-│   ├── financial-ledger/
-│   ├── free-content-backend/
-│   ├── global-auth-channels/
-│   ├── marketing-infra-backend/
-│   ├── partner-video-sdk/
-│   └── payment-gateway-abstraction/
-├── apps/mobile/.agents/specs/
-│   ├── free-content-mobile/
-│   ├── ios-release-pipeline/
-│   └── marketing-infra/
-└── platform/simulator/.agents/specs/
-    └── e2e-simulation-platform/
-```
-
----
-*Generated automatically via `scripts/linear-backlog.py --sync` on 2026-11-06 11:53 UTC.*
+*Generated automatically via `scripts/linear-backlog.py --sync` on 2026-11-06 16:36 UTC.*
