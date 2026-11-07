@@ -14,11 +14,11 @@
 2. **Ephemeral Spot Runners**:
    - Provisioned JIT via the AWS Lambda dispatcher stack (`moovv-fit-spot-runner-dispatcher`) in `ap-south-1`.
    - Multi-region Golden AMIs pre-baked with Node 22, pnpm, Docker, Python 3.12, Semgrep, Flutter, and Maestro:
-     - `us-east-2`: `ami-0840c9f13119c6201`
-     - `us-east-1`: `ami-0dd7c5e44cb54532f`
-     - `us-west-2`: `ami-0e9ca90dd60332cdb`
-     - `eu-west-1`: `ami-081dfdc01223cfeec`
-     - `ap-south-1`: `ami-0f38dc9a9dbfad965`
+     - `us-east-2`: `ami-02b193b51c29d082d`
+     - `us-east-1`: `ami-05dc81a3524c67bf9`
+     - `us-west-2`: `ami-066a5591d200e6755`
+     - `eu-west-1`: `ami-0c7b7709b2afc04ba`
+     - `ap-south-1`: `ami-0ba2fca0c328e14f5`
    - Instances boot in ~12 seconds and terminate (`shutdown -h now`) immediately after job execution.
 3. **No Duplicate CI on Merge (Rule 1)**:
    - Merging a PR into `main` must NEVER trigger duplicate CI test runs.
