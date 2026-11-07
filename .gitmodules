@@ -31,3 +31,6 @@
 [submodule "repos/backend/analysis"]
 	path = repos/backend/analysis
 	url = git@github.com:moovv-fit/exercise_canonical_analysis.git
+[submodule "repos/infra/kiro-spot"]
+	path = repos/infra/kiro-spot
+	url = git@github.com:moovv-fit/moovv-fit-kiro-spot.git
