@@ -1,7 +1,7 @@
 # 📋 Moovv Fit — Master Cross-Repo Backlog
 
 > **Canonical Backlog Mirror** synchronized with Linear (`moovv-fit` workspace).  
-> **Last Synced:** `2026-11-06 16:53 UTC` • **Total Open Backlog Issues:** `97`  
+> **Last Synced:** `2026-11-07 17:40 UTC` • **Total Open Backlog Issues:** `96`  
 > *To refresh this document automatically, run: `./scripts/linear-backlog.py --sync`*
 
 ---
@@ -54,13 +54,13 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 | Domain | Submodule Path | Issues | Primary Focus |
 |---|---|:---:|---|
 | **📱 Mobile (iOS & Android)** | [`repos/apps/mobile`](repos/apps/mobile) | **15** | Flutter rehabilitation app, assessment engine, routine player, and pain tracking. |
-| **⚙️ Backend Core API & Database** | [`repos/backend/node`](repos/backend/node) | **14** | Node/TypeScript Lambda API, Prisma ORM, Cognito auth, and clinical data models. |
+| **⚙️ Backend Core API & Database** | [`repos/backend/node`](repos/backend/node) | **13** | Node/TypeScript Lambda API, Prisma ORM, Cognito auth, and clinical data models. |
 | **🌐 Web Portals (Clinic OS & Admin)** | [`repos/apps/web`](repos/apps/web) | **6** | React 19 clinical portal, appointment booking, patient queue, and chat. |
-| **🚀 Landing & Patient Acquisition** | [`repos/apps/landing`](repos/apps/landing) | **3** | Static marketing sites, physician lead funnels, and store/PWA onboarding. |
+| **🚀 Landing & Patient Acquisition** | [`repos/apps/landing`](repos/apps/landing) | **2** | Static marketing sites, physician lead funnels, and store/PWA onboarding. |
 | **🧪 Autonomous Simulator & Test Harness** | [`repos/platform/simulator`](repos/platform/simulator) | **2** | E2E multi-persona automated test harness, websocket synthetic testing. |
 | **🎨 Design System Tokens & UI** | [`repos/platform/design-system`](repos/platform/design-system) | **1** | Svelte 5 / Tailwind v4 canonical components and tokens. |
 | **📚 Documentation Portals** | [`repos/docs/technical`](repos/docs/technical) | **1** | Partner developer documentation and clinical specifications. |
-| **☁️ Platform Infrastructure & Cross-Repo** | [`repos/infra/cdk`](repos/infra/cdk) | **55** | Shared CDK stacks, CloudFront routing, DNS, auth pools, and cross-cutting platform epics. |
+| **☁️ Platform Infrastructure & Cross-Repo** | [`repos/infra/cdk`](repos/infra/cdk) | **56** | Shared CDK stacks, CloudFront routing, DNS, auth pools, and cross-cutting platform epics. |
 
 ---
 
@@ -88,13 +88,12 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 | [CORE-89](https://linear.app/moovv-fit/issue/CORE-89/mobile-audit-and-modernize-github-actions-workflows) | `High` | [Mobile] Audit & modernize GitHub Actions workflows | `CORE` |
 | [CORE-94](https://linear.app/moovv-fit/issue/CORE-94/mobile-post-launch-framework-and-dependency-upgrades) | `Medium` | [Mobile] Post-Launch Framework & Dependency Upgrades | `CORE` |
 
-### ⚙️ Backend Core API & Database (14 issues)
+### ⚙️ Backend Core API & Database (13 issues)
 **Path:** [`repos/backend/node`](repos/backend/node)  
 *Node/TypeScript Lambda API, Prisma ORM, Cognito auth, and clinical data models.*
 
 | ID | Priority | Title | Team |
 |---|:---:|---|:---:|
-| [CORE-143](https://linear.app/moovv-fit/issue/CORE-143/infrabackend-add-allowdocscloudfrontoac-to-moovv-fit-content-bucket) | `Urgent` | [Infra/Backend] Add AllowDocsCloudFrontOAC to moovv-fit-content bucket policy for docs.moovv.fit | `CORE` |
 | [CORE-113](https://linear.app/moovv-fit/issue/CORE-113/implement-plan-review-status-state-machine-unreviewed-pending-physio) | `Urgent` | Implement plan review status state machine (UNREVIEWED, PENDING_PHYSIO_REVIEW, APPROVED_BY_PHYSIO) | `CORE` |
 | [CORE-112](https://linear.app/moovv-fit/issue/CORE-112/implement-dual-queue-triage-dispatch-pain-clinical-queue-vs-wellness) | `Urgent` | Implement dual-queue triage dispatch (PAIN_CLINICAL_QUEUE vs WELLNESS_PERFORMANCE_QUEUE) | `CORE` |
 | [CORE-111](https://linear.app/moovv-fit/issue/CORE-111/implement-razorpay-order-creation-and-webhook-verification-for-indian) | `Urgent` | Implement Razorpay order creation and webhook verification for ₹499/₹299 review package | `CORE` |
@@ -122,7 +121,7 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 | [CLINIC-44](https://linear.app/moovv-fit/issue/CLINIC-44/implement-duty-physiotherapist-teleconsultation-timeslot-availability) | `High` | Implement duty physiotherapist teleconsultation timeslot availability and calendar scheduling | `CLINIC` |
 | [CORE-99](https://linear.app/moovv-fit/issue/CORE-99/web-evaluate-and-extract-shared-ui-components-to-moovvdesign-system) | `Medium` | [Web] Evaluate and extract shared UI components to @moovv/design-system | `CORE` |
 
-### 🚀 Landing & Patient Acquisition (3 issues)
+### 🚀 Landing & Patient Acquisition (2 issues)
 **Path:** [`repos/apps/landing`](repos/apps/landing)  
 *Static marketing sites, physician lead funnels, and store/PWA onboarding.*
 
@@ -130,7 +129,6 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 |---|:---:|---|:---:|
 | [CORE-126](https://linear.app/moovv-fit/issue/CORE-126/release-revert-apple-review-pending-flag-in-store-linksjs-once-app) | `High` | [Release] Revert APPLE_REVIEW_PENDING flag in store-links.js once App Store approves new bundle ID | `CORE` |
 | [CORE-115](https://linear.app/moovv-fit/issue/CORE-115/implement-in-home-consultation-lead-routing-webhook-and-ops) | `Medium` | Implement in-home consultation lead routing webhook and ops notification | `CORE` |
-| [CORE-114](https://linear.app/moovv-fit/issue/CORE-114/update-landing-page-hero-copy-for-free-exercise-streaming-and-paid) | `Medium` | Update landing page hero copy for free exercise streaming and paid physio review | `CORE` |
 
 ### 🧪 Autonomous Simulator & Test Harness (2 issues)
 **Path:** [`repos/platform/simulator`](repos/platform/simulator)  
@@ -157,12 +155,13 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 |---|:---:|---|:---:|
 | [CORE-92](https://linear.app/moovv-fit/issue/CORE-92/docs-modernize-documentation-ci-workflows) | `High` | [Docs] Modernize documentation CI workflows | `CORE` |
 
-### ☁️ Platform Infrastructure & Cross-Repo (55 issues)
+### ☁️ Platform Infrastructure & Cross-Repo (56 issues)
 **Path:** [`repos/infra/cdk`](repos/infra/cdk)  
 *Shared CDK stacks, CloudFront routing, DNS, auth pools, and cross-cutting platform epics.*
 
 | ID | Priority | Title | Team |
 |---|:---:|---|:---:|
+| [CORE-148](https://linear.app/moovv-fit/issue/CORE-148/ios-app-store-rejection-nov-2026-iap-sandbox-error-ai-privacy) | `Urgent` | [iOS] App Store Rejection (Nov 2026): IAP sandbox error, AI privacy clarification, medical citations | `CORE` |
 | [CORE-121](https://linear.app/moovv-fit/issue/CORE-121/infra-track-spamhaus-dbl-delisting-for-moovvfit-st7326681) | `Urgent` | [Infra] Track Spamhaus DBL delisting for moovv.fit (ST7326681) | `CORE` |
 | [CORE-85](https://linear.app/moovv-fit/issue/CORE-85/dev-005-add-clinical-red-flag-triage-hard-stops-for-pregnancy-and) | `Urgent` | [DEV-005] Add clinical red-flag triage hard stops for pregnancy and acute fractures in mobile onboarding | `CORE` |
 | [CLINIC-8](https://linear.app/moovv-fit/issue/CLINIC-8/dipp-startup-certification-and-aws-activate-credits-recovery) | `Urgent` | DIPP Startup Certification & AWS Activate Credits Recovery | `CLINIC` |
@@ -220,4 +219,4 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 | [CLINIC-41](https://linear.app/moovv-fit/issue/CLINIC-41/kineticage-partner-integration-source-documents) | `No priority` | KineticAge Partner Integration — Source Documents | `CLINIC` |
 
 ---
-*Generated automatically via `scripts/linear-backlog.py --sync` on 2026-11-06 16:53 UTC.*
+*Generated automatically via `scripts/linear-backlog.py --sync` on 2026-11-07 17:40 UTC.*
