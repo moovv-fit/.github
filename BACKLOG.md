@@ -1,7 +1,7 @@
 # 📋 Moovv Fit — Master Cross-Repo Backlog
 
 > **Canonical Backlog Mirror** synchronized with Linear (`moovv-fit` workspace).  
-> **Last Synced:** `2026-11-09 14:39 UTC` • **Total Open Backlog Issues:** `77`  
+> **Last Synced:** `2026-11-09 15:56 UTC` • **Total Open Backlog Issues:** `78`  
 > *To refresh this document automatically, run: `./scripts/linear-backlog.py --sync`*
 
 ---
@@ -53,7 +53,7 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 
 | Domain | Submodule Path | Issues | Primary Focus |
 |---|---|:---:|---|
-| **📱 Mobile (iOS & Android)** | [`repos/apps/mobile`](repos/apps/mobile) | **6** | Flutter rehabilitation app, assessment engine, routine player, and pain tracking. |
+| **📱 Mobile (iOS & Android)** | [`repos/apps/mobile`](repos/apps/mobile) | **7** | Flutter rehabilitation app, assessment engine, routine player, and pain tracking. |
 | **⚙️ Backend Core API & Database** | [`repos/backend/node`](repos/backend/node) | **6** | Node/TypeScript Lambda API, Prisma ORM, Cognito auth, and clinical data models. |
 | **🌐 Web Portals (Clinic OS & Admin)** | [`repos/apps/web`](repos/apps/web) | **6** | React 19 clinical portal, appointment booking, patient queue, and chat. |
 | **🚀 Landing & Patient Acquisition** | [`repos/apps/landing`](repos/apps/landing) | **2** | Static marketing sites, physician lead funnels, and store/PWA onboarding. |
@@ -66,13 +66,14 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 
 ## 📦 Detailed Backlog Breakdown
 
-### 📱 Mobile (iOS & Android) (6 issues)
+### 📱 Mobile (iOS & Android) (7 issues)
 **Path:** [`repos/apps/mobile`](repos/apps/mobile)  
 *Flutter rehabilitation app, assessment engine, routine player, and pain tracking.*
 
 | ID | Priority | Title | Team |
 |---|:---:|---|:---:|
 | [CORE-116](https://linear.app/moovv-fit/issue/CORE-116/shift-mobility-assessments-from-manual-self-tests-to-video-based) | `Urgent` | Shift mobility assessments from manual self-tests to video-based assessments | `CORE` |
+| [CORE-154](https://linear.app/moovv-fit/issue/CORE-154/fixmobile-stabilize-and-re-enable-maestro-e2e-test-suite-for-web-and) | `High` | fix(mobile): stabilize and re-enable Maestro E2E test suite for Web and Android | `CORE` |
 | [CORE-119](https://linear.app/moovv-fit/issue/CORE-119/de-hardcode-mobile-trial-copy-and-support-dynamic-campaign-ingress) | `High` | De-hardcode mobile trial copy and support dynamic campaign ingress | `CORE` |
 | [CORE-102](https://linear.app/moovv-fit/issue/CORE-102/implement-talk-to-physio-at-home-lead-capture-and-teleconsultation) | `High` | Implement 'Talk to Physio' At-Home lead capture and Teleconsultation timeslot picker | `CORE` |
 | [CORE-93](https://linear.app/moovv-fit/issue/CORE-93/mobile-firebase-cloud-messaging-fcm-remote-push-notifications) | `High` | [Mobile] Firebase Cloud Messaging (FCM) Remote Push Notifications Implementation | `CORE` |
@@ -200,4 +201,4 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 | [CLINIC-41](https://linear.app/moovv-fit/issue/CLINIC-41/kineticage-partner-integration-source-documents) | `No priority` | KineticAge Partner Integration — Source Documents | `CLINIC` |
 
 ---
-*Generated automatically via `scripts/linear-backlog.py --sync` on 2026-11-09 14:39 UTC.*
+*Generated automatically via `scripts/linear-backlog.py --sync` on 2026-11-09 15:56 UTC.*
