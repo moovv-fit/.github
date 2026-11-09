@@ -9,6 +9,7 @@ For repo-specific ADRs, see the `docs/architecture/adr/` directory in each submo
 | ADR | Title | Status |
 |-----|-------|--------|
 | [ADR-001](./ADR-001-SUBMODULE-ARCHITECTURE.md) | Submodule Architecture for Moovv Platform | ✅ Current |
+| [ADR-002](./ADR-002-SPOT-RUNNER-FIFO-PROTECTION.md) | Spot Runner FIFO Protection via Run-Specific Labels | ✅ Current |
 
 ## Template
 

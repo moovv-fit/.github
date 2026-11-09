@@ -9,9 +9,15 @@
 1. **Zero Quota Waste (macOS Preservation)**:
    - Free/hosted GitHub Actions minutes are strictly reserved for macOS iOS builds (`runs-on: macos-15`) in `repos/apps/mobile`.
    - All Linux workloads (CI, SAST, unit tests, integration tests, E2E) MUST use self-hosted ephemeral Spot instances:
-     - General Linux compute: `runs-on: [self-hosted, spot-compute]`
-     - Web UI/Playwright compute: `runs-on: [self-hosted, spot-web]`
-2. **Ephemeral Spot Runners**:
+     - General Linux compute: `runs-on: [self-hosted, spot-compute, "run-${{ github.run_id }}"]`
+     - Web UI/Playwright compute: `runs-on: [self-hosted, spot-web, "run-${{ github.run_id }}"]`
+2. **FIFO Runner Theft Prevention (Run-Specific Labels)**:
+   - GitHub's FIFO scheduler assigns runners to the oldest queued job matching the requested labels.
+   - Without run-specific labels, a runner launched for Job B can be "stolen" by older Job A, leaving Job B orphaned.
+   - **Solution**: All CI workflows MUST include `"run-${{ github.run_id }}"` in `runs-on` labels.
+   - The dispatcher Lambda logs presence of run-specific labels (✅ protected vs ⚠️ vulnerable).
+   - JIT token expiry (5 minutes) handles cleanup of orphaned runner registrations.
+3. **Ephemeral Spot Runners**:
    - Provisioned JIT via the AWS Lambda dispatcher stack (`moovv-fit-github-spot-runner`) in `ap-south-1`.
    - Multi-region Golden AMIs pre-baked with Node 22, pnpm, Docker, Python 3.12, Semgrep, Flutter, Kiro CLI, gh CLI, and Linear CLI.
    - **AMI IDs managed via SSM Parameter Store** (single source of truth):
@@ -20,7 +26,7 @@
      - Lambda dispatcher reads from SSM with 1-hour caching.
      - No code deployment needed when AMIs rotate.
    - Instances boot in ~12 seconds and terminate (`shutdown -h now`) immediately after job execution.
-3. **No Duplicate CI on Merge (Rule 1)**:
+4. **No Duplicate CI on Merge (Rule 1)**:
    - Merging a PR into `main` must NEVER trigger duplicate CI test runs.
    - Pushes to `main` run only Release-Please and environment CD (`deploy.yml`).
 
@@ -118,5 +124,3 @@ gh run view <RUN_ID> --repo moovv-fit/moovv-fit-backend-node --log-failed
    - Every deploy to Staging or Production registers a release and deployment marker via `@sentry/cli`.
    - Stack traces correlate with git commits, identifying "Suspect Commits" automatically.
    - Backend API: `moovv-fit-backend-node` (DSN in SSM Parameter `/moovv-fit/shared/sentry/backend-node-dsn`).
-
-
