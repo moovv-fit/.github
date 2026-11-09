@@ -10,30 +10,27 @@
 
 | Order | Linear Issue | Spec | Repo | Dependencies | Effort | Status |
 |:---:|---|---|---|---|:---:|:---:|
-| 1.1 | [CORE-122](https://linear.app/moovv-fit/issue/CORE-122) | [payment-gateway-abstraction](../repos/backend/node/.agents/specs/payment-gateway-abstraction/) | `backend/node` | — | `L` | ✅ Done |
-| 1.2 | [CORE-135](https://linear.app/moovv-fit/issue/CORE-135) | [financial-ledger](../repos/backend/node/.agents/specs/financial-ledger/) | `backend/node` | CORE-122 | `XL` | ✅ Done |
+| 1.1 | [CORE-122](https://linear.app/moovv-fit/issue/CORE-122) | [payment-gateway-abstraction](../repos/backend/node/.agents/specs/payment-gateway-abstraction/) | `backend/node` | — | `L` | ✅ Phase 1 Done |
+| 1.2 | [CORE-135](https://linear.app/moovv-fit/issue/CORE-135) | [financial-ledger](../repos/backend/node/.agents/specs/financial-ledger/) | `backend/node` | CORE-122 | `XL` | ✅ Phase 1 Done |
+
+> **Phase 1 Merged**: PR #57 (2026-11-09) — Interface, RazorpayAdapter, Factory, Handler migration, LedgerService, Prisma schema, seed accounts. Phase 2 (Stripe/IAP adapters, webhook→ledger integration, Zoho sync) remains.
 
 ### Phase 2: Global Auth & Partner Platform (Weeks 2-4)
 *Enables multi-country expansion and B2B video SDK revenue.*
 
-| Order | Linear Issue | Spec | Repo | Dependencies | Effort | Status |
-|:---:|---|---|---|---|:---:|:---:|
-| 2.1 | [CORE-123](https://linear.app/moovv-fit/issue/CORE-123) | [global-auth-channels](../repos/backend/node/.agents/specs/global-auth-channels/) | `backend/node` | — | `M` | 🚧 |
-| 2.2 | [CLINIC-2](https://linear.app/moovv-fit/issue/CLINIC-2) | [partner-video-sdk](../repos/backend/node/.agents/specs/partner-video-sdk/) | `backend/node` | — | `L` | ✅ Done |
-
-**Partner Video SDK Phase 1 (MVP):** Complete and deployed. Deferred work tracked in:
-- [CLINIC-48](https://linear.app/moovv-fit/issue/CLINIC-48) — Plan Management & Dashboard (Jan 2027)
-- [CLINIC-49](https://linear.app/moovv-fit/issue/CLINIC-49) — Treatment Plan Import (Jan 2027)
-- [CLINIC-50](https://linear.app/moovv-fit/issue/CLINIC-50) — Alias Management (Jan 2027)
+| Order | Linear Issue | Spec | Repo | Dependencies | Effort |
+|:---:|---|---|---|---|:---:|
+| 2.1 | [CORE-123](https://linear.app/moovv-fit/issue/CORE-123) | [global-auth-channels](../repos/backend/node/.agents/specs/global-auth-channels/) | `backend/node` | — | `M` |
+| 2.2 | [CLINIC-2](https://linear.app/moovv-fit/issue/CLINIC-2) | [partner-video-sdk](../repos/backend/node/.agents/specs/partner-video-sdk/) | `backend/node` | — | `L` |
 
 ### Phase 3: CRM & Marketing Infrastructure (Weeks 4-6)
 *Backend services must complete before mobile/web consumers.*
 
-| Order | Linear Issue | Spec | Repo | Dependencies | Effort | Status |
-|:---:|---|---|---|---|:---:|:---:|
-| 3.1 | [CLINIC-47](https://linear.app/moovv-fit/issue/CLINIC-47) | [crm-gateway-zoho](../repos/backend/node/.agents/specs/crm-gateway-zoho/) | `backend/node` | — | `M` | 🚧 |
-| 3.2 | [CORE-120](https://linear.app/moovv-fit/issue/CORE-120) | [marketing-infra-backend](../repos/backend/node/.agents/specs/marketing-infra-backend/) | `backend/node` | CLINIC-47 | `M` | 🚧 |
-| 3.3 | [CORE-119](https://linear.app/moovv-fit/issue/CORE-119) | [marketing-infra](../repos/apps/mobile/.agents/specs/marketing-infra/) | `apps/mobile` | CORE-120 | `S` | 🚧 |
+| Order | Linear Issue | Spec | Repo | Dependencies | Effort |
+|:---:|---|---|---|---|:---:|
+| 3.1 | [CLINIC-47](https://linear.app/moovv-fit/issue/CLINIC-47) | [crm-gateway-zoho](../repos/backend/node/.agents/specs/crm-gateway-zoho/) | `backend/node` | — | `M` |
+| 3.2 | [CORE-120](https://linear.app/moovv-fit/issue/CORE-120) | [marketing-infra-backend](../repos/backend/node/.agents/specs/marketing-infra-backend/) | `backend/node` | CLINIC-47 | `M` |
+| 3.3 | [CORE-119](https://linear.app/moovv-fit/issue/CORE-119) | [marketing-infra](../repos/apps/mobile/.agents/specs/marketing-infra/) | `apps/mobile` | CORE-120 | `S` |
 
 ### Phase 4: Free Content & Engagement (Weeks 5-7)
 *Growth lever — backend before mobile consumer.*
@@ -41,15 +38,17 @@
 | Order | Linear Issue | Spec | Repo | Dependencies | Effort | Status |
 |:---:|---|---|---|---|:---:|:---:|
 | 4.1 | [CORE-136](https://linear.app/moovv-fit/issue/CORE-136) | [free-content-backend](../repos/backend/node/.agents/specs/free-content-backend/) | `backend/node` | — | `M` | ✅ Done |
-| 4.2 | [CORE-137](https://linear.app/moovv-fit/issue/CORE-137) | [free-content-mobile](../repos/apps/mobile/.agents/specs/free-content-mobile/) | `apps/mobile` | CORE-136 | `M` | ✅ Done |
+| 4.2 | [CORE-137](https://linear.app/moovv-fit/issue/CORE-137) | [free-content-mobile](../repos/apps/mobile/.agents/specs/free-content-mobile/) | `apps/mobile` | CORE-136 | `M` | 🔓 Unblocked |
+
+> **CORE-136 Merged**: PR #54 (2026-11-09) — Free content access, physio review tier, promotions, product catalog.
 
 ### Phase 5: Platform Quality & Testing (Ongoing)
 *Horizontal capabilities that support all other specs.*
 
-| Order | Linear Issue | Spec | Repo | Dependencies | Effort | Status |
-|:---:|---|---|---|---|:---:|:---:|
-| 5.1 | [CORE-139](https://linear.app/moovv-fit/issue/CORE-139) | [e2e-simulation-platform](../repos/platform/simulator/.agents/specs/e2e-simulation-platform/) | `platform/simulator` | — | `L` | 🚧 |
-| 5.2 | [CORE-138](https://linear.app/moovv-fit/issue/CORE-138) | [ios-release-pipeline](../repos/apps/mobile/.agents/specs/ios-release-pipeline/) | `apps/mobile` | — | `M` | 🚧 |
+| Order | Linear Issue | Spec | Repo | Dependencies | Effort |
+|:---:|---|---|---|---|:---:|
+| 5.1 | [CORE-139](https://linear.app/moovv-fit/issue/CORE-139) | [e2e-simulation-platform](../repos/platform/simulator/.agents/specs/e2e-simulation-platform/) | `platform/simulator` | — | `L` |
+| 5.2 | [CORE-138](https://linear.app/moovv-fit/issue/CORE-138) | [ios-release-pipeline](../repos/apps/mobile/.agents/specs/ios-release-pipeline/) | `apps/mobile` | — | `M` |
 
 ## Dependency Graph
 
@@ -61,8 +60,7 @@ CLINIC-47 (crm-zoho) ──► CORE-120 (marketing-backend) ──► CORE-119 (
 CORE-136 (free-content-backend) ──► CORE-137 (free-content-mobile)
 
 CORE-123 (global-auth) ──► (enables all international features)
-CLINIC-2 (partner-video-sdk) ──► ✅ COMPLETE (Phase 1 MVP)
-  └── CLINIC-48/49/50 (deferred to Jan 2027)
+CLINIC-2 (partner-video-sdk) ──► (standalone B2B revenue)
 CORE-139 (e2e-simulation) ──► (validates all specs)
 ```
 
@@ -75,14 +73,6 @@ CORE-139 (e2e-simulation) ──► (validates all specs)
 | `L` | 1-2 weeks | Cross-cutting, multiple services, DB migrations |
 | `XL` | 2-3 weeks | Major architectural change, data migration |
 
-## Status Key
-
-| Icon | Meaning |
-|:---:|---|
-| ✅ | Complete and deployed |
-| 🚧 | In progress or not started |
-| ⏳ | Deferred to future date |
-
 ## Spec Locations Quick Reference
 
 ```
@@ -93,7 +83,7 @@ repos/
 │   ├── free-content-backend/      → CORE-136
 │   ├── global-auth-channels/      → CORE-123
 │   ├── marketing-infra-backend/   → CORE-120
-│   ├── partner-video-sdk/         → CLINIC-2 ✅
+│   ├── partner-video-sdk/         → CLINIC-2
 │   └── payment-gateway-abstraction/ → CORE-122
 ├── apps/mobile/.agents/specs/
 │   ├── free-content-mobile/       → CORE-137
@@ -102,11 +92,3 @@ repos/
 └── platform/simulator/.agents/specs/
     └── e2e-simulation-platform/   → CORE-139
 ```
-
-## Deferred Work (January 2027)
-
-| Linear Issue | Spec | Description |
-|---|---|---|
-| [CLINIC-48](https://linear.app/moovv-fit/issue/CLINIC-48) | partner-video-sdk Phase 2 | Plan Management, Billing Dashboard, Usage Reporting |
-| [CLINIC-49](https://linear.app/moovv-fit/issue/CLINIC-49) | partner-video-sdk Phase 2 | Treatment Plan Import API |
-| [CLINIC-50](https://linear.app/moovv-fit/issue/CLINIC-50) | partner-video-sdk Phase 3 | Exercise Alias Management |
