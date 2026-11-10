@@ -1,7 +1,7 @@
 # 📋 Moovv Fit — Master Cross-Repo Backlog
 
 > **Canonical Backlog Mirror** synchronized with Linear (`moovv-fit` workspace).  
-> **Last Synced:** `2026-11-10 08:19 UTC` • **Total Open Backlog Issues:** `81`  
+> **Last Synced:** `2026-11-10 12:50 UTC` • **Total Open Backlog Issues:** `80`  
 > *To refresh this document automatically, run: `./scripts/linear-backlog.py --sync`*
 
 ---
@@ -53,20 +53,20 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 
 | Domain | Submodule Path | Issues | Primary Focus |
 |---|---|:---:|---|
-| **📱 Mobile (iOS & Android)** | [`repos/apps/mobile`](repos/apps/mobile) | **7** | Flutter rehabilitation app, assessment engine, routine player, and pain tracking. |
+| **📱 Mobile (iOS & Android)** | [`repos/apps/mobile`](repos/apps/mobile) | **6** | Flutter rehabilitation app, assessment engine, routine player, and pain tracking. |
 | **⚙️ Backend Core API & Database** | [`repos/backend/node`](repos/backend/node) | **6** | Node/TypeScript Lambda API, Prisma ORM, Cognito auth, and clinical data models. |
-| **🌐 Web Portals (Clinic OS & Admin)** | [`repos/apps/web`](repos/apps/web) | **6** | React 19 clinical portal, appointment booking, patient queue, and chat. |
+| **🌐 Web Portals (Clinic OS & Admin)** | [`repos/apps/web`](repos/apps/web) | **5** | React 19 clinical portal, appointment booking, patient queue, and chat. |
 | **🚀 Landing & Patient Acquisition** | [`repos/apps/landing`](repos/apps/landing) | **2** | Static marketing sites, physician lead funnels, and store/PWA onboarding. |
 | **🧪 Autonomous Simulator & Test Harness** | [`repos/platform/simulator`](repos/platform/simulator) | **1** | E2E multi-persona automated test harness, websocket synthetic testing. |
 | **🎨 Design System Tokens & UI** | [`repos/platform/design-system`](repos/platform/design-system) | **1** | Svelte 5 / Tailwind v4 canonical components and tokens. |
 | **📚 Documentation Portals** | [`repos/docs/technical`](repos/docs/technical) | **1** | Partner developer documentation and clinical specifications. |
-| **☁️ Platform Infrastructure & Cross-Repo** | [`repos/infra/cdk`](repos/infra/cdk) | **57** | Shared CDK stacks, CloudFront routing, DNS, auth pools, and cross-cutting platform epics. |
+| **☁️ Platform Infrastructure & Cross-Repo** | [`repos/infra/cdk`](repos/infra/cdk) | **58** | Shared CDK stacks, CloudFront routing, DNS, auth pools, and cross-cutting platform epics. |
 
 ---
 
 ## 📦 Detailed Backlog Breakdown
 
-### 📱 Mobile (iOS & Android) (7 issues)
+### 📱 Mobile (iOS & Android) (6 issues)
 **Path:** [`repos/apps/mobile`](repos/apps/mobile)  
 *Flutter rehabilitation app, assessment engine, routine player, and pain tracking.*
 
@@ -76,7 +76,6 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 | [CORE-154](https://linear.app/moovv-fit/issue/CORE-154/fixmobile-stabilize-and-re-enable-maestro-e2e-test-suite-for-web-and) | `High` | fix(mobile): stabilize and re-enable Maestro E2E test suite for Web and Android | `CORE` |
 | [CORE-119](https://linear.app/moovv-fit/issue/CORE-119/de-hardcode-mobile-trial-copy-and-support-dynamic-campaign-ingress) | `High` | De-hardcode mobile trial copy and support dynamic campaign ingress | `CORE` |
 | [CORE-102](https://linear.app/moovv-fit/issue/CORE-102/implement-talk-to-physio-at-home-lead-capture-and-teleconsultation) | `High` | Implement 'Talk to Physio' At-Home lead capture and Teleconsultation timeslot picker | `CORE` |
-| [CORE-93](https://linear.app/moovv-fit/issue/CORE-93/mobile-firebase-cloud-messaging-fcm-remote-push-notifications) | `High` | [Mobile] Firebase Cloud Messaging (FCM) Remote Push Notifications Implementation | `CORE` |
 | [CORE-89](https://linear.app/moovv-fit/issue/CORE-89/mobile-audit-and-modernize-github-actions-workflows) | `High` | [Mobile] Audit & modernize GitHub Actions workflows | `CORE` |
 | [CORE-94](https://linear.app/moovv-fit/issue/CORE-94/mobile-post-launch-framework-and-dependency-upgrades) | `Medium` | [Mobile] Post-Launch Framework & Dependency Upgrades | `CORE` |
 
@@ -93,7 +92,7 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 | [CORE-131](https://linear.app/moovv-fit/issue/CORE-131/engine-codify-recommendation-engine-ecr-and-lambda-infrastructure-into) | `Medium` | [Engine] Codify Recommendation Engine ECR and Lambda Infrastructure into CDK | `CORE` |
 | [CORE-97](https://linear.app/moovv-fit/issue/CORE-97/backend-implement-unified-v1-api-versioning-strategy-adr-014) | `Medium` | [Backend] Implement Unified /v1/ API Versioning Strategy (ADR-014) | `CORE` |
 
-### 🌐 Web Portals (Clinic OS & Admin) (6 issues)
+### 🌐 Web Portals (Clinic OS & Admin) (5 issues)
 **Path:** [`repos/apps/web`](repos/apps/web)  
 *React 19 clinical portal, appointment booking, patient queue, and chat.*
 
@@ -101,7 +100,6 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 |---|:---:|---|:---:|
 | [CLINIC-45](https://linear.app/moovv-fit/issue/CLINIC-45/implement-clinician-plan-review-workbench-exercise-swap-clinical-notes) | `Urgent` | Implement clinician plan review workbench (exercise swap, clinical notes, and 1-click approval) | `CLINIC` |
 | [CLINIC-43](https://linear.app/moovv-fit/issue/CLINIC-43/build-dual-tab-triage-interface-in-clinic-os-pain-clinical-queue-vs) | `Urgent` | Build dual-tab triage interface in Clinic OS (PAIN_CLINICAL_QUEUE vs WELLNESS_PERFORMANCE_QUEUE) | `CLINIC` |
-| [CLINIC-47](https://linear.app/moovv-fit/issue/CLINIC-47/build-zoho-crm-and-whatsapp-attribution-webhook-pipeline) | `High` | Build Zoho CRM & WhatsApp Attribution Webhook Pipeline | `CLINIC` |
 | [CLINIC-46](https://linear.app/moovv-fit/issue/CLINIC-46/build-30-day-asynchronous-chat-messaging-interface-between) | `High` | Build 30-day asynchronous chat messaging interface between physiotherapist and patient | `CLINIC` |
 | [CLINIC-44](https://linear.app/moovv-fit/issue/CLINIC-44/implement-duty-physiotherapist-teleconsultation-timeslot-availability) | `High` | Implement duty physiotherapist teleconsultation timeslot availability and calendar scheduling | `CLINIC` |
 | [CORE-99](https://linear.app/moovv-fit/issue/CORE-99/web-evaluate-and-extract-shared-ui-components-to-moovvdesign-system) | `Medium` | [Web] Evaluate and extract shared UI components to @moovv/design-system | `CORE` |
@@ -139,12 +137,13 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 |---|:---:|---|:---:|
 | [CORE-92](https://linear.app/moovv-fit/issue/CORE-92/docs-modernize-documentation-ci-workflows) | `High` | [Docs] Modernize documentation CI workflows | `CORE` |
 
-### ☁️ Platform Infrastructure & Cross-Repo (57 issues)
+### ☁️ Platform Infrastructure & Cross-Repo (58 issues)
 **Path:** [`repos/infra/cdk`](repos/infra/cdk)  
 *Shared CDK stacks, CloudFront routing, DNS, auth pools, and cross-cutting platform epics.*
 
 | ID | Priority | Title | Team |
 |---|:---:|---|:---:|
+| [CORE-161](https://linear.app/moovv-fit/issue/CORE-161/infra-cdk-managed-rds-right-sizing-and-migration-300gb-20gb-gp3-pre) | `Urgent` | [Infra] CDK-Managed RDS Right-Sizing & Migration (300GB -> 20GB GP3) Pre-App Store Submission | `CORE` |
 | [CORE-121](https://linear.app/moovv-fit/issue/CORE-121/infra-track-spamhaus-dbl-delisting-for-moovvfit-st7326681) | `Urgent` | [Infra] Track Spamhaus DBL delisting for moovv.fit (ST7326681) | `CORE` |
 | [CORE-85](https://linear.app/moovv-fit/issue/CORE-85/dev-005-add-clinical-red-flag-triage-hard-stops-for-pregnancy-and) | `Urgent` | [DEV-005] Add clinical red-flag triage hard stops for pregnancy and acute fractures in mobile onboarding | `CORE` |
 | [CLINIC-8](https://linear.app/moovv-fit/issue/CLINIC-8/dipp-startup-certification-and-aws-activate-credits-recovery) | `Urgent` | DIPP Startup Certification & AWS Activate Credits Recovery | `CLINIC` |
@@ -204,4 +203,4 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 | [CLINIC-41](https://linear.app/moovv-fit/issue/CLINIC-41/kineticage-partner-integration-source-documents) | `No priority` | KineticAge Partner Integration — Source Documents | `CLINIC` |
 
 ---
-*Generated automatically via `scripts/linear-backlog.py --sync` on 2026-11-10 08:19 UTC.*
+*Generated automatically via `scripts/linear-backlog.py --sync` on 2026-11-10 12:50 UTC.*
