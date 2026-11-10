@@ -1,7 +1,7 @@
 # 📋 Moovv Fit — Master Cross-Repo Backlog
 
 > **Canonical Backlog Mirror** synchronized with Linear (`moovv-fit` workspace).  
-> **Last Synced:** `2026-11-09 15:56 UTC` • **Total Open Backlog Issues:** `78`  
+> **Last Synced:** `2026-11-10 08:19 UTC` • **Total Open Backlog Issues:** `81`  
 > *To refresh this document automatically, run: `./scripts/linear-backlog.py --sync`*
 
 ---
@@ -60,7 +60,7 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 | **🧪 Autonomous Simulator & Test Harness** | [`repos/platform/simulator`](repos/platform/simulator) | **1** | E2E multi-persona automated test harness, websocket synthetic testing. |
 | **🎨 Design System Tokens & UI** | [`repos/platform/design-system`](repos/platform/design-system) | **1** | Svelte 5 / Tailwind v4 canonical components and tokens. |
 | **📚 Documentation Portals** | [`repos/docs/technical`](repos/docs/technical) | **1** | Partner developer documentation and clinical specifications. |
-| **☁️ Platform Infrastructure & Cross-Repo** | [`repos/infra/cdk`](repos/infra/cdk) | **54** | Shared CDK stacks, CloudFront routing, DNS, auth pools, and cross-cutting platform epics. |
+| **☁️ Platform Infrastructure & Cross-Repo** | [`repos/infra/cdk`](repos/infra/cdk) | **57** | Shared CDK stacks, CloudFront routing, DNS, auth pools, and cross-cutting platform epics. |
 
 ---
 
@@ -139,7 +139,7 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 |---|:---:|---|:---:|
 | [CORE-92](https://linear.app/moovv-fit/issue/CORE-92/docs-modernize-documentation-ci-workflows) | `High` | [Docs] Modernize documentation CI workflows | `CORE` |
 
-### ☁️ Platform Infrastructure & Cross-Repo (54 issues)
+### ☁️ Platform Infrastructure & Cross-Repo (57 issues)
 **Path:** [`repos/infra/cdk`](repos/infra/cdk)  
 *Shared CDK stacks, CloudFront routing, DNS, auth pools, and cross-cutting platform epics.*
 
@@ -167,6 +167,9 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 | [CORE-13](https://linear.app/moovv-fit/issue/CORE-13/human-in-the-loop-hitl-verification-queue-and-48h-sla-escalation) | `High` | Human-in-the-Loop (HITL) Verification Queue & 48h SLA Escalation | `CORE` |
 | [CORE-12](https://linear.app/moovv-fit/issue/CORE-12/decouple-four-bucket-entitlement-engine) | `High` | Decouple Four-Bucket Entitlement Engine | `CORE` |
 | [CORE-8](https://linear.app/moovv-fit/issue/CORE-8/consolidate-170-sam-lambdas-to-ecs-fargate-fastifynode-20) | `High` | Consolidate 170+ SAM Lambdas to ECS Fargate (Fastify/Node 20) | `CORE` |
+| [CORE-158](https://linear.app/moovv-fit/issue/CORE-158/physical-ai-personal-health-coach-agent-behavioral-guidance) | `Medium` | [Physical AI] Personal Health Coach Agent - Behavioral Guidance | `CORE` |
+| [CORE-157](https://linear.app/moovv-fit/issue/CORE-157/physical-ai-health-domain-expert-agent-medical-knowledge-integration) | `Medium` | [Physical AI] Health Domain Expert Agent - Medical Knowledge Integration | `CORE` |
+| [CORE-156](https://linear.app/moovv-fit/issue/CORE-156/physical-ai-data-scientist-agent-longitudinal-health-analytics) | `Medium` | [Physical AI] Data Scientist Agent - Longitudinal Health Analytics | `CORE` |
 | [CORE-140](https://linear.app/moovv-fit/issue/CORE-140/tech-debt-rename-adr-025-to-adr-027-third-party-integration) | `Medium` | [Tech Debt] Rename ADR-025 to ADR-027 (Third-Party Integration Abstraction) | `CORE` |
 | [CORE-138](https://linear.app/moovv-fit/issue/CORE-138/spec-ios-release-pipeline-automated-testflight-and-app-store) | `Medium` | [Spec] iOS Release Pipeline: Automated TestFlight & App Store Submission | `CORE` |
 | [CORE-134](https://linear.app/moovv-fit/issue/CORE-134/infra-codify-iam-release-roles-github-oidc-and-shared-storage-stacks) | `Medium` | [Infra] Codify IAM Release Roles, GitHub OIDC & Shared Storage Stacks | `CORE` |
@@ -201,4 +204,4 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 | [CLINIC-41](https://linear.app/moovv-fit/issue/CLINIC-41/kineticage-partner-integration-source-documents) | `No priority` | KineticAge Partner Integration — Source Documents | `CLINIC` |
 
 ---
-*Generated automatically via `scripts/linear-backlog.py --sync` on 2026-11-09 15:56 UTC.*
+*Generated automatically via `scripts/linear-backlog.py --sync` on 2026-11-10 08:19 UTC.*
