@@ -1,7 +1,7 @@
 # 📋 Moovv Fit — Master Cross-Repo Backlog
 
 > **Canonical Backlog Mirror** synchronized with Linear (`moovv-fit` workspace).  
-> **Last Synced:** `2026-11-10 12:50 UTC` • **Total Open Backlog Issues:** `80`  
+> **Last Synced:** `2026-11-10 14:42 UTC` • **Total Open Backlog Issues:** `80`  
 > *To refresh this document automatically, run: `./scripts/linear-backlog.py --sync`*
 
 ---
@@ -143,7 +143,6 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 
 | ID | Priority | Title | Team |
 |---|:---:|---|:---:|
-| [CORE-161](https://linear.app/moovv-fit/issue/CORE-161/infra-cdk-managed-rds-right-sizing-and-migration-300gb-20gb-gp3-pre) | `Urgent` | [Infra] CDK-Managed RDS Right-Sizing & Migration (300GB -> 20GB GP3) Pre-App Store Submission | `CORE` |
 | [CORE-121](https://linear.app/moovv-fit/issue/CORE-121/infra-track-spamhaus-dbl-delisting-for-moovvfit-st7326681) | `Urgent` | [Infra] Track Spamhaus DBL delisting for moovv.fit (ST7326681) | `CORE` |
 | [CORE-85](https://linear.app/moovv-fit/issue/CORE-85/dev-005-add-clinical-red-flag-triage-hard-stops-for-pregnancy-and) | `Urgent` | [DEV-005] Add clinical red-flag triage hard stops for pregnancy and acute fractures in mobile onboarding | `CORE` |
 | [CLINIC-8](https://linear.app/moovv-fit/issue/CLINIC-8/dipp-startup-certification-and-aws-activate-credits-recovery) | `Urgent` | DIPP Startup Certification & AWS Activate Credits Recovery | `CLINIC` |
@@ -166,6 +165,7 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 | [CORE-13](https://linear.app/moovv-fit/issue/CORE-13/human-in-the-loop-hitl-verification-queue-and-48h-sla-escalation) | `High` | Human-in-the-Loop (HITL) Verification Queue & 48h SLA Escalation | `CORE` |
 | [CORE-12](https://linear.app/moovv-fit/issue/CORE-12/decouple-four-bucket-entitlement-engine) | `High` | Decouple Four-Bucket Entitlement Engine | `CORE` |
 | [CORE-8](https://linear.app/moovv-fit/issue/CORE-8/consolidate-170-sam-lambdas-to-ecs-fargate-fastifynode-20) | `High` | Consolidate 170+ SAM Lambdas to ECS Fargate (Fastify/Node 20) | `CORE` |
+| [CORE-162](https://linear.app/moovv-fit/issue/CORE-162/backend-single-fcm-token-deletion-endpoint-for-device-specific) | `Medium` | [Backend] Single FCM token deletion endpoint for device-specific deregistration | `CORE` |
 | [CORE-158](https://linear.app/moovv-fit/issue/CORE-158/physical-ai-personal-health-coach-agent-behavioral-guidance) | `Medium` | [Physical AI] Personal Health Coach Agent - Behavioral Guidance | `CORE` |
 | [CORE-157](https://linear.app/moovv-fit/issue/CORE-157/physical-ai-health-domain-expert-agent-medical-knowledge-integration) | `Medium` | [Physical AI] Health Domain Expert Agent - Medical Knowledge Integration | `CORE` |
 | [CORE-156](https://linear.app/moovv-fit/issue/CORE-156/physical-ai-data-scientist-agent-longitudinal-health-analytics) | `Medium` | [Physical AI] Data Scientist Agent - Longitudinal Health Analytics | `CORE` |
@@ -203,4 +203,4 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 | [CLINIC-41](https://linear.app/moovv-fit/issue/CLINIC-41/kineticage-partner-integration-source-documents) | `No priority` | KineticAge Partner Integration — Source Documents | `CLINIC` |
 
 ---
-*Generated automatically via `scripts/linear-backlog.py --sync` on 2026-11-10 12:50 UTC.*
+*Generated automatically via `scripts/linear-backlog.py --sync` on 2026-11-10 14:42 UTC.*
