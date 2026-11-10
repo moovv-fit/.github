@@ -85,11 +85,55 @@ When a change spans multiple repos:
 3. Update parent repo to track new commits
 4. Create PRs in each repo referencing the parent PR
 
+## ☁️ AWS Authentication & SSO Profile
+
+All cloud infrastructure, SSM parameters, and S3 assets across the platform use AWS Account `855246887543` in `ap-south-1` (Mumbai) with IAM Identity Center in `us-east-1`.
+
+| Context | SSO Profile | Role | Usage |
+| :--- | :--- | :--- | :--- |
+| **Interactive / Agent Dev** | `moovv-fit-ujwal-admin` | `AdministratorAccess` | CDK diff/synth/deploy, S3 releases, SSM lookups, manual Spot launches |
+| **Automation / Worker** | `moovv-fit-worker` | `AdministratorAccess` | Ephemeral CI/CD runners, automated AMIs, background scripts |
+
+```bash
+# Headless re-auth (always use device code on remote devboxes):
+aws sso login --profile moovv-fit-ujwal-admin --use-device-code
+
+# Verify active session:
+aws sts get-caller-identity --profile moovv-fit-ujwal-admin
+
+# Default profile in terminal:
+export AWS_PROFILE=moovv-fit-ujwal-admin
+```
+> **Guideline:** When AWS CLI credentials expire or fail, activate the `aws-sso-helper` skill immediately. Do not manually manipulate `.aws/credentials`.
+
+## 🧰 Available Skills & Skill-First Protocol
+
+Agents must adhere to the **Skill-First Principle**: before modifying code, debugging complex regressions, branching, or finishing tasks, check the available skills catalog and load the matching `SKILL.md`.
+
+### Core Skills Catalog
+
+| Domain | Skill Name | Path | When to Activate |
+| :--- | :--- | :--- | :--- |
+| **AWS & SSO** | `aws-sso-helper` | `.agents/skills/aws-sso-helper/` | Expired tokens, AWS CLI errors, headless device login, credential export |
+| **Root-Cause Analysis** | `systematic-debugging` | `.agents/skills/systematic-debugging/` | Flaky tests, elusive runtime crashes, or regression isolation |
+| **Verification Gate** | `verification-before-completion` | `.agents/skills/verification-before-completion/` | MANDATORY before declaring tasks complete or opening PRs |
+| **Workspace Isolation** | `using-git-worktrees` | `.agents/skills/using-git-worktrees/` | Parallel agent work, preventing branch clashes on shared devbox |
+| **Git & PR Workflows** | `git-flow` | `.agents/skills/git-flow/` | Commit message conventions, Linear issue tags, PR lifecycle |
+| **Product & Clinical** | `moovv-fit-product` | `repos/docs/product/...` | Verifying clinical invariants, prescription rules, PDR specs |
+| **Design Tokens & UI** | `moovv-design-system` | `repos/platform/design-system/...` | Svelte 5 runes, bits-ui primitives, Tailwind v4 tokens |
+| **Serverless Lambda** | `aws-lambda` | `.agents/shared/skills/` | Lambda cold starts, event payloads, handler optimization |
+| **Browser E2E** | `playwright-e2e` | `.agents/shared/skills/` | Authoring, debugging, or running web E2E specs |
+
+### Activation Methods
+- **Antigravity / Gemini**: Direct file read of `.agents/skills/<name>/SKILL.md`.
+- **Kiro / Markdown Anchors**: `#[[file:.agents/skills/{name}/SKILL.md]]` or `#[[file:.agents/shared/skills/{name}/SKILL.md]]`.
+
 ## 📎 Steering (auto-loaded)
 
 | File | Purpose |
 |------|---------|
-| `orchestration-rules.md` | Cross-repo coordination patterns |
+| `orchestration-rules.md` | Cross-repo coordination patterns, skill-first protocol & anti-patterns |
+| `aws-and-cloud-credentials.md` | AWS SSO profiles, authentication, region targeting & token recovery |
 | `submodule-routing.md` | Task routing to submodules |
 | `linear-workflow.md` | Linear issue tracking & agent CLI workflow |
 | `ci-cd-spot-runner-playbook.md` | Ephemeral Spot runner CI/CD & on-demand test execution |

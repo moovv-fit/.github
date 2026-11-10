@@ -106,6 +106,16 @@ gh run view <RUN_ID> --repo moovv-fit/moovv-fit-backend-node --log-failed
 * **GitHub Summary**: Detailed Markdown summary in `$GITHUB_STEP_SUMMARY`.
 * **JUnit Reports**: Populated under the GitHub Checks tab.
 * **Artifacts**: S3 sync for failed HTML reports (`s3://moovv-fit-release-assets/ci/e2e-reports/`).
+  ```bash
+  # Inspect failed artifacts from S3 (requires active SSO session):
+  aws s3 ls s3://moovv-fit-release-assets/ci/e2e-reports/ --profile moovv-fit-ujwal-admin
+  ```
+
+### AWS Cloud Credentials & Profile
+When managing Spot runner AMIs, dispatcher Lambdas, or querying SSM parameters:
+- **SSO Profile**: `moovv-fit-ujwal-admin` (interactive) or `moovv-fit-worker` (CI/Spot)
+- **Region**: `ap-south-1`
+- **Re-authenticate**: `aws sso login --profile moovv-fit-ujwal-admin --use-device-code` (see `aws-and-cloud-credentials.md`)
 
 ---
 
