@@ -13,7 +13,9 @@
 | 1.1 | [CORE-122](https://linear.app/moovv-fit/issue/CORE-122) | [payment-gateway-abstraction](../repos/backend/node/.agents/specs/payment-gateway-abstraction/) | `backend/node` | — | `L` | ✅ Phase 1 Done |
 | 1.2 | [CORE-135](https://linear.app/moovv-fit/issue/CORE-135) | [financial-ledger](../repos/backend/node/.agents/specs/financial-ledger/) | `backend/node` | CORE-122 | `XL` | ✅ Phase 1 Done |
 
-> **Phase 1 Merged**: PR #57 (2026-11-09) — Interface, RazorpayAdapter, Factory, Handler migration, LedgerService, Prisma schema, seed accounts. Phase 2 (Stripe/IAP adapters, webhook→ledger integration, Zoho sync) remains.
+> **Phase 1 Merged**: PR #57 (2026-11-09) — Interface, RazorpayAdapter, Factory, Handler migration, LedgerService, Prisma schema, seed accounts.
+> **Phase 2**: Webhook→ledger integration (Razorpay, Apple IAP), reconciliation reporting, integration tests. No external dependencies.
+> **Phase 3**: Zoho Books sync worker. Depends on CLINIC-47 (shared OAuth patterns).
 
 ### Phase 2: Global Auth & Partner Platform (Weeks 2-4)
 *Enables multi-country expansion and B2B video SDK revenue.*
