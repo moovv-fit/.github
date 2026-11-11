@@ -28,7 +28,45 @@
    - Instances boot in ~12 seconds and terminate (`shutdown -h now`) immediately after job execution.
 4. **No Duplicate CI on Merge (Rule 1)**:
    - Merging a PR into `main` must NEVER trigger duplicate CI test runs.
-   - Pushes to `main` run only Release-Please and environment CD (`deploy.yml`).
+   - Pushes to `main` run the release pipeline (`release-pipeline.yml` for mobile, `deploy.yml` for other repos).
+
+---
+
+## 📱 Mobile Release Pipeline
+
+The mobile repo (`moovv-fit/moovv-fit-mobile`) uses a progressive validation pipeline on merge to `main`:
+
+```
+merge to main → release-please (tag) → web deploy → Maestro E2E → Firebase deploy
+                                                                        │
+                                                           (manual) → Store upload
+```
+
+| Stage | Runner | Duration | Gate |
+|-------|--------|----------|------|
+| Release-Please | `spot-compute` | ~30s | Auto |
+| Web Deploy | `spot-compute` | ~2-3 min | Auto |
+| Maestro E2E | `spot-web` | ~5 min | **Blocking** |
+| Firebase Android | `spot-compute` | ~8 min | Auto |
+| Firebase iOS | `macos-15` | ~15 min | Auto |
+| Store Upload | Manual dispatch | ~5 min | **Manual** |
+
+### Manual Store Submission (After Firebase QA)
+```bash
+# Android → Play Store
+gh workflow run deploy.yml --repo moovv-fit/moovv-fit-mobile --ref main \
+  -f environment=production \
+  -f platform=android \
+  -f upload_to_store=true \
+  -f distribution_channel=store
+
+# iOS → App Store Connect
+gh workflow run deploy.yml --repo moovv-fit/moovv-fit-mobile --ref main \
+  -f environment=production \
+  -f platform=ios \
+  -f upload_to_store=true \
+  -f distribution_channel=store
+```
 
 ---
 
