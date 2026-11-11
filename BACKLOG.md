@@ -1,7 +1,7 @@
 # 📋 Moovv Fit — Master Cross-Repo Backlog
 
 > **Canonical Backlog Mirror** synchronized with Linear (`moovv-fit` workspace).  
-> **Last Synced:** `2026-11-10 15:22 UTC` • **Total Open Backlog Issues:** `82`  
+> **Last Synced:** `2026-11-11 06:23 UTC` • **Total Open Backlog Issues:** `94`  
 > *To refresh this document automatically, run: `./scripts/linear-backlog.py --sync`*
 
 ---
@@ -53,7 +53,7 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 
 | Domain | Submodule Path | Issues | Primary Focus |
 |---|---|:---:|---|
-| **📱 Mobile (iOS & Android)** | [`repos/apps/mobile`](repos/apps/mobile) | **6** | Flutter rehabilitation app, assessment engine, routine player, and pain tracking. |
+| **📱 Mobile (iOS & Android)** | [`repos/apps/mobile`](repos/apps/mobile) | **18** | Flutter rehabilitation app, assessment engine, routine player, and pain tracking. |
 | **⚙️ Backend Core API & Database** | [`repos/backend/node`](repos/backend/node) | **6** | Node/TypeScript Lambda API, Prisma ORM, Cognito auth, and clinical data models. |
 | **🌐 Web Portals (Clinic OS & Admin)** | [`repos/apps/web`](repos/apps/web) | **5** | React 19 clinical portal, appointment booking, patient queue, and chat. |
 | **🚀 Landing & Patient Acquisition** | [`repos/apps/landing`](repos/apps/landing) | **2** | Static marketing sites, physician lead funnels, and store/PWA onboarding. |
@@ -66,18 +66,30 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 
 ## 📦 Detailed Backlog Breakdown
 
-### 📱 Mobile (iOS & Android) (6 issues)
+### 📱 Mobile (iOS & Android) (18 issues)
 **Path:** [`repos/apps/mobile`](repos/apps/mobile)  
 *Flutter rehabilitation app, assessment engine, routine player, and pain tracking.*
 
 | ID | Priority | Title | Team |
 |---|:---:|---|:---:|
 | [CORE-116](https://linear.app/moovv-fit/issue/CORE-116/shift-mobility-assessments-from-manual-self-tests-to-video-based) | `Urgent` | Shift mobility assessments from manual self-tests to video-based assessments | `CORE` |
+| [CORE-186](https://linear.app/moovv-fit/issue/CORE-186/multi-channel-otp-ux-and-preference-storage) | `High` | Multi-Channel OTP UX & Preference Storage | `CORE` |
+| [CORE-176](https://linear.app/moovv-fit/issue/CORE-176/mobile-cicd-agora-app-id-and-razorpay-key-id-have-no-visible-source) | `High` | [Mobile CI/CD] AGORA_APP_ID and RAZORPAY_KEY_ID have no visible source (native builds would fail) | `CORE` |
+| [CORE-179](https://linear.app/moovv-fit/issue/CORE-179/mobile-cicd-patient-web-config-published-as-public-runtime-assets-pr-6) | `High` | [Mobile CI/CD] Patient web config published as public runtime assets; PR #6 redesign and transition | `CORE` |
+| [CORE-166](https://linear.app/moovv-fit/issue/CORE-166/mobile-cicd-workflow-hardening-review-2026-11-10) | `High` | Mobile CI/CD workflow hardening (review 2026-11-10) | `CORE` |
 | [CORE-154](https://linear.app/moovv-fit/issue/CORE-154/fixmobile-stabilize-and-re-enable-maestro-e2e-test-suite-for-web-and) | `High` | fix(mobile): stabilize and re-enable Maestro E2E test suite for Web and Android | `CORE` |
 | [CORE-119](https://linear.app/moovv-fit/issue/CORE-119/de-hardcode-mobile-trial-copy-and-support-dynamic-campaign-ingress) | `High` | De-hardcode mobile trial copy and support dynamic campaign ingress | `CORE` |
 | [CORE-102](https://linear.app/moovv-fit/issue/CORE-102/implement-talk-to-physio-at-home-lead-capture-and-teleconsultation) | `High` | Implement 'Talk to Physio' At-Home lead capture and Teleconsultation timeslot picker | `CORE` |
 | [CORE-89](https://linear.app/moovv-fit/issue/CORE-89/mobile-audit-and-modernize-github-actions-workflows) | `High` | [Mobile] Audit & modernize GitHub Actions workflows | `CORE` |
+| [CORE-184](https://linear.app/moovv-fit/issue/CORE-184/email-otp-and-whatsapp-consent-flows) | `Medium` | Email OTP & WhatsApp Consent Flows | `CORE` |
+| [CORE-178](https://linear.app/moovv-fit/issue/CORE-178/mobile-cicd-web-cache-headers-1-year-cache-on-un-hashed-maindartjs-and) | `Medium` | [Mobile CI/CD] Web cache headers: 1-year cache on un-hashed main.dart.js and flutter_bootstrap.js | `CORE` |
+| [CORE-180](https://linear.app/moovv-fit/issue/CORE-180/mobile-cicd-maestro-e2e-disabled-reports-would-go-to-public-bucket-adr) | `Medium` | [Mobile CI/CD] Maestro E2E disabled; reports would go to public bucket (ADR-010 conflict) | `CORE` |
+| [CORE-181](https://linear.app/moovv-fit/issue/CORE-181/mobile-cicd-release-please-pr-checks-never-run-github-token-and-extra) | `Medium` | [Mobile CI/CD] Release-please PR checks never run (GITHUB_TOKEN) and extra id-token permission | `CORE` |
+| [CORE-183](https://linear.app/moovv-fit/issue/CORE-183/mobile-cicd-unverified-assumptions-iam-trust-org-level-vars-native) | `Medium` | [Mobile CI/CD] Unverified assumptions: IAM trust, org-level vars, native deploy baseline, branch protection | `CORE` |
 | [CORE-94](https://linear.app/moovv-fit/issue/CORE-94/mobile-post-launch-framework-and-dependency-upgrades) | `Medium` | [Mobile] Post-Launch Framework & Dependency Upgrades | `CORE` |
+| [CORE-173](https://linear.app/moovv-fit/issue/CORE-173/mobile-cicd-sentry-release-steps-use-unset-version-output-no-web) | `Low` | [Mobile CI/CD] Sentry release steps use unset version output; no web source maps | `CORE` |
+| [CORE-177](https://linear.app/moovv-fit/issue/CORE-177/mobile-cicd-web-deploy-bucket-expression-and-cloudfront-id-fallback) | `Low` | [Mobile CI/CD] Web deploy bucket expression and CloudFront ID fallback can misroute or silently skip | `CORE` |
+| [CORE-182](https://linear.app/moovv-fit/issue/CORE-182/mobile-cicd-ciyml-gaps-no-flutter-analyze-no-build-no-permissions) | `Low` | [Mobile CI/CD] ci.yml gaps: no flutter analyze, no build, no permissions block | `CORE` |
 
 ### ⚙️ Backend Core API & Database (6 issues)
 **Path:** [`repos/backend/node`](repos/backend/node)  
@@ -205,4 +217,4 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 | [CLINIC-41](https://linear.app/moovv-fit/issue/CLINIC-41/kineticage-partner-integration-source-documents) | `No priority` | KineticAge Partner Integration — Source Documents | `CLINIC` |
 
 ---
-*Generated automatically via `scripts/linear-backlog.py --sync` on 2026-11-10 15:22 UTC.*
+*Generated automatically via `scripts/linear-backlog.py --sync` on 2026-11-11 06:23 UTC.*
