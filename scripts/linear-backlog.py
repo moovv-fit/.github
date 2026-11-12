@@ -82,7 +82,7 @@ def fetch_backlog():
         sys.exit(1)
     try:
         data = json.loads(res.stdout)
-        # Linear CLI returns a list directly, not {"nodes": [...]}
+        # Handle both array format and object with nodes
         if isinstance(data, list):
             return data
         return data.get("nodes", [])
@@ -95,12 +95,12 @@ def generate_markdown(issues, output_path):
 
     by_repo = {}
     for issue in issues:
-        # Labels can be a list directly or {"nodes": [...]} depending on CLI version
-        labels_data = issue.get("labels", [])
-        if isinstance(labels_data, dict):
-            lbl_nodes = labels_data.get("nodes", [])
+        # Handle both formats: array of labels or object with nodes
+        labels = issue.get("labels", [])
+        if isinstance(labels, dict):
+            lbl_nodes = labels.get("nodes", [])
         else:
-            lbl_nodes = labels_data
+            lbl_nodes = labels
         repo_labels = [l["name"].replace("repo:", "") for l in lbl_nodes if l.get("name", "").startswith("repo:")]
         repo_key = repo_labels[0] if repo_labels else "cross-repo / platform"
         if repo_key in ("infra", "cdk"):
@@ -244,13 +244,13 @@ def main():
         if args.priority and args.priority.lower() not in prio_label.lower():
             continue
 
-        # Labels can be a list directly or {"nodes": [...]} depending on CLI version
-        labels_data = issue.get("labels", [])
-        if isinstance(labels_data, dict):
-            lbl_nodes = labels_data.get("nodes", [])
-        else:
+        # Handle both dict with nodes and direct list
+        labels_data = issue.get("labels", {})
+        if isinstance(labels_data, list):
             lbl_nodes = labels_data
-        repo_labels = [l["name"].replace("repo:", "") for l in lbl_nodes if l.get("name", "").startswith("repo:")]
+        else:
+            lbl_nodes = labels_data.get("nodes", [])
+        repo_labels = [l["name"].replace("repo:", "") for l in lbl_nodes if l["name"].startswith("repo:")]
         repo = repo_labels[0] if repo_labels else "cross-repo / platform"
         if repo in ("infra", "cdk"):
             repo = "cross-repo / platform"
