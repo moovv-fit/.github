@@ -64,10 +64,10 @@
 | Order | Linear Issue | Spec | Repo | Dependencies | Effort | Status |
 |:---:|---|---|---|---|:---:|:---:|
 | 5.1 | [CORE-139](https://linear.app/moovv-fit/issue/CORE-139) | [e2e-simulation-platform](../repos/platform/simulator/.agents/specs/e2e-simulation-platform/) | `platform/simulator` | — | `L` | 📋 Backlog |
-| 5.2 | [CORE-138](https://linear.app/moovv-fit/issue/CORE-138) | [ios-release-pipeline](../repos/apps/mobile/.agents/specs/ios-release-pipeline/) | `apps/mobile` | — | `M` | 📋 Backlog |
+| 5.2 | [CORE-138](https://linear.app/moovv-fit/issue/CORE-138) | [ios-release-pipeline](../repos/apps/mobile/.agents/specs/ios-release-pipeline/) | `apps/mobile` | — | `M` | ✅ Done |
 
 > **CORE-139**: Spec created, 5 implementation tasks remaining.
-> **CORE-138**: Spec created, not yet started.
+> **CORE-138**: Audit complete — all 12 requirements implemented. Fastlane Match (S3), App Store Connect API, TestFlight automation, StoreKit IAP hardening. See ADR-007-MOBILE-RELEASE-PIPELINE.md.
 
 ## Dependency Graph
 
