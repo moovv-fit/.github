@@ -1,7 +1,7 @@
 # 📋 Moovv Fit — Master Cross-Repo Backlog
 
 > **Canonical Backlog Mirror** synchronized with Linear (`moovv-fit` workspace).  
-> **Last Synced:** `2026-11-12 05:03 UTC` • **Total Open Backlog Issues:** `93`  
+> **Last Synced:** `2026-11-12 11:07 UTC` • **Total Open Backlog Issues:** `95`  
 > *To refresh this document automatically, run: `./scripts/linear-backlog.py --sync`*
 
 ---
@@ -53,27 +53,25 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 
 | Domain | Submodule Path | Issues | Primary Focus |
 |---|---|:---:|---|
-| **📱 Mobile (iOS & Android)** | [`repos/apps/mobile`](repos/apps/mobile) | **8** | Flutter rehabilitation app, assessment engine, routine player, and pain tracking. |
+| **📱 Mobile (iOS & Android)** | [`repos/apps/mobile`](repos/apps/mobile) | **6** | Flutter rehabilitation app, assessment engine, routine player, and pain tracking. |
 | **⚙️ Backend Core API & Database** | [`repos/backend/node`](repos/backend/node) | **9** | Node/TypeScript Lambda API, Prisma ORM, Cognito auth, and clinical data models. |
 | **🌐 Web Portals (Clinic OS & Admin)** | [`repos/apps/web`](repos/apps/web) | **5** | React 19 clinical portal, appointment booking, patient queue, and chat. |
 | **🚀 Landing & Patient Acquisition** | [`repos/apps/landing`](repos/apps/landing) | **2** | Static marketing sites, physician lead funnels, and store/PWA onboarding. |
 | **🧪 Autonomous Simulator & Test Harness** | [`repos/platform/simulator`](repos/platform/simulator) | **1** | E2E multi-persona automated test harness, websocket synthetic testing. |
 | **🎨 Design System Tokens & UI** | [`repos/platform/design-system`](repos/platform/design-system) | **1** | Svelte 5 / Tailwind v4 canonical components and tokens. |
 | **📚 Documentation Portals** | [`repos/docs/technical`](repos/docs/technical) | **1** | Partner developer documentation and clinical specifications. |
-| **☁️ Platform Infrastructure & Cross-Repo** | [`repos/infra/cdk`](repos/infra/cdk) | **66** | Shared CDK stacks, CloudFront routing, DNS, auth pools, and cross-cutting platform epics. |
+| **☁️ Platform Infrastructure & Cross-Repo** | [`repos/infra/cdk`](repos/infra/cdk) | **70** | Shared CDK stacks, CloudFront routing, DNS, auth pools, and cross-cutting platform epics. |
 
 ---
 
 ## 📦 Detailed Backlog Breakdown
 
-### 📱 Mobile (iOS & Android) (8 issues)
+### 📱 Mobile (iOS & Android) (6 issues)
 **Path:** [`repos/apps/mobile`](repos/apps/mobile)  
 *Flutter rehabilitation app, assessment engine, routine player, and pain tracking.*
 
 | ID | Priority | Title | Team |
 |---|:---:|---|:---:|
-| [CORE-116](https://linear.app/moovv-fit/issue/CORE-116/shift-mobility-assessments-from-manual-self-tests-to-video-based) | `Urgent` | Shift mobility assessments from manual self-tests to video-based assessments | `CORE` |
-| [CORE-154](https://linear.app/moovv-fit/issue/CORE-154/fixmobile-stabilize-and-re-enable-maestro-e2e-test-suite-for-web-and) | `High` | fix(mobile): stabilize and re-enable Maestro E2E test suite for Web and Android | `CORE` |
 | [CORE-102](https://linear.app/moovv-fit/issue/CORE-102/implement-talk-to-physio-at-home-lead-capture-and-teleconsultation) | `High` | Implement 'Talk to Physio' At-Home lead capture and Teleconsultation timeslot picker | `CORE` |
 | [CORE-89](https://linear.app/moovv-fit/issue/CORE-89/mobile-audit-and-modernize-github-actions-workflows) | `High` | [Mobile] Audit & modernize GitHub Actions workflows | `CORE` |
 | [CORE-94](https://linear.app/moovv-fit/issue/CORE-94/mobile-post-launch-framework-and-dependency-upgrades) | `Medium` | [Mobile] Post-Launch Framework & Dependency Upgrades | `CORE` |
@@ -142,7 +140,7 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 |---|:---:|---|:---:|
 | [CORE-92](https://linear.app/moovv-fit/issue/CORE-92/docs-modernize-documentation-ci-workflows) | `High` | [Docs] Modernize documentation CI workflows | `CORE` |
 
-### ☁️ Platform Infrastructure & Cross-Repo (66 issues)
+### ☁️ Platform Infrastructure & Cross-Repo (70 issues)
 **Path:** [`repos/infra/cdk`](repos/infra/cdk)  
 *Shared CDK stacks, CloudFront routing, DNS, auth pools, and cross-cutting platform epics.*
 
@@ -173,6 +171,8 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 | [CORE-13](https://linear.app/moovv-fit/issue/CORE-13/human-in-the-loop-hitl-verification-queue-and-48h-sla-escalation) | `High` | Human-in-the-Loop (HITL) Verification Queue & 48h SLA Escalation | `CORE` |
 | [CORE-12](https://linear.app/moovv-fit/issue/CORE-12/decouple-four-bucket-entitlement-engine) | `High` | Decouple Four-Bucket Entitlement Engine | `CORE` |
 | [CORE-8](https://linear.app/moovv-fit/issue/CORE-8/consolidate-170-sam-lambdas-to-ecs-fargate-fastifynode-20) | `High` | Consolidate 170+ SAM Lambdas to ECS Fargate (Fastify/Node 20) | `CORE` |
+| [CORE-207](https://linear.app/moovv-fit/issue/CORE-207/mobile-add-widget-tests-and-device-testing-for-video-assessment) | `Medium` | [Mobile] Add widget tests and device testing for video assessment feature | `CORE` |
+| [CORE-204](https://linear.app/moovv-fit/issue/CORE-204/backend-add-server-side-rom-score-validation-for-video-assessments) | `Medium` | [Backend] Add server-side ROM score validation for video assessments | `CORE` |
 | [CORE-200](https://linear.app/moovv-fit/issue/CORE-200/mobile-integrate-app-links-package-for-deep-link-utm-capture-on) | `Medium` | Mobile: Integrate app_links package for deep link UTM capture on iOS/Android | `CORE` |
 | [CORE-192](https://linear.app/moovv-fit/issue/CORE-192/mobile-integrate-app-links-package-for-native-deep-link-utm-capture) | `Medium` | [Mobile] Integrate app_links package for native deep link UTM capture | `CORE` |
 | [CORE-162](https://linear.app/moovv-fit/issue/CORE-162/backend-single-fcm-token-deletion-endpoint-for-device-specific) | `Medium` | [Backend] Single FCM token deletion endpoint for device-specific deregistration | `CORE` |
@@ -199,6 +199,8 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 | [CORE-15](https://linear.app/moovv-fit/issue/CORE-15/admin-staging-review-ui-for-enriched-metadata) | `Medium` | Admin Staging Review UI for Enriched Metadata | `CORE` |
 | [CORE-14](https://linear.app/moovv-fit/issue/CORE-14/batch-enrichment-of-300-exercise-jsons-via-claude-sonnet-45) | `Medium` | Batch Enrichment of 300+ Exercise JSONs via Claude Sonnet 4.5 | `CORE` |
 | [CORE-10](https://linear.app/moovv-fit/issue/CORE-10/replace-3-5s-web-portal-polling-with-push-events) | `Medium` | Replace 3-5s Web Portal Polling with Push Events | `CORE` |
+| [CORE-206](https://linear.app/moovv-fit/issue/CORE-206/backend-add-sql-batch-insert-comment-for-kinematic-frame-handler) | `Low` | [Backend] Add SQL batch insert comment for kinematic frame handler | `CORE` |
+| [CORE-205](https://linear.app/moovv-fit/issue/CORE-205/backend-add-endpoint-level-rate-limiting-for-kinematic-telemetry-api) | `Low` | [Backend] Add endpoint-level rate limiting for kinematic telemetry API | `CORE` |
 | [CORE-201](https://linear.app/moovv-fit/issue/CORE-201/docs-mark-core-119-complete-in-backlog-plan-and-update-marketing-infra) | `Low` | Docs: Mark CORE-119 complete in backlog plan and update marketing-infra spec | `CORE` |
 | [CORE-86](https://linear.app/moovv-fit/issue/CORE-86/consolidate-custom-exercise-videos-under-moovv-fit-content-production) | `Low` | Consolidate custom exercise videos under moovv-fit-content-production bucket | `CORE` |
 | [CORE-83](https://linear.app/moovv-fit/issue/CORE-83/data-link-existing-videos-to-sh-018-and-sh-030-exercise-ids) | `Low` | Data: Link existing videos to SH_018 and SH_030 exercise IDs | `CORE` |
@@ -216,4 +218,4 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 | [CLINIC-41](https://linear.app/moovv-fit/issue/CLINIC-41/kineticage-partner-integration-source-documents) | `No priority` | KineticAge Partner Integration — Source Documents | `CLINIC` |
 
 ---
-*Generated automatically via `scripts/linear-backlog.py --sync` on 2026-11-12 05:03 UTC.*
+*Generated automatically via `scripts/linear-backlog.py --sync` on 2026-11-12 11:07 UTC.*
