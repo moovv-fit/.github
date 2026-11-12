@@ -5,6 +5,17 @@
 
 ## Implementation Phases
 
+### Phase 0: Clinical Triage & Review (Urgent)
+*Critical clinical workflow features for physio efficiency and patient safety.*
+
+| Order | Linear Issue | Spec | Repo | Dependencies | Effort | Status |
+|:---:|---|---|---|---|:---:|:---:|
+| 0.1 | [CLINIC-43](https://linear.app/moovv-fit/issue/CLINIC-43) | [triage-interface](../repos/apps/web/.agents/specs/triage-interface/) | `apps/web` | — | `M` | 📋 Spec Created |
+| 0.2 | [CLINIC-45](https://linear.app/moovv-fit/issue/CLINIC-45) | [plan-review-workbench](../repos/apps/web/.agents/specs/plan-review-workbench/) | `apps/web` | CLINIC-43 | `L` | 📋 Spec Created |
+| 0.3 | [CORE-85](https://linear.app/moovv-fit/issue/CORE-85) | [clinical-red-flag-triage](../repos/apps/mobile/.agents/specs/clinical-red-flag-triage/) | `apps/mobile` | — | `M` | 📋 Spec Created |
+
+> **Rationale**: CLINIC-43 and CLINIC-45 enable physio plan review workflow (PDR-001 HITL gate). CORE-85 enforces clinical safety boundaries (PDR-001 exclusions: pregnancy, acute fractures).
+
 ### Phase 1: Revenue & Payment Foundation (Weeks 1-3)
 *Critical path for international expansion and financial compliance.*
 
@@ -55,6 +66,10 @@
 ## Dependency Graph
 
 ```
+CLINIC-43 (triage-interface) ──► CLINIC-45 (plan-review-workbench)
+
+CORE-85 (clinical-red-flag-triage) ──► (standalone clinical safety)
+
 CORE-122 (payment-gateway) ──► CORE-135 (financial-ledger)
 
 CLINIC-47 (crm-zoho) ──► CORE-120 (marketing-backend) ──► CORE-119 (marketing-mobile)
@@ -79,6 +94,14 @@ CORE-139 (e2e-simulation) ──► (validates all specs)
 
 ```
 repos/
+├── apps/web/.agents/specs/
+│   ├── plan-review-workbench/     → CLINIC-45
+│   └── triage-interface/          → CLINIC-43
+├── apps/mobile/.agents/specs/
+│   ├── clinical-red-flag-triage/  → CORE-85
+│   ├── free-content-mobile/       → CORE-137
+│   ├── ios-release-pipeline/      → CORE-138
+│   └── marketing-infra/           → CORE-119
 ├── backend/node/.agents/specs/
 │   ├── crm-gateway-zoho/          → CLINIC-47
 │   ├── financial-ledger/          → CORE-135
@@ -87,10 +110,6 @@ repos/
 │   ├── marketing-infra-backend/   → CORE-120
 │   ├── partner-video-sdk/         → CLINIC-2
 │   └── payment-gateway-abstraction/ → CORE-122
-├── apps/mobile/.agents/specs/
-│   ├── free-content-mobile/       → CORE-137
-│   ├── ios-release-pipeline/      → CORE-138
-│   └── marketing-infra/           → CORE-119
 └── platform/simulator/.agents/specs/
     └── e2e-simulation-platform/   → CORE-139
 ```
