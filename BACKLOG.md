@@ -1,7 +1,7 @@
 # 📋 Moovv Fit — Master Cross-Repo Backlog
 
 > **Canonical Backlog Mirror** synchronized with Linear (`moovv-fit` workspace).  
-> **Last Synced:** `2026-11-11 06:23 UTC` • **Total Open Backlog Issues:** `94`  
+> **Last Synced:** `2026-11-12 15:22 UTC` • **Total Open Backlog Issues:** `95`  
 > *To refresh this document automatically, run: `./scripts/linear-backlog.py --sync`*
 
 ---
@@ -53,65 +53,56 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 
 | Domain | Submodule Path | Issues | Primary Focus |
 |---|---|:---:|---|
-| **📱 Mobile (iOS & Android)** | [`repos/apps/mobile`](repos/apps/mobile) | **18** | Flutter rehabilitation app, assessment engine, routine player, and pain tracking. |
-| **⚙️ Backend Core API & Database** | [`repos/backend/node`](repos/backend/node) | **6** | Node/TypeScript Lambda API, Prisma ORM, Cognito auth, and clinical data models. |
-| **🌐 Web Portals (Clinic OS & Admin)** | [`repos/apps/web`](repos/apps/web) | **5** | React 19 clinical portal, appointment booking, patient queue, and chat. |
+| **📱 Mobile (iOS & Android)** | [`repos/apps/mobile`](repos/apps/mobile) | **6** | Flutter rehabilitation app, assessment engine, routine player, and pain tracking. |
+| **⚙️ Backend Core API & Database** | [`repos/backend/node`](repos/backend/node) | **11** | Node/TypeScript Lambda API, Prisma ORM, Cognito auth, and clinical data models. |
+| **🌐 Web Portals (Clinic OS & Admin)** | [`repos/apps/web`](repos/apps/web) | **3** | React 19 clinical portal, appointment booking, patient queue, and chat. |
 | **🚀 Landing & Patient Acquisition** | [`repos/apps/landing`](repos/apps/landing) | **2** | Static marketing sites, physician lead funnels, and store/PWA onboarding. |
 | **🧪 Autonomous Simulator & Test Harness** | [`repos/platform/simulator`](repos/platform/simulator) | **1** | E2E multi-persona automated test harness, websocket synthetic testing. |
 | **🎨 Design System Tokens & UI** | [`repos/platform/design-system`](repos/platform/design-system) | **1** | Svelte 5 / Tailwind v4 canonical components and tokens. |
 | **📚 Documentation Portals** | [`repos/docs/technical`](repos/docs/technical) | **1** | Partner developer documentation and clinical specifications. |
-| **☁️ Platform Infrastructure & Cross-Repo** | [`repos/infra/cdk`](repos/infra/cdk) | **60** | Shared CDK stacks, CloudFront routing, DNS, auth pools, and cross-cutting platform epics. |
+| **☁️ Platform Infrastructure & Cross-Repo** | [`repos/infra/cdk`](repos/infra/cdk) | **70** | Shared CDK stacks, CloudFront routing, DNS, auth pools, and cross-cutting platform epics. |
 
 ---
 
 ## 📦 Detailed Backlog Breakdown
 
-### 📱 Mobile (iOS & Android) (18 issues)
+### 📱 Mobile (iOS & Android) (6 issues)
 **Path:** [`repos/apps/mobile`](repos/apps/mobile)  
 *Flutter rehabilitation app, assessment engine, routine player, and pain tracking.*
 
 | ID | Priority | Title | Team |
 |---|:---:|---|:---:|
-| [CORE-116](https://linear.app/moovv-fit/issue/CORE-116/shift-mobility-assessments-from-manual-self-tests-to-video-based) | `Urgent` | Shift mobility assessments from manual self-tests to video-based assessments | `CORE` |
-| [CORE-186](https://linear.app/moovv-fit/issue/CORE-186/multi-channel-otp-ux-and-preference-storage) | `High` | Multi-Channel OTP UX & Preference Storage | `CORE` |
-| [CORE-176](https://linear.app/moovv-fit/issue/CORE-176/mobile-cicd-agora-app-id-and-razorpay-key-id-have-no-visible-source) | `High` | [Mobile CI/CD] AGORA_APP_ID and RAZORPAY_KEY_ID have no visible source (native builds would fail) | `CORE` |
-| [CORE-179](https://linear.app/moovv-fit/issue/CORE-179/mobile-cicd-patient-web-config-published-as-public-runtime-assets-pr-6) | `High` | [Mobile CI/CD] Patient web config published as public runtime assets; PR #6 redesign and transition | `CORE` |
-| [CORE-166](https://linear.app/moovv-fit/issue/CORE-166/mobile-cicd-workflow-hardening-review-2026-11-10) | `High` | Mobile CI/CD workflow hardening (review 2026-11-10) | `CORE` |
-| [CORE-154](https://linear.app/moovv-fit/issue/CORE-154/fixmobile-stabilize-and-re-enable-maestro-e2e-test-suite-for-web-and) | `High` | fix(mobile): stabilize and re-enable Maestro E2E test suite for Web and Android | `CORE` |
-| [CORE-119](https://linear.app/moovv-fit/issue/CORE-119/de-hardcode-mobile-trial-copy-and-support-dynamic-campaign-ingress) | `High` | De-hardcode mobile trial copy and support dynamic campaign ingress | `CORE` |
 | [CORE-102](https://linear.app/moovv-fit/issue/CORE-102/implement-talk-to-physio-at-home-lead-capture-and-teleconsultation) | `High` | Implement 'Talk to Physio' At-Home lead capture and Teleconsultation timeslot picker | `CORE` |
 | [CORE-89](https://linear.app/moovv-fit/issue/CORE-89/mobile-audit-and-modernize-github-actions-workflows) | `High` | [Mobile] Audit & modernize GitHub Actions workflows | `CORE` |
-| [CORE-184](https://linear.app/moovv-fit/issue/CORE-184/email-otp-and-whatsapp-consent-flows) | `Medium` | Email OTP & WhatsApp Consent Flows | `CORE` |
-| [CORE-178](https://linear.app/moovv-fit/issue/CORE-178/mobile-cicd-web-cache-headers-1-year-cache-on-un-hashed-maindartjs-and) | `Medium` | [Mobile CI/CD] Web cache headers: 1-year cache on un-hashed main.dart.js and flutter_bootstrap.js | `CORE` |
-| [CORE-180](https://linear.app/moovv-fit/issue/CORE-180/mobile-cicd-maestro-e2e-disabled-reports-would-go-to-public-bucket-adr) | `Medium` | [Mobile CI/CD] Maestro E2E disabled; reports would go to public bucket (ADR-010 conflict) | `CORE` |
-| [CORE-181](https://linear.app/moovv-fit/issue/CORE-181/mobile-cicd-release-please-pr-checks-never-run-github-token-and-extra) | `Medium` | [Mobile CI/CD] Release-please PR checks never run (GITHUB_TOKEN) and extra id-token permission | `CORE` |
-| [CORE-183](https://linear.app/moovv-fit/issue/CORE-183/mobile-cicd-unverified-assumptions-iam-trust-org-level-vars-native) | `Medium` | [Mobile CI/CD] Unverified assumptions: IAM trust, org-level vars, native deploy baseline, branch protection | `CORE` |
 | [CORE-94](https://linear.app/moovv-fit/issue/CORE-94/mobile-post-launch-framework-and-dependency-upgrades) | `Medium` | [Mobile] Post-Launch Framework & Dependency Upgrades | `CORE` |
 | [CORE-173](https://linear.app/moovv-fit/issue/CORE-173/mobile-cicd-sentry-release-steps-use-unset-version-output-no-web) | `Low` | [Mobile CI/CD] Sentry release steps use unset version output; no web source maps | `CORE` |
-| [CORE-177](https://linear.app/moovv-fit/issue/CORE-177/mobile-cicd-web-deploy-bucket-expression-and-cloudfront-id-fallback) | `Low` | [Mobile CI/CD] Web deploy bucket expression and CloudFront ID fallback can misroute or silently skip | `CORE` |
-| [CORE-182](https://linear.app/moovv-fit/issue/CORE-182/mobile-cicd-ciyml-gaps-no-flutter-analyze-no-build-no-permissions) | `Low` | [Mobile CI/CD] ci.yml gaps: no flutter analyze, no build, no permissions block | `CORE` |
+| [CORE-195](https://linear.app/moovv-fit/issue/CORE-195/mobile-remove-otpphone-debugprint-in-cognito-servicedart-and-redact) | `No priority` | [Mobile] Remove OTP/phone debugPrint in cognito_service.dart and redact query strings in Dio logger | `CORE` |
+| [CORE-193](https://linear.app/moovv-fit/issue/CORE-193/mobile-send-session-on-otp-consent-revoke-and-gate-international-otp) | `No priority` | Mobile: send session on OTP consent revoke and gate international OTP to India until ENABLE_MULTI_CHANNEL_OTP | `CORE` |
 
-### ⚙️ Backend Core API & Database (6 issues)
+### ⚙️ Backend Core API & Database (11 issues)
 **Path:** [`repos/backend/node`](repos/backend/node)  
 *Node/TypeScript Lambda API, Prisma ORM, Cognito auth, and clinical data models.*
 
 | ID | Priority | Title | Team |
 |---|:---:|---|:---:|
-| [CORE-118](https://linear.app/moovv-fit/issue/CORE-118/implement-physio-capacity-and-review-inventory-throttling-engine) | `High` | Implement Physio Capacity & Review Inventory Throttling Engine | `CORE` |
+| [CORE-208](https://linear.app/moovv-fit/issue/CORE-208/fixci-unit-tests-fail-on-main-after-core-135-phase-2-unmocked-dbclient) | `High` | fix(ci): unit tests fail on main after CORE-135 Phase 2 (unmocked db/client env validation) | `CORE` |
 | [CORE-96](https://linear.app/moovv-fit/issue/CORE-96/backend-re-enable-and-validate-platform-e2e-tests-on-staging) | `High` | [Backend] Re-enable & Validate Platform E2E Tests on Staging | `CORE` |
 | [CORE-95](https://linear.app/moovv-fit/issue/CORE-95/backend-expand-unit-and-integration-test-coverage-to-80percent) | `High` | [Backend] Expand Unit & Integration Test Coverage to 80% | `CORE` |
+| [CORE-187](https://linear.app/moovv-fit/issue/CORE-187/email-template-management-ses-s3-for-transactional-customerio-for) | `Medium` | Email Template Management: SES + S3 for Transactional, Customer.io for Marketing | `CORE` |
 | [CORE-152](https://linear.app/moovv-fit/issue/CORE-152/chorebackend-clean-up-deprecated-trial-expiration-cron-and-enable) | `Medium` | chore(backend): clean up deprecated trial expiration cron and ENABLE_TRIAL_EXPIRATION flag | `CORE` |
 | [CORE-131](https://linear.app/moovv-fit/issue/CORE-131/engine-codify-recommendation-engine-ecr-and-lambda-infrastructure-into) | `Medium` | [Engine] Codify Recommendation Engine ECR and Lambda Infrastructure into CDK | `CORE` |
 | [CORE-97](https://linear.app/moovv-fit/issue/CORE-97/backend-implement-unified-v1-api-versioning-strategy-adr-014) | `Medium` | [Backend] Implement Unified /v1/ API Versioning Strategy (ADR-014) | `CORE` |
+| [CORE-210](https://linear.app/moovv-fit/issue/CORE-210/backend-customerio-messaging-adapter-fix-ssm-param-names-track-api) | `No priority` | [Backend] Customer.io messaging adapter: fix SSM param names, Track API Basic auth (site_id:key), webhook_secret | `CORE` |
+| [CORE-198](https://linear.app/moovv-fit/issue/CORE-198/rollout-multi-channel-otp-enable-multi-channel-otp-staging-then-prod) | `No priority` | [Rollout] Multi-channel OTP: ENABLE_MULTI_CHANNEL_OTP staging then prod with mobile release | `CORE` |
+| [CORE-196](https://linear.app/moovv-fit/issue/CORE-196/auth-save-preferred-otp-channel-to-user-profile-after-auth-n12) | `No priority` | [Auth] Save preferred OTP channel to user profile after auth (N12) | `CORE` |
+| [CORE-194](https://linear.app/moovv-fit/issue/CORE-194/backendproduct-pdr-017-opt-out-path-outside-any-login-flow-eg-signed) | `No priority` | [Backend/Product] PDR-017 opt-out path outside any login flow (e.g. signed link) | `CORE` |
 
-### 🌐 Web Portals (Clinic OS & Admin) (5 issues)
+### 🌐 Web Portals (Clinic OS & Admin) (3 issues)
 **Path:** [`repos/apps/web`](repos/apps/web)  
 *React 19 clinical portal, appointment booking, patient queue, and chat.*
 
 | ID | Priority | Title | Team |
 |---|:---:|---|:---:|
-| [CLINIC-45](https://linear.app/moovv-fit/issue/CLINIC-45/implement-clinician-plan-review-workbench-exercise-swap-clinical-notes) | `Urgent` | Implement clinician plan review workbench (exercise swap, clinical notes, and 1-click approval) | `CLINIC` |
-| [CLINIC-43](https://linear.app/moovv-fit/issue/CLINIC-43/build-dual-tab-triage-interface-in-clinic-os-pain-clinical-queue-vs) | `Urgent` | Build dual-tab triage interface in Clinic OS (PAIN_CLINICAL_QUEUE vs WELLNESS_PERFORMANCE_QUEUE) | `CLINIC` |
 | [CLINIC-46](https://linear.app/moovv-fit/issue/CLINIC-46/build-30-day-asynchronous-chat-messaging-interface-between) | `High` | Build 30-day asynchronous chat messaging interface between physiotherapist and patient | `CLINIC` |
 | [CLINIC-44](https://linear.app/moovv-fit/issue/CLINIC-44/implement-duty-physiotherapist-teleconsultation-timeslot-availability) | `High` | Implement duty physiotherapist teleconsultation timeslot availability and calendar scheduling | `CLINIC` |
 | [CORE-99](https://linear.app/moovv-fit/issue/CORE-99/web-evaluate-and-extract-shared-ui-components-to-moovvdesign-system) | `Medium` | [Web] Evaluate and extract shared UI components to @moovv/design-system | `CORE` |
@@ -149,19 +140,20 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 |---|:---:|---|:---:|
 | [CORE-92](https://linear.app/moovv-fit/issue/CORE-92/docs-modernize-documentation-ci-workflows) | `High` | [Docs] Modernize documentation CI workflows | `CORE` |
 
-### ☁️ Platform Infrastructure & Cross-Repo (60 issues)
+### ☁️ Platform Infrastructure & Cross-Repo (70 issues)
 **Path:** [`repos/infra/cdk`](repos/infra/cdk)  
 *Shared CDK stacks, CloudFront routing, DNS, auth pools, and cross-cutting platform epics.*
 
 | ID | Priority | Title | Team |
 |---|:---:|---|:---:|
 | [CORE-121](https://linear.app/moovv-fit/issue/CORE-121/infra-track-spamhaus-dbl-delisting-for-moovvfit-st7326681) | `Urgent` | [Infra] Track Spamhaus DBL delisting for moovv.fit (ST7326681) | `CORE` |
-| [CORE-85](https://linear.app/moovv-fit/issue/CORE-85/dev-005-add-clinical-red-flag-triage-hard-stops-for-pregnancy-and) | `Urgent` | [DEV-005] Add clinical red-flag triage hard stops for pregnancy and acute fractures in mobile onboarding | `CORE` |
 | [CLINIC-8](https://linear.app/moovv-fit/issue/CLINIC-8/dipp-startup-certification-and-aws-activate-credits-recovery) | `Urgent` | DIPP Startup Certification & AWS Activate Credits Recovery | `CLINIC` |
 | [CORE-11](https://linear.app/moovv-fit/issue/CORE-11/enforce-o1-bodypartactiveplan-laterality-lock) | `Urgent` | Enforce O(1) BodyPartActivePlan Laterality Lock | `CORE` |
 | [CORE-9](https://linear.app/moovv-fit/issue/CORE-9/implement-production-pgbouncer-rds-proxy-connection-pooling) | `Urgent` | Implement Production PgBouncer / RDS Proxy Connection Pooling | `CORE` |
+| [CORE-213](https://linear.app/moovv-fit/issue/CORE-213/ci-release-please-prerelease-pr-overwrites-production-release-pr) | `High` | [CI] Release Please: prerelease PR overwrites production release PR (shared branch) | `CORE` |
+| [CORE-202](https://linear.app/moovv-fit/issue/CORE-202/ses-from-address-ssm-parameter-hand-created-must-be-removed-before-cdk) | `High` | SES from-address SSM parameter: hand-created, must be removed before CDK creates it | `CORE` |
+| [CORE-190](https://linear.app/moovv-fit/issue/CORE-190/auth-pdr-017-whatsapp-consent-infrastructure) | `High` | [Auth] PDR-017 WhatsApp Consent Infrastructure | `CORE` |
 | [CORE-164](https://linear.app/moovv-fit/issue/CORE-164/infra-post-migration-7-day-observation-and-legacy-rds-termination) | `High` | [Infra] Post-Migration 7-Day Observation & Legacy RDS Termination Checklist | `CORE` |
-| [CORE-163](https://linear.app/moovv-fit/issue/CORE-163/auth-auto-resolve-saved-email-for-returning-international-users) | `High` | [Auth] Auto-resolve saved email for returning international users | `CORE` |
 | [CORE-142](https://linear.app/moovv-fit/issue/CORE-142/tech-debt-fix-auth-handler-references-in-global-auth-channels-spec) | `High` | [Tech Debt] Fix auth handler references in global-auth-channels spec | `CORE` |
 | [CORE-141](https://linear.app/moovv-fit/issue/CORE-141/tech-debt-fix-users-vs-user-profile-table-references-in-specs) | `High` | [Tech Debt] Fix users vs user_profile table references in specs | `CORE` |
 | [CORE-139](https://linear.app/moovv-fit/issue/CORE-139/spec-e2e-simulation-platform-multi-persona-test-harness) | `High` | [Spec] E2E Simulation Platform: Multi-Persona Test Harness | `CORE` |
@@ -171,6 +163,7 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 | [CORE-129](https://linear.app/moovv-fit/issue/CORE-129/infra-unmanaged-cloud-infrastructure-adoption-and-migration-adr-001) | `High` | [Infra] Unmanaged Cloud Infrastructure Adoption & Migration (ADR-001) | `CORE` |
 | [CORE-87](https://linear.app/moovv-fit/issue/CORE-87/cross-repo-cicd-and-github-actions-modernization-and-dual-org) | `High` | [Cross-Repo] CI/CD & GitHub Actions Modernization and Dual-Org Deployment Alignment | `CORE` |
 | [CORE-84](https://linear.app/moovv-fit/issue/CORE-84/abr-add-multi-rendition-hls-output-sdhdfull-hd) | `High` | ABR: Add multi-rendition HLS output (SD/HD/FULL_HD) | `CORE` |
+| [CLINIC-51](https://linear.app/moovv-fit/issue/CLINIC-51/web-update-and-ci-enable-the-playwright-e2e-suite-for-the-clinical-and) | `High` | [Web] Update and CI-enable the Playwright E2E suite for the clinical & admin portals | `CLINIC` |
 | [CLINIC-5](https://linear.app/moovv-fit/issue/CLINIC-5/whatsapp-adherence-tracking-and-care-plan-recall-workflows) | `High` | WhatsApp Adherence Tracking & Care Plan Recall Workflows | `CLINIC` |
 | [CLINIC-6](https://linear.app/moovv-fit/issue/CLINIC-6/session-package-billing-and-razorpay-webhooks-zoho-suite) | `High` | Session Package Billing & Razorpay Webhooks (Zoho Suite) | `CLINIC` |
 | [CLINIC-4](https://linear.app/moovv-fit/issue/CLINIC-4/inbound-voice-and-whatsapp-triage-flow-twilioretell-zoho-crm) | `High` | Inbound Voice & WhatsApp Triage Flow (Twilio/Retell + Zoho CRM) | `CLINIC` |
@@ -179,12 +172,15 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 | [CORE-13](https://linear.app/moovv-fit/issue/CORE-13/human-in-the-loop-hitl-verification-queue-and-48h-sla-escalation) | `High` | Human-in-the-Loop (HITL) Verification Queue & 48h SLA Escalation | `CORE` |
 | [CORE-12](https://linear.app/moovv-fit/issue/CORE-12/decouple-four-bucket-entitlement-engine) | `High` | Decouple Four-Bucket Entitlement Engine | `CORE` |
 | [CORE-8](https://linear.app/moovv-fit/issue/CORE-8/consolidate-170-sam-lambdas-to-ecs-fargate-fastifynode-20) | `High` | Consolidate 170+ SAM Lambdas to ECS Fargate (Fastify/Node 20) | `CORE` |
+| [CORE-207](https://linear.app/moovv-fit/issue/CORE-207/mobile-add-widget-tests-and-device-testing-for-video-assessment) | `Medium` | [Mobile] Add widget tests and device testing for video assessment feature | `CORE` |
+| [CORE-204](https://linear.app/moovv-fit/issue/CORE-204/backend-add-server-side-rom-score-validation-for-video-assessments) | `Medium` | [Backend] Add server-side ROM score validation for video assessments | `CORE` |
+| [CORE-200](https://linear.app/moovv-fit/issue/CORE-200/mobile-integrate-app-links-package-for-deep-link-utm-capture-on) | `Medium` | Mobile: Integrate app_links package for deep link UTM capture on iOS/Android | `CORE` |
+| [CORE-192](https://linear.app/moovv-fit/issue/CORE-192/mobile-integrate-app-links-package-for-native-deep-link-utm-capture) | `Medium` | [Mobile] Integrate app_links package for native deep link UTM capture | `CORE` |
 | [CORE-162](https://linear.app/moovv-fit/issue/CORE-162/backend-single-fcm-token-deletion-endpoint-for-device-specific) | `Medium` | [Backend] Single FCM token deletion endpoint for device-specific deregistration | `CORE` |
 | [CORE-158](https://linear.app/moovv-fit/issue/CORE-158/physical-ai-personal-health-coach-agent-behavioral-guidance) | `Medium` | [Physical AI] Personal Health Coach Agent - Behavioral Guidance | `CORE` |
 | [CORE-157](https://linear.app/moovv-fit/issue/CORE-157/physical-ai-health-domain-expert-agent-medical-knowledge-integration) | `Medium` | [Physical AI] Health Domain Expert Agent - Medical Knowledge Integration | `CORE` |
 | [CORE-156](https://linear.app/moovv-fit/issue/CORE-156/physical-ai-data-scientist-agent-longitudinal-health-analytics) | `Medium` | [Physical AI] Data Scientist Agent - Longitudinal Health Analytics | `CORE` |
 | [CORE-140](https://linear.app/moovv-fit/issue/CORE-140/tech-debt-rename-adr-025-to-adr-027-third-party-integration) | `Medium` | [Tech Debt] Rename ADR-025 to ADR-027 (Third-Party Integration Abstraction) | `CORE` |
-| [CORE-138](https://linear.app/moovv-fit/issue/CORE-138/spec-ios-release-pipeline-automated-testflight-and-app-store) | `Medium` | [Spec] iOS Release Pipeline: Automated TestFlight & App Store Submission | `CORE` |
 | [CORE-134](https://linear.app/moovv-fit/issue/CORE-134/infra-codify-iam-release-roles-github-oidc-and-shared-storage-stacks) | `Medium` | [Infra] Codify IAM Release Roles, GitHub OIDC & Shared Storage Stacks | `CORE` |
 | [CORE-82](https://linear.app/moovv-fit/issue/CORE-82/content-gap-50-exercises-from-ka-mapping-have-no-video-equivalent) | `Medium` | Content Gap: 50 exercises from KA mapping have no video equivalent | `CORE` |
 | [CORE-81](https://linear.app/moovv-fit/issue/CORE-81/crashlytics-test-healthcheck) | `Medium` | [Crashlytics] Test Healthcheck | `CORE` |
@@ -203,6 +199,9 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 | [CORE-15](https://linear.app/moovv-fit/issue/CORE-15/admin-staging-review-ui-for-enriched-metadata) | `Medium` | Admin Staging Review UI for Enriched Metadata | `CORE` |
 | [CORE-14](https://linear.app/moovv-fit/issue/CORE-14/batch-enrichment-of-300-exercise-jsons-via-claude-sonnet-45) | `Medium` | Batch Enrichment of 300+ Exercise JSONs via Claude Sonnet 4.5 | `CORE` |
 | [CORE-10](https://linear.app/moovv-fit/issue/CORE-10/replace-3-5s-web-portal-polling-with-push-events) | `Medium` | Replace 3-5s Web Portal Polling with Push Events | `CORE` |
+| [CORE-206](https://linear.app/moovv-fit/issue/CORE-206/backend-add-sql-batch-insert-comment-for-kinematic-frame-handler) | `Low` | [Backend] Add SQL batch insert comment for kinematic frame handler | `CORE` |
+| [CORE-205](https://linear.app/moovv-fit/issue/CORE-205/backend-add-endpoint-level-rate-limiting-for-kinematic-telemetry-api) | `Low` | [Backend] Add endpoint-level rate limiting for kinematic telemetry API | `CORE` |
+| [CORE-201](https://linear.app/moovv-fit/issue/CORE-201/docs-mark-core-119-complete-in-backlog-plan-and-update-marketing-infra) | `Low` | Docs: Mark CORE-119 complete in backlog plan and update marketing-infra spec | `CORE` |
 | [CORE-86](https://linear.app/moovv-fit/issue/CORE-86/consolidate-custom-exercise-videos-under-moovv-fit-content-production) | `Low` | Consolidate custom exercise videos under moovv-fit-content-production bucket | `CORE` |
 | [CORE-83](https://linear.app/moovv-fit/issue/CORE-83/data-link-existing-videos-to-sh-018-and-sh-030-exercise-ids) | `Low` | Data: Link existing videos to SH_018 and SH_030 exercise IDs | `CORE` |
 | [CLINIC-50](https://linear.app/moovv-fit/issue/CLINIC-50/sdk-exercise-alias-management-phase-3) | `Low` | [SDK] Exercise Alias Management (Phase 3) | `CLINIC` |
@@ -210,6 +209,8 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 | [CLINIC-10](https://linear.app/moovv-fit/issue/CLINIC-10/long-term-physical-ai-and-computer-vision-roadmap-phase-2-and-3-vision) | `Low` | Long-Term Physical AI & Computer Vision Roadmap (Phase 2 & 3 Vision) | `CLINIC` |
 | [CLINIC-11](https://linear.app/moovv-fit/issue/CLINIC-11/cross-border-telehealth-and-compliance-blueprint-uk-hcpc-and-gcc) | `Low` | Cross-Border Telehealth & Compliance Blueprint (UK HCPC & GCC) | `CLINIC` |
 | [CLINIC-12](https://linear.app/moovv-fit/issue/CLINIC-12/practice-management-and-os-benchmark-analysis-cortexa-and-spry-pt) | `Low` | Practice Management & OS Benchmark Analysis (Cortexa & SPRY PT) | `CLINIC` |
+| [CORE-203](https://linear.app/moovv-fit/issue/CORE-203/auth-self-asserted-whatsapp-consent-grant-activate-only-after-otp) | `No priority` | [Auth] Self-asserted WhatsApp consent grant: activate only after OTP verify (blocks enabling WhatsApp) | `CORE` |
+| [CORE-197](https://linear.app/moovv-fit/issue/CORE-197/infra-host-aasa-and-assetlinksjson-enable-associated-domains-device) | `No priority` | [Infra] Host AASA and assetlinks.json, enable Associated Domains, device-check deep links (N7) | `CORE` |
 | [CORE-67](https://linear.app/moovv-fit/issue/CORE-67/annual-apple-distribution-certificate-and-profile-renewal-sept-2027) | `No priority` | Annual Apple Distribution Certificate & Profile Renewal (Sept 2027) | `CORE` |
 | [CORE-64](https://linear.app/moovv-fit/issue/CORE-64/automate-testflight-external-beta-review-submission-via-async-linux) | `No priority` | Automate TestFlight External Beta Review Submission via Async Linux Job | `CORE` |
 | [CORE-63](https://linear.app/moovv-fit/issue/CORE-63/future-scope-real-time-exercise-recommendation-engine-with-jev) | `No priority` | [Future Scope] Real-Time Exercise Recommendation Engine with Jev | `CORE` |
@@ -217,4 +218,4 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 | [CLINIC-41](https://linear.app/moovv-fit/issue/CLINIC-41/kineticage-partner-integration-source-documents) | `No priority` | KineticAge Partner Integration — Source Documents | `CLINIC` |
 
 ---
-*Generated automatically via `scripts/linear-backlog.py --sync` on 2026-11-11 06:23 UTC.*
+*Generated automatically via `scripts/linear-backlog.py --sync` on 2026-11-12 15:22 UTC.*

@@ -82,6 +82,9 @@ def fetch_backlog():
         sys.exit(1)
     try:
         data = json.loads(res.stdout)
+        # Linear CLI returns a list directly, not {"nodes": [...]}
+        if isinstance(data, list):
+            return data
         return data.get("nodes", [])
     except Exception as e:
         print(f"Failed to parse linear JSON: {e}", file=sys.stderr)
@@ -92,8 +95,13 @@ def generate_markdown(issues, output_path):
 
     by_repo = {}
     for issue in issues:
-        lbl_nodes = issue.get("labels", {}).get("nodes", [])
-        repo_labels = [l["name"].replace("repo:", "") for l in lbl_nodes if l["name"].startswith("repo:")]
+        # Labels can be a list directly or {"nodes": [...]} depending on CLI version
+        labels_data = issue.get("labels", [])
+        if isinstance(labels_data, dict):
+            lbl_nodes = labels_data.get("nodes", [])
+        else:
+            lbl_nodes = labels_data
+        repo_labels = [l["name"].replace("repo:", "") for l in lbl_nodes if l.get("name", "").startswith("repo:")]
         repo_key = repo_labels[0] if repo_labels else "cross-repo / platform"
         if repo_key in ("infra", "cdk"):
             repo_key = "cross-repo / platform"
@@ -236,8 +244,13 @@ def main():
         if args.priority and args.priority.lower() not in prio_label.lower():
             continue
 
-        lbl_nodes = issue.get("labels", {}).get("nodes", [])
-        repo_labels = [l["name"].replace("repo:", "") for l in lbl_nodes if l["name"].startswith("repo:")]
+        # Labels can be a list directly or {"nodes": [...]} depending on CLI version
+        labels_data = issue.get("labels", [])
+        if isinstance(labels_data, dict):
+            lbl_nodes = labels_data.get("nodes", [])
+        else:
+            lbl_nodes = labels_data
+        repo_labels = [l["name"].replace("repo:", "") for l in lbl_nodes if l.get("name", "").startswith("repo:")]
         repo = repo_labels[0] if repo_labels else "cross-repo / platform"
         if repo in ("infra", "cdk"):
             repo = "cross-repo / platform"
