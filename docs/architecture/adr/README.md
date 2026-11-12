@@ -11,6 +11,7 @@ For repo-specific ADRs, see the `docs/architecture/adr/` directory in each submo
 | [ADR-001](./ADR-001-SUBMODULE-ARCHITECTURE.md) | Submodule Architecture for Moovv Platform | ✅ Current |
 | [ADR-002](./ADR-002-SPOT-RUNNER-FIFO-PROTECTION.md) | Spot Runner FIFO Protection via Run-Specific Labels | ✅ Current |
 | [ADR-003](./ADR-003-AWS-COST-OPTIMIZATION-AND-INFRASTRUCTURE-CONSOLIDATION.md) | AWS Cost Optimization, Secrets Elimination, and RDS Right-Sizing | ✅ Current |
+| [ADR-004](./ADR-004-VIDEO-ASSESSMENT-ARCHITECTURE.md) | Video Assessment Architecture | ✅ Current |
 
 ## Template
 
