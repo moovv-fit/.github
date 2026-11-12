@@ -29,3 +29,6 @@ node_modules/
 # Local dev
 .local/
 repos/legacy/
+
+# Workflow artifacts
+semantic-review/
