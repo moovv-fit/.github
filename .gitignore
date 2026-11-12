@@ -32,3 +32,6 @@ repos/legacy/
 
 # Workflow artifacts
 semantic-review/
+
+# Worktrees
+.worktrees/
