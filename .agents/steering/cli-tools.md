@@ -171,6 +171,39 @@ gh auth status
 gh auth login
 ```
 
+### Fork Repository Defaults (IMPORTANT)
+
+All submodules are forks with both `origin` (moovv-fit) and `upstream` (moovvfit) remotes. By default, `gh pr create` targets the **upstream** repo, which is usually not what we want.
+
+**Fix:** Set the default repo to origin for each submodule:
+
+```bash
+# One-time setup per repo
+gh repo set-default moovv-fit/moovv-fit-web
+gh repo set-default moovv-fit/moovv-fit-mobile
+gh repo set-default moovv-fit/moovv-fit-backend-node
+# ... etc
+```
+
+This creates a `.git/.gh-resolved` file that persists the setting. All repos should have this configured:
+
+| Submodule | Default Repo |
+|-----------|--------------|
+| `repos/apps/web` | `moovv-fit/moovv-fit-web` |
+| `repos/apps/mobile` | `moovv-fit/moovv-fit-mobile` |
+| `repos/apps/landing` | `moovv-fit/moovv-fit-landing` |
+| `repos/backend/node` | `moovv-fit/moovv-fit-backend-node` |
+| `repos/infra/cdk` | `moovv-fit/moovv-fit-infra` |
+| `repos/platform/design-system` | `moovv-fit/moovv-fit-design-system` |
+| `repos/platform/simulator` | `moovv-fit/moovv-fit-simulator` |
+| `repos/docs/technical` | `moovv-fit/moovv-fit-docs` |
+| `repos/docs/product` | `moovv-fit/moovv-fit-product` |
+
+**Verify:** After cloning fresh, run this in each submodule:
+```bash
+gh repo set-default  # Shows current default
+```
+
 ### Common Operations
 
 ```bash
