@@ -17,7 +17,8 @@ moovv-fit/
 │   ├── backend/
 │   │   └── node/           → moovv-fit-backend-node (Lambda/CDK)
 │   ├── infra/
-│   │   └── cdk/            → moovv-fit-infra (CDK constructs)
+│   │   ├── cdk/            → moovv-fit-infra (CDK constructs)
+│   │   └── kiro-spot/      → moovv-fit-kiro-spot (Spot orchestration)
 │   ├── platform/
 │   │   ├── design-system/  → moovv-fit-design-system (Svelte)
 │   │   └── simulator/      → moovv-fit-simulator
@@ -52,7 +53,8 @@ When working in a submodule (e.g., `repos/backend/node`), the agent follows that
 | **Mobile** | `repos/apps/mobile` | Flutter 3.x / Dart / Riverpod / Go Router | iOS/Android rehabilitation application |
 | **Web** | `repos/apps/web` | React 19 / Vite / Tailwind v4 / Zustand / React Query | Clinical (`/physio`, `/clinic`) & Admin portals |
 | **Landing** | `repos/apps/landing` | HTML5 / CSS3 / Vanilla JS / CloudFront | Marketing sites & patient lead acquisition |
-| **Infra** | `repos/infra/cdk` | AWS CDK v2 / TypeScript / Docker Compose | Shared cloud infrastructure & telemetry |
+| **Infra (CDK)** | `repos/infra/cdk` | AWS CDK v2 / TypeScript / Docker Compose | Shared cloud infrastructure & telemetry |
+| **Infra (Kiro Spot)** | `repos/infra/kiro-spot` | Bash / AWS CLI / EC2 Spot | On-demand spot instance orchestration for CI/codegen |
 | **Design** | `repos/platform/design-system` | Svelte 5 (Runes) / Tailwind v4 / bits-ui | Canonical design tokens & UI library |
 | **Simulator** | `repos/platform/simulator` | Node 22 / TypeScript / Zod / undici / ws | Autonomous multi-persona E2E test harness |
 | **Docs (Technical)** | `repos/docs/technical` | SvelteKit 2 / Svelte 5 / Tailwind v4 / CDK | Partner developer documentation portal |
