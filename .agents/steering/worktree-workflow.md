@@ -42,7 +42,44 @@ git worktree add .worktrees/feat-CORE-123-add-login -b feat/CORE-123-add-login
 
 ## 2. Manifest Specification
 
-Each repo maintains `.worktrees/manifest.json` tracking active worktrees:
+### Dual Manifest Architecture
+
+Worktree tracking uses **both** a central manifest and per-repo manifests:
+
+1. **Central Manifest** (`/mnt/workspace/src/moovv-fit/.worktrees/manifest.json`) — Master orchestration repo tracks all worktrees across all submodules
+2. **Per-Repo Manifests** (`{repo}/.worktrees/manifest.json`) — Each submodule maintains its own manifest for local agent context
+
+### Central Manifest Schema
+
+```json
+{
+  "version": "1.0",
+  "lastUpdated": "2026-11-13T10:00:00Z",
+  "repos": {
+    "repos/backend/node": {
+      "worktrees": [
+        {
+          "branch": "feat/CORE-123-add-login",
+          "linearIssue": "CORE-123",
+          "spec": "login-flow",
+          "createdAt": "2026-11-13T10:00:00Z",
+          "path": ".worktrees/feat-CORE-123-add-login",
+          "prNumber": 42,
+          "prStatus": "open",
+          "merged": false
+        }
+      ]
+    },
+    "repos/apps/web": {
+      "worktrees": []
+    }
+  }
+}
+```
+
+### Per-Repo Manifest Schema
+
+Each repo maintains `.worktrees/manifest.json` for local agent context:
 
 ```json
 {

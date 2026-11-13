@@ -44,6 +44,19 @@ aws s3 ls  # Now uses the exported profile
 
 ---
 
+## AWS Skills
+
+For complex AWS operations, consider using available Kiro skills that provide built-in patterns and best practices:
+
+| Skill | Keywords | Use For |
+|-------|----------|---------|
+| `amazon-aurora-postgresql` | aurora, postgresql, database, aws, rds | Database operations, queries, schema management, cluster creation |
+| `aws-security-agent` | security scan, code review, sast, pentest | Security scanning, threat modeling, penetration testing |
+
+Skills are activated automatically based on keywords in your request, or explicitly via `load_resource`. They encapsulate AWS patterns including SSO authentication, SSM parameter retrieval, and service-specific best practices.
+
+---
+
 ## SSM Parameter Store
 
 ### Path Convention

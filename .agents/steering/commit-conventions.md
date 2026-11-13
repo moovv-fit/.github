@@ -9,20 +9,26 @@ description: "Standardized commit message format with Linear issue references fo
 ## Commit Title Format
 
 ```
-type(LINEAR-ISSUE): description
+type(scope): description (LINEAR-ISSUE) [SPEC-ID]
 ```
+
+- **type**: The category of change (feat, fix, docs, etc.)
+- **scope**: The domain or component affected (mobility, auth, telehealth, etc.)
+- **description**: What the commit does (imperative mood, lowercase)
+- **LINEAR-ISSUE**: Required Linear issue reference in parentheses
+- **SPEC-ID**: Optional spec reference in brackets (when working from a Kiro spec)
 
 ### Examples
 
 ```
-feat(CORE-123): add login endpoint with OTP verification
-fix(CLINIC-456): resolve auth token refresh race condition
-docs(CORE-789): update API documentation for v2 endpoints
-refactor(CORE-101): extract payment service into separate module
-test(CLINIC-202): add integration tests for telehealth flow
-chore(CORE-303): update dependencies to latest versions
-ci(CORE-404): add Maestro E2E tests to release pipeline
-style(CLINIC-505): fix lint warnings in physio portal
+feat(mobility): add kinetic chain validation (CORE-145) [SPEC-006]
+fix(auth): resolve token refresh race condition (CLINIC-456)
+docs(api): update v2 endpoint documentation (CORE-789)
+refactor(payments): extract Razorpay adapter (CORE-101) [SPEC-012]
+test(telehealth): add integration tests for video reconnect (CLINIC-202)
+chore(deps): update dependencies to latest versions (CORE-303)
+ci(release): add Maestro E2E tests to pipeline (CORE-404)
+style(physio-portal): fix lint warnings (CLINIC-505)
 ```
 
 ---
@@ -39,6 +45,25 @@ style(CLINIC-505): fix lint warnings in physio portal
 | `test` | Tests | Adding or updating tests |
 | `chore` | Maintenance | Dependencies, configs, tooling |
 | `ci` | CI/CD | Workflow files, deployment scripts |
+
+---
+
+## Scope Reference
+
+Use a meaningful scope that describes the domain or component:
+
+| Scope | Description | Examples |
+|-------|-------------|----------|
+| `mobility` | Exercise/mobility features | kinetic chain, ROM |
+| `auth` | Authentication/authorization | login, OTP, tokens |
+| `telehealth` | Video/remote features | calls, scheduling |
+| `payments` | Payment processing | Razorpay, subscriptions |
+| `api` | API endpoints | routes, handlers |
+| `physio-portal` | Physio web portal | physio UI |
+| `clinic-portal` | Clinic web portal | clinic UI |
+| `admin-portal` | Admin web portal | admin UI |
+| `deps` | Dependencies | package updates |
+| `release` | Release pipeline | CI/CD |
 
 ---
 
@@ -98,43 +123,43 @@ Closes CORE-123
 
 ```
 # Missing issue reference
-feat: add login endpoint
+feat(auth): add login endpoint
 
-# Wrong format (issue in wrong position)
+# Missing scope
 feat: add login endpoint (CORE-123)
 
 # Vague description
-fix(CORE-123): fix bug
+fix(auth): fix bug (CORE-123)
 
-# Too long (> 72 chars)
-feat(CORE-123): add comprehensive login endpoint with OTP verification and WhatsApp fallback
+# Too long (> 72 chars title)
+feat(mobility): add comprehensive kinetic chain validation with ROM analysis and feedback (CORE-145)
 
 # Wrong type
-feat(CORE-123): fix typo in README  # Should be 'docs'
+feat(docs): fix typo in README (CORE-999)  # Should be 'docs' type
 
 # Borrowing unrelated issue
-feat(CORE-999): add payment flow  # CORE-999 is for docs, not payment
+feat(payments): add Razorpay flow (CORE-999)  # CORE-999 is for docs, not payments
 ```
 
 ### ✅ Correct
 
 ```
-feat(CORE-123): add login endpoint with OTP verification
-fix(CLINIC-456): resolve auth token refresh race condition
-docs(CORE-789): update API documentation
+feat(mobility): add kinetic chain validation (CORE-145) [SPEC-006]
+fix(auth): resolve token refresh race condition (CLINIC-456)
+docs(api): update API documentation (CORE-789)
+refactor(payments): extract Razorpay adapter (CORE-101) [SPEC-012]
 ```
 
 ---
 
-## Scope Specificity (Optional)
+## Skills Encouragement
 
-For large repos, add scope after the type:
+When working with AWS resources, consider using available Kiro skills that provide built-in patterns and best practices:
 
-```
-feat(CORE-123/auth): add OTP verification
-fix(CLINIC-456/telehealth): resolve video reconnect
-refactor(CORE-789/payments): extract Razorpay adapter
-```
+- **amazon-aurora-postgresql** — For Aurora PostgreSQL database operations (queries, schema management, cluster creation). Keywords: aurora, postgresql, database, aws, rds
+- **aws-security-agent** — For security scanning, threat modeling, and penetration testing. Keywords: security scan, code review, sast, pentest
+
+Skills are activated automatically based on keywords in your request, or explicitly via `load_resource`.
 
 ---
 
