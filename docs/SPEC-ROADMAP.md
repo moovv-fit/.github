@@ -34,8 +34,11 @@
 |:---:|---|---|---|---|:---:|:---:|
 | 2.1 | [CORE-123](https://linear.app/moovv-fit/issue/CORE-123) | [global-auth-channels](../repos/backend/node/.agents/specs/global-auth-channels/) | `backend/node` | — | `M` | ✅ Done |
 | 2.2 | [CLINIC-2](https://linear.app/moovv-fit/issue/CLINIC-2) | [partner-video-sdk](../repos/backend/node/.agents/specs/partner-video-sdk/) | `backend/node` | — | `L` | ✅ Done |
+| 2.3 | [CORE-185](https://linear.app/moovv-fit/issue/CORE-185) | International Phone Selector | `apps/mobile` | CORE-123 | `S` | ✅ Done |
+| 2.4 | [CORE-186](https://linear.app/moovv-fit/issue/CORE-186) | Multi-Channel OTP UX | `apps/mobile` | CORE-123 | `S` | ✅ Done |
+| 2.5 | [CORE-184](https://linear.app/moovv-fit/issue/CORE-184) | Email OTP & WhatsApp Consent | `apps/mobile` | CORE-123 | `S` | ✅ Done |
 
-> **Merged**: PR #60 (CORE-123 Multi-Channel OTP), CLINIC-2 complete.
+> **Merged**: PR #60 (CORE-123 Multi-Channel OTP backend), Mobile PR #8 (CORE-185/186/184 mobile auth UX).
 
 ### Phase 3: CRM & Marketing Infrastructure
 *Backend services must complete before mobile/web consumers.*
@@ -43,7 +46,7 @@
 | Order | Linear Issue | Spec | Repo | Dependencies | Effort | Status |
 |:---:|---|---|---|---|:---:|:---:|
 | 3.1 | [CLINIC-47](https://linear.app/moovv-fit/issue/CLINIC-47) | [crm-gateway-zoho](../repos/backend/node/.agents/specs/crm-gateway-zoho/) | `backend/node` | — | `M` | ✅ Done |
-| 3.2 | [CORE-120](https://linear.app/moovv-fit/issue/CORE-120) | [marketing-infra-backend](../repos/backend/node/.agents/specs/marketing-infra-backend/) | `backend/node` | CLINIC-47 | `M` | ✅ Done |
+| 3.2 | [CORE-120](https://linear.app/moovv-fit/issue/CORE-120) | [marketing-infra-backend](../repos/backend/node/.agents/specs/marketing-infra-backend/) (Customer.io) | `backend/node` | CLINIC-47 | `M` | ✅ Done |
 | 3.3 | [CORE-119](https://linear.app/moovv-fit/issue/CORE-119) | [marketing-infra](../repos/apps/mobile/.agents/specs/marketing-infra/) | `apps/mobile` | CORE-120 | `S` | ✅ Done |
 
 > **Merged**: PR #59, #61, #62, #69 (CLINIC-47 Messaging Gateway phases), PR #59 (CORE-120), Mobile PR #9 (CORE-119).
@@ -82,7 +85,7 @@ CLINIC-47 (crm-zoho) ──► CORE-120 (marketing-backend) ──► CORE-119 (
 
 CORE-136 (free-content-backend) ──► CORE-137 (free-content-mobile)
 
-CORE-123 (global-auth) ──► (enables all international features)
+CORE-123 (global-auth) ──► CORE-185/186/184 (mobile auth UX) ──► (enables all international features)
 CLINIC-2 (partner-video-sdk) ──► (standalone B2B revenue)
 CORE-139 (e2e-simulation) ──► (validates all specs)
 ```

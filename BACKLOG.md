@@ -1,7 +1,7 @@
 # 📋 Moovv Fit — Master Cross-Repo Backlog
 
 > **Canonical Backlog Mirror** synchronized with Linear (`moovv-fit` workspace).  
-> **Last Synced:** `2026-11-13 03:04 UTC` • **Total Open Backlog Issues:** `95`  
+> **Last Synced:** `2026-11-13 07:04 UTC` • **Total Open Backlog Issues:** `95`  
 > *To refresh this document automatically, run: `./scripts/linear-backlog.py --sync`*
 
 ---
@@ -54,13 +54,13 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 | Domain | Submodule Path | Issues | Primary Focus |
 |---|---|:---:|---|
 | **📱 Mobile (iOS & Android)** | [`repos/apps/mobile`](repos/apps/mobile) | **6** | Flutter rehabilitation app, assessment engine, routine player, and pain tracking. |
-| **⚙️ Backend Core API & Database** | [`repos/backend/node`](repos/backend/node) | **11** | Node/TypeScript Lambda API, Prisma ORM, Cognito auth, and clinical data models. |
+| **⚙️ Backend Core API & Database** | [`repos/backend/node`](repos/backend/node) | **10** | Node/TypeScript Lambda API, Prisma ORM, Cognito auth, and clinical data models. |
 | **🌐 Web Portals (Clinic OS & Admin)** | [`repos/apps/web`](repos/apps/web) | **3** | React 19 clinical portal, appointment booking, patient queue, and chat. |
 | **🚀 Landing & Patient Acquisition** | [`repos/apps/landing`](repos/apps/landing) | **2** | Static marketing sites, physician lead funnels, and store/PWA onboarding. |
 | **🧪 Autonomous Simulator & Test Harness** | [`repos/platform/simulator`](repos/platform/simulator) | **1** | E2E multi-persona automated test harness, websocket synthetic testing. |
 | **🎨 Design System Tokens & UI** | [`repos/platform/design-system`](repos/platform/design-system) | **1** | Svelte 5 / Tailwind v4 canonical components and tokens. |
 | **📚 Documentation Portals** | [`repos/docs/technical`](repos/docs/technical) | **1** | Partner developer documentation and clinical specifications. |
-| **☁️ Platform Infrastructure & Cross-Repo** | [`repos/infra/cdk`](repos/infra/cdk) | **70** | Shared CDK stacks, CloudFront routing, DNS, auth pools, and cross-cutting platform epics. |
+| **☁️ Platform Infrastructure & Cross-Repo** | [`repos/infra/cdk`](repos/infra/cdk) | **71** | Shared CDK stacks, CloudFront routing, DNS, auth pools, and cross-cutting platform epics. |
 
 ---
 
@@ -79,7 +79,7 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 | [CORE-195](https://linear.app/moovv-fit/issue/CORE-195/mobile-remove-otpphone-debugprint-in-cognito-servicedart-and-redact) | `No priority` | [Mobile] Remove OTP/phone debugPrint in cognito_service.dart and redact query strings in Dio logger | `CORE` |
 | [CORE-193](https://linear.app/moovv-fit/issue/CORE-193/mobile-send-session-on-otp-consent-revoke-and-gate-international-otp) | `No priority` | Mobile: send session on OTP consent revoke and gate international OTP to India until ENABLE_MULTI_CHANNEL_OTP | `CORE` |
 
-### ⚙️ Backend Core API & Database (11 issues)
+### ⚙️ Backend Core API & Database (10 issues)
 **Path:** [`repos/backend/node`](repos/backend/node)  
 *Node/TypeScript Lambda API, Prisma ORM, Cognito auth, and clinical data models.*
 
@@ -92,7 +92,6 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 | [CORE-152](https://linear.app/moovv-fit/issue/CORE-152/chorebackend-clean-up-deprecated-trial-expiration-cron-and-enable) | `Medium` | chore(backend): clean up deprecated trial expiration cron and ENABLE_TRIAL_EXPIRATION flag | `CORE` |
 | [CORE-131](https://linear.app/moovv-fit/issue/CORE-131/engine-codify-recommendation-engine-ecr-and-lambda-infrastructure-into) | `Medium` | [Engine] Codify Recommendation Engine ECR and Lambda Infrastructure into CDK | `CORE` |
 | [CORE-97](https://linear.app/moovv-fit/issue/CORE-97/backend-implement-unified-v1-api-versioning-strategy-adr-014) | `Medium` | [Backend] Implement Unified /v1/ API Versioning Strategy (ADR-014) | `CORE` |
-| [CORE-210](https://linear.app/moovv-fit/issue/CORE-210/backend-customerio-messaging-adapter-fix-ssm-param-names-track-api) | `No priority` | [Backend] Customer.io messaging adapter: fix SSM param names, Track API Basic auth (site_id:key), webhook_secret | `CORE` |
 | [CORE-198](https://linear.app/moovv-fit/issue/CORE-198/rollout-multi-channel-otp-enable-multi-channel-otp-staging-then-prod) | `No priority` | [Rollout] Multi-channel OTP: ENABLE_MULTI_CHANNEL_OTP staging then prod with mobile release | `CORE` |
 | [CORE-196](https://linear.app/moovv-fit/issue/CORE-196/auth-save-preferred-otp-channel-to-user-profile-after-auth-n12) | `No priority` | [Auth] Save preferred OTP channel to user profile after auth (N12) | `CORE` |
 | [CORE-194](https://linear.app/moovv-fit/issue/CORE-194/backendproduct-pdr-017-opt-out-path-outside-any-login-flow-eg-signed) | `No priority` | [Backend/Product] PDR-017 opt-out path outside any login flow (e.g. signed link) | `CORE` |
@@ -140,12 +139,13 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 |---|:---:|---|:---:|
 | [CORE-92](https://linear.app/moovv-fit/issue/CORE-92/docs-modernize-documentation-ci-workflows) | `High` | [Docs] Modernize documentation CI workflows | `CORE` |
 
-### ☁️ Platform Infrastructure & Cross-Repo (70 issues)
+### ☁️ Platform Infrastructure & Cross-Repo (71 issues)
 **Path:** [`repos/infra/cdk`](repos/infra/cdk)  
 *Shared CDK stacks, CloudFront routing, DNS, auth pools, and cross-cutting platform epics.*
 
 | ID | Priority | Title | Team |
 |---|:---:|---|:---:|
+| [CORE-219](https://linear.app/moovv-fit/issue/CORE-219/customerio-integration-review-findings-pr-59-follow-up) | `Urgent` | Customer.io integration review findings (PR #59 follow-up) | `CORE` |
 | [CORE-121](https://linear.app/moovv-fit/issue/CORE-121/infra-track-spamhaus-dbl-delisting-for-moovvfit-st7326681) | `Urgent` | [Infra] Track Spamhaus DBL delisting for moovv.fit (ST7326681) | `CORE` |
 | [CLINIC-8](https://linear.app/moovv-fit/issue/CLINIC-8/dipp-startup-certification-and-aws-activate-credits-recovery) | `Urgent` | DIPP Startup Certification & AWS Activate Credits Recovery | `CLINIC` |
 | [CORE-11](https://linear.app/moovv-fit/issue/CORE-11/enforce-o1-bodypartactiveplan-laterality-lock) | `Urgent` | Enforce O(1) BodyPartActivePlan Laterality Lock | `CORE` |
@@ -218,4 +218,4 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 | [CLINIC-41](https://linear.app/moovv-fit/issue/CLINIC-41/kineticage-partner-integration-source-documents) | `No priority` | KineticAge Partner Integration — Source Documents | `CLINIC` |
 
 ---
-*Generated automatically via `scripts/linear-backlog.py --sync` on 2026-11-13 03:04 UTC.*
+*Generated automatically via `scripts/linear-backlog.py --sync` on 2026-11-13 07:04 UTC.*
