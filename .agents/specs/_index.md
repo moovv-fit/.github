@@ -8,31 +8,31 @@
 
 ### Backend (`repos/backend/node`)
 
-| Spec | Linear | Status | Description |
-|------|--------|--------|-------------|
-| [crm-gateway-zoho](./crm-gateway-zoho/) | [CLINIC-47](https://linear.app/moovv-fit/issue/CLINIC-47) | ✅ Done | Zoho CRM integration via MessagingGateway |
-| [financial-ledger](./financial-ledger/) | [CORE-135](https://linear.app/moovv-fit/issue/CORE-135) | ✅ Done | Double-entry financial ledger (ADR-030) |
-| [free-content-backend](./free-content-backend/) | [CORE-136](https://linear.app/moovv-fit/issue/CORE-136) | ✅ Done | PDR-016 backend: trial removal, review status, plan limits |
-| [global-auth-channels](./global-auth-channels/) | [CORE-123](https://linear.app/moovv-fit/issue/CORE-123) | ✅ Done | Multi-channel OTP (SMS/WhatsApp/Email) |
-| [marketing-infra-backend](./marketing-infra-backend/) | [CORE-120](https://linear.app/moovv-fit/issue/CORE-120) | ✅ Done | FCM token endpoints, MessagingGateway, Customer.io |
-| [messaging-gateway](./messaging-gateway/) | — | 🚧 Active | Provider-agnostic messaging abstraction |
-| [payment-gateway-abstraction](./payment-gateway-abstraction/) | [CORE-122](https://linear.app/moovv-fit/issue/CORE-122) | ✅ Done | Multi-provider payment abstraction |
-| [testing-strategy-backend](./testing-strategy-backend/) | — | 📋 Draft | Backend testing patterns and E2E strategy |
+| Spec | Linear | Status | Tasks | Description |
+|------|--------|--------|-------|-------------|
+| [crm-gateway-zoho](./crm-gateway-zoho/) | [CLINIC-47](https://linear.app/moovv-fit/issue/CLINIC-47) | 📋 Not Started | 0/73 | Zoho CRM integration via MessagingGateway |
+| [financial-ledger](./financial-ledger/) | [CORE-135](https://linear.app/moovv-fit/issue/CORE-135) | 🚧 In Progress | 19/38 | Double-entry financial ledger (ADR-030) |
+| [free-content-backend](./free-content-backend/) | [CORE-136](https://linear.app/moovv-fit/issue/CORE-136) | 📋 Not Started | 0/60 | PDR-016 backend: trial removal, review status, plan limits |
+| [global-auth-channels](./global-auth-channels/) | [CORE-123](https://linear.app/moovv-fit/issue/CORE-123) | 🚧 In Progress | 31/40 | Multi-channel OTP (SMS/WhatsApp/Email) |
+| [marketing-infra-backend](./marketing-infra-backend/) | [CORE-120](https://linear.app/moovv-fit/issue/CORE-120) | 📋 Not Started | 0/50 | FCM token endpoints, MessagingGateway, Customer.io |
+| [messaging-gateway](./messaging-gateway/) | — | 🚧 Active | 2/88 | Provider-agnostic messaging abstraction (core infra merged) |
+| [payment-gateway-abstraction](./payment-gateway-abstraction/) | [CORE-122](https://linear.app/moovv-fit/issue/CORE-122) | 🚧 In Progress | 38/49 | Multi-provider payment abstraction |
+| [testing-strategy-backend](./testing-strategy-backend/) | — | 🚧 Nearly Done | 72/76 | Backend testing patterns and E2E strategy |
 
 ### Mobile (`repos/apps/mobile`)
 
-| Spec | Linear | Status | Description |
-|------|--------|--------|-------------|
-| [clinical-red-flag-triage-mobile](./clinical-red-flag-triage-mobile/) | [CORE-85](https://linear.app/moovv-fit/issue/CORE-85) | 🚧 Active | Clinical safety boundaries (PDR-001 exclusions) |
-| [free-content-mobile](./free-content-mobile/) | [CORE-137](https://linear.app/moovv-fit/issue/CORE-137) | ✅ Done | PDR-016 mobile: trial UI removal, review banners, plan limits |
-| [ios-release-pipeline-mobile](./ios-release-pipeline-mobile/) | [CORE-138](https://linear.app/moovv-fit/issue/CORE-138) | ✅ Done | Fastlane Match, TestFlight, StoreKit IAP |
-| [marketing-infra-mobile](./marketing-infra-mobile/) | [CORE-119](https://linear.app/moovv-fit/issue/CORE-119) | ✅ Done | FCM setup, push channels, soft-ask flow |
+| Spec | Linear | Status | Tasks | Description |
+|------|--------|--------|-------|-------------|
+| [clinical-red-flag-triage-mobile](./clinical-red-flag-triage-mobile/) | [CORE-85](https://linear.app/moovv-fit/issue/CORE-85) | 📋 Not Started | 0/97 | Clinical safety boundaries (PDR-001 exclusions) |
+| [free-content-mobile](./free-content-mobile/) | [CORE-137](https://linear.app/moovv-fit/issue/CORE-137) | 📋 Not Started | 0/146 | PDR-016 mobile: trial UI removal, review banners, plan limits |
+| [ios-release-pipeline-mobile](./ios-release-pipeline-mobile/) | [CORE-138](https://linear.app/moovv-fit/issue/CORE-138) | ✅ Done | — | Fastlane Match, TestFlight, StoreKit IAP |
+| [marketing-infra-mobile](./marketing-infra-mobile/) | [CORE-119](https://linear.app/moovv-fit/issue/CORE-119) | 📋 Not Started | 0/46 | FCM setup, push channels, soft-ask flow |
 
 ### Web (`repos/apps/web`)
 
-| Spec | Linear | Status | Description |
-|------|--------|--------|-------------|
-| *No active specs* | — | — | See [SPEC-ROADMAP.md](../../../docs/SPEC-ROADMAP.md) for planned work |
+| Spec | Linear | Status | Tasks | Description |
+|------|--------|--------|-------|-------------|
+| [plan-review-workbench-web](./plan-review-workbench-web/) | [CLINIC-45](https://linear.app/moovv-fit/issue/CLINIC-45) | ✅ Done | — | Clinician plan review, exercise editor, approval workflow |
 
 ### Infra (`repos/infra/cdk`)
 
@@ -42,9 +42,9 @@
 
 ### Platform (`repos/platform/simulator`)
 
-| Spec | Linear | Status | Description |
-|------|--------|--------|-------------|
-| e2e-simulation-platform | [CORE-139](https://linear.app/moovv-fit/issue/CORE-139) | 📋 Backlog | Multi-persona E2E test harness |
+| Spec | Linear | Status | Tasks | Description |
+|------|--------|--------|-------|-------------|
+| [e2e-simulation-platform](./e2e-simulation-platform-simulator/) | [CORE-139](https://linear.app/moovv-fit/issue/CORE-139) | 🚧 Nearly Done | 159/164 | Multi-persona E2E test harness |
 
 ---
 
