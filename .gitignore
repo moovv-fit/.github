@@ -16,6 +16,7 @@ Thumbs.db
 .agents/tasks/
 .agents/prompts/
 .agents/shared
+.agents/settings/
 
 # Logs
 *.log
