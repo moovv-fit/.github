@@ -1,8 +1,22 @@
 # 📋 Moovv Fit — Master Cross-Repo Backlog
 
 > **Canonical Backlog Mirror** synchronized with Linear (`moovv-fit` workspace).  
-> **Last Synced:** `2026-11-13 07:08 UTC` • **Total Open Backlog Issues:** `95`  
+> **Last Synced:** `2026-11-13 15:06 UTC` • **Total Open Backlog Issues:** `97`  
 > *To refresh this document automatically, run: `./scripts/linear-backlog.py --sync`*
+
+---
+
+## 📊 Linear Free Plan Quota Tracker
+
+| Resource | Used | Limit | Status |
+|----------|------|-------|--------|
+| **Active Issues** | 156 | 250 | ✅ 62% (94 remaining) |
+| **Teams** | 2 (CORE, CLINIC) | 2 | ⚠️ At limit |
+| **Total Issues** | 262 | ∞ | — |
+| **Completed/Canceled** | 106 | — | *Don't count against quota* |
+
+> **Free Plan Notes:** Archived/completed issues don't count toward the 250 active limit. If you need a 3rd team, upgrade to Basic ($10/user/month). File uploads capped at 10MB each.  
+> *Last quota check: 2026-11-13*
 
 ---
 
@@ -54,13 +68,13 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 | Domain | Submodule Path | Issues | Primary Focus |
 |---|---|:---:|---|
 | **📱 Mobile (iOS & Android)** | [`repos/apps/mobile`](repos/apps/mobile) | **6** | Flutter rehabilitation app, assessment engine, routine player, and pain tracking. |
-| **⚙️ Backend Core API & Database** | [`repos/backend/node`](repos/backend/node) | **10** | Node/TypeScript Lambda API, Prisma ORM, Cognito auth, and clinical data models. |
+| **⚙️ Backend Core API & Database** | [`repos/backend/node`](repos/backend/node) | **11** | Node/TypeScript Lambda API, Prisma ORM, Cognito auth, and clinical data models. |
 | **🌐 Web Portals (Clinic OS & Admin)** | [`repos/apps/web`](repos/apps/web) | **3** | React 19 clinical portal, appointment booking, patient queue, and chat. |
 | **🚀 Landing & Patient Acquisition** | [`repos/apps/landing`](repos/apps/landing) | **2** | Static marketing sites, physician lead funnels, and store/PWA onboarding. |
 | **🧪 Autonomous Simulator & Test Harness** | [`repos/platform/simulator`](repos/platform/simulator) | **1** | E2E multi-persona automated test harness, websocket synthetic testing. |
 | **🎨 Design System Tokens & UI** | [`repos/platform/design-system`](repos/platform/design-system) | **1** | Svelte 5 / Tailwind v4 canonical components and tokens. |
 | **📚 Documentation Portals** | [`repos/docs/technical`](repos/docs/technical) | **1** | Partner developer documentation and clinical specifications. |
-| **☁️ Platform Infrastructure & Cross-Repo** | [`repos/infra/cdk`](repos/infra/cdk) | **71** | Shared CDK stacks, CloudFront routing, DNS, auth pools, and cross-cutting platform epics. |
+| **☁️ Platform Infrastructure & Cross-Repo** | [`repos/infra/cdk`](repos/infra/cdk) | **72** | Shared CDK stacks, CloudFront routing, DNS, auth pools, and cross-cutting platform epics. |
 
 ---
 
@@ -79,19 +93,20 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 | [CORE-195](https://linear.app/moovv-fit/issue/CORE-195/mobile-remove-otpphone-debugprint-in-cognito-servicedart-and-redact) | `No priority` | [Mobile] Remove OTP/phone debugPrint in cognito_service.dart and redact query strings in Dio logger | `CORE` |
 | [CORE-193](https://linear.app/moovv-fit/issue/CORE-193/mobile-send-session-on-otp-consent-revoke-and-gate-international-otp) | `No priority` | Mobile: send session on OTP consent revoke and gate international OTP to India until ENABLE_MULTI_CHANNEL_OTP | `CORE` |
 
-### ⚙️ Backend Core API & Database (10 issues)
+### ⚙️ Backend Core API & Database (11 issues)
 **Path:** [`repos/backend/node`](repos/backend/node)  
 *Node/TypeScript Lambda API, Prisma ORM, Cognito auth, and clinical data models.*
 
 | ID | Priority | Title | Team |
 |---|:---:|---|:---:|
+| [CORE-221](https://linear.app/moovv-fit/issue/CORE-221/backend-fix-auth-guard-ordering-return-401-before-500-for) | `High` | [Backend] Fix auth guard ordering — return 401 before 500 for unauthenticated requests | `CORE` |
 | [CORE-208](https://linear.app/moovv-fit/issue/CORE-208/fixci-unit-tests-fail-on-main-after-core-135-phase-2-unmocked-dbclient) | `High` | fix(ci): unit tests fail on main after CORE-135 Phase 2 (unmocked db/client env validation) | `CORE` |
 | [CORE-96](https://linear.app/moovv-fit/issue/CORE-96/backend-re-enable-and-validate-platform-e2e-tests-on-staging) | `High` | [Backend] Re-enable & Validate Platform E2E Tests on Staging | `CORE` |
-| [CORE-95](https://linear.app/moovv-fit/issue/CORE-95/backend-expand-unit-and-integration-test-coverage-to-80percent) | `High` | [Backend] Expand Unit & Integration Test Coverage to 80% | `CORE` |
 | [CORE-187](https://linear.app/moovv-fit/issue/CORE-187/email-template-management-ses-s3-for-transactional-customerio-for) | `Medium` | Email Template Management: SES + S3 for Transactional, Customer.io for Marketing | `CORE` |
 | [CORE-152](https://linear.app/moovv-fit/issue/CORE-152/chorebackend-clean-up-deprecated-trial-expiration-cron-and-enable) | `Medium` | chore(backend): clean up deprecated trial expiration cron and ENABLE_TRIAL_EXPIRATION flag | `CORE` |
 | [CORE-131](https://linear.app/moovv-fit/issue/CORE-131/engine-codify-recommendation-engine-ecr-and-lambda-infrastructure-into) | `Medium` | [Engine] Codify Recommendation Engine ECR and Lambda Infrastructure into CDK | `CORE` |
 | [CORE-97](https://linear.app/moovv-fit/issue/CORE-97/backend-implement-unified-v1-api-versioning-strategy-adr-014) | `Medium` | [Backend] Implement Unified /v1/ API Versioning Strategy (ADR-014) | `CORE` |
+| [CORE-227](https://linear.app/moovv-fit/issue/CORE-227/backend-test-coverage-phase-3-40percent-60percent-handler-testability) | `Low` | [Backend] Test coverage phase 3: 40% → 60% (handler testability) | `CORE` |
 | [CORE-198](https://linear.app/moovv-fit/issue/CORE-198/rollout-multi-channel-otp-enable-multi-channel-otp-staging-then-prod) | `No priority` | [Rollout] Multi-channel OTP: ENABLE_MULTI_CHANNEL_OTP staging then prod with mobile release | `CORE` |
 | [CORE-196](https://linear.app/moovv-fit/issue/CORE-196/auth-save-preferred-otp-channel-to-user-profile-after-auth-n12) | `No priority` | [Auth] Save preferred OTP channel to user profile after auth (N12) | `CORE` |
 | [CORE-194](https://linear.app/moovv-fit/issue/CORE-194/backendproduct-pdr-017-opt-out-path-outside-any-login-flow-eg-signed) | `No priority` | [Backend/Product] PDR-017 opt-out path outside any login flow (e.g. signed link) | `CORE` |
@@ -139,7 +154,7 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 |---|:---:|---|:---:|
 | [CORE-92](https://linear.app/moovv-fit/issue/CORE-92/docs-modernize-documentation-ci-workflows) | `High` | [Docs] Modernize documentation CI workflows | `CORE` |
 
-### ☁️ Platform Infrastructure & Cross-Repo (71 issues)
+### ☁️ Platform Infrastructure & Cross-Repo (72 issues)
 **Path:** [`repos/infra/cdk`](repos/infra/cdk)  
 *Shared CDK stacks, CloudFront routing, DNS, auth pools, and cross-cutting platform epics.*
 
@@ -172,6 +187,7 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 | [CORE-13](https://linear.app/moovv-fit/issue/CORE-13/human-in-the-loop-hitl-verification-queue-and-48h-sla-escalation) | `High` | Human-in-the-Loop (HITL) Verification Queue & 48h SLA Escalation | `CORE` |
 | [CORE-12](https://linear.app/moovv-fit/issue/CORE-12/decouple-four-bucket-entitlement-engine) | `High` | Decouple Four-Bucket Entitlement Engine | `CORE` |
 | [CORE-8](https://linear.app/moovv-fit/issue/CORE-8/consolidate-170-sam-lambdas-to-ecs-fargate-fastifynode-20) | `High` | Consolidate 170+ SAM Lambdas to ECS Fargate (Fastify/Node 20) | `CORE` |
+| [CORE-220](https://linear.app/moovv-fit/issue/CORE-220/e2e-unified-cross-platform-testing-dsl-maestro-playwright) | `Medium` | [E2E] Unified Cross-Platform Testing DSL (Maestro + Playwright) | `CORE` |
 | [CORE-207](https://linear.app/moovv-fit/issue/CORE-207/mobile-add-widget-tests-and-device-testing-for-video-assessment) | `Medium` | [Mobile] Add widget tests and device testing for video assessment feature | `CORE` |
 | [CORE-204](https://linear.app/moovv-fit/issue/CORE-204/backend-add-server-side-rom-score-validation-for-video-assessments) | `Medium` | [Backend] Add server-side ROM score validation for video assessments | `CORE` |
 | [CORE-200](https://linear.app/moovv-fit/issue/CORE-200/mobile-integrate-app-links-package-for-deep-link-utm-capture-on) | `Medium` | Mobile: Integrate app_links package for deep link UTM capture on iOS/Android | `CORE` |
@@ -218,4 +234,4 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 | [CLINIC-41](https://linear.app/moovv-fit/issue/CLINIC-41/kineticage-partner-integration-source-documents) | `No priority` | KineticAge Partner Integration — Source Documents | `CLINIC` |
 
 ---
-*Generated automatically via `scripts/linear-backlog.py --sync` on 2026-11-13 07:08 UTC.*
+*Generated automatically via `scripts/linear-backlog.py --sync` on 2026-11-13 15:06 UTC.*

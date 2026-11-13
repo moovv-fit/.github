@@ -90,8 +90,82 @@ def fetch_backlog():
         print(f"Failed to parse linear JSON: {e}", file=sys.stderr)
         sys.exit(1)
 
+
+def fetch_quota_stats():
+    """Fetch Linear quota statistics via GraphQL API."""
+    # Count active issues (not completed/canceled)
+    active_query = '{ issues(first: 250, filter: { state: { type: { nin: ["completed", "canceled"] } } }) { nodes { identifier } } }'
+    completed_query = '{ issues(first: 250, filter: { state: { type: { in: ["completed", "canceled"] } } }) { nodes { identifier } } }'
+    
+    stats = {
+        "active_issues": 0,
+        "completed_issues": 0,
+        "total_issues": 0,
+        "teams": 2,  # CORE + CLINIC (static for now)
+        "team_limit": 2,
+        "active_limit": 250
+    }
+    
+    try:
+        # Fetch active issues count
+        res = subprocess.run(
+            ["linear", "api", active_query],
+            capture_output=True, text=True
+        )
+        if res.returncode == 0:
+            data = json.loads(res.stdout)
+            active_nodes = data.get("data", {}).get("issues", {}).get("nodes", [])
+            stats["active_issues"] = len(active_nodes)
+            
+            # Check if there are more pages (pagination)
+            page_info = data.get("data", {}).get("issues", {}).get("pageInfo", {})
+            if page_info.get("hasNextPage"):
+                # Fetch next page
+                cursor = page_info.get("endCursor")
+                next_query = f'{{ issues(first: 250, after: "{cursor}", filter: {{ state: {{ type: {{ nin: ["completed", "canceled"] }} }} }}) {{ nodes {{ identifier }} }} }}'
+                res2 = subprocess.run(
+                    ["linear", "api", next_query],
+                    capture_output=True, text=True
+                )
+                if res2.returncode == 0:
+                    data2 = json.loads(res2.stdout)
+                    stats["active_issues"] += len(data2.get("data", {}).get("issues", {}).get("nodes", []))
+        
+        # Fetch completed issues count
+        res = subprocess.run(
+            ["linear", "api", completed_query],
+            capture_output=True, text=True
+        )
+        if res.returncode == 0:
+            data = json.loads(res.stdout)
+            completed_nodes = data.get("data", {}).get("issues", {}).get("nodes", [])
+            stats["completed_issues"] = len(completed_nodes)
+            
+            # Check pagination
+            page_info = data.get("data", {}).get("issues", {}).get("pageInfo", {})
+            if page_info.get("hasNextPage"):
+                cursor = page_info.get("endCursor")
+                next_query = f'{{ issues(first: 250, after: "{cursor}", filter: {{ state: {{ type: {{ in: ["completed", "canceled"] }} }} }}) {{ nodes {{ identifier }} }} }}'
+                res2 = subprocess.run(
+                    ["linear", "api", next_query],
+                    capture_output=True, text=True
+                )
+                if res2.returncode == 0:
+                    data2 = json.loads(res2.stdout)
+                    stats["completed_issues"] += len(data2.get("data", {}).get("issues", {}).get("nodes", []))
+        
+        stats["total_issues"] = stats["active_issues"] + stats["completed_issues"]
+        
+    except Exception as e:
+        print(f"Warning: Could not fetch quota stats: {e}", file=sys.stderr)
+    
+    return stats
+
 def generate_markdown(issues, output_path):
     now_utc = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    
+    # Fetch quota statistics
+    quota = fetch_quota_stats()
 
     by_repo = {}
     for issue in issues:
@@ -125,6 +199,27 @@ def generate_markdown(issues, output_path):
     lines.append(f"> **Canonical Backlog Mirror** synchronized with Linear (`moovv-fit` workspace).  ")
     lines.append(f"> **Last Synced:** `{now_utc}` • **Total Open Backlog Issues:** `{total_issues}`  ")
     lines.append("> *To refresh this document automatically, run: `./scripts/linear-backlog.py --sync`*")
+    lines.append("")
+    lines.append("---")
+    lines.append("")
+    
+    # Add quota tracker section
+    active_pct = round((quota["active_issues"] / quota["active_limit"]) * 100) if quota["active_limit"] > 0 else 0
+    remaining = quota["active_limit"] - quota["active_issues"]
+    active_status = "✅" if active_pct < 80 else ("⚠️" if active_pct < 95 else "🔴")
+    team_status = "⚠️ At limit" if quota["teams"] >= quota["team_limit"] else "✅"
+    
+    lines.append("## 📊 Linear Free Plan Quota Tracker")
+    lines.append("")
+    lines.append("| Resource | Used | Limit | Status |")
+    lines.append("|----------|------|-------|--------|")
+    lines.append(f"| **Active Issues** | {quota['active_issues']} | {quota['active_limit']} | {active_status} {active_pct}% ({remaining} remaining) |")
+    lines.append(f"| **Teams** | {quota['teams']} (CORE, CLINIC) | {quota['team_limit']} | {team_status} |")
+    lines.append(f"| **Total Issues** | {quota['total_issues']} | ∞ | — |")
+    lines.append(f"| **Completed/Canceled** | {quota['completed_issues']} | — | *Don't count against quota* |")
+    lines.append("")
+    lines.append("> **Free Plan Notes:** Archived/completed issues don't count toward the 250 active limit. If you need a 3rd team, upgrade to Basic ($10/user/month). File uploads capped at 10MB each.  ")
+    lines.append(f"> *Last quota check: {now_utc.split()[0]}*")
     lines.append("")
     lines.append("---")
     lines.append("")
