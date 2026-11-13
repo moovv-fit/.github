@@ -1,7 +1,7 @@
 # 📋 Moovv Fit — Master Cross-Repo Backlog
 
 > **Canonical Backlog Mirror** synchronized with Linear (`moovv-fit` workspace).  
-> **Last Synced:** `2026-11-13 07:04 UTC` • **Total Open Backlog Issues:** `95`  
+> **Last Synced:** `2026-11-13 07:08 UTC` • **Total Open Backlog Issues:** `95`  
 > *To refresh this document automatically, run: `./scripts/linear-backlog.py --sync`*
 
 ---
@@ -218,4 +218,4 @@ For prioritized implementation order of Kiro specs with dependency tracking, see
 | [CLINIC-41](https://linear.app/moovv-fit/issue/CLINIC-41/kineticage-partner-integration-source-documents) | `No priority` | KineticAge Partner Integration — Source Documents | `CLINIC` |
 
 ---
-*Generated automatically via `scripts/linear-backlog.py --sync` on 2026-11-13 07:04 UTC.*
+*Generated automatically via `scripts/linear-backlog.py --sync` on 2026-11-13 07:08 UTC.*

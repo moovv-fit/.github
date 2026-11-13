@@ -12,10 +12,11 @@
 |:---:|---|---|---|---|:---:|:---:|
 | 0.1 | [CLINIC-43](https://linear.app/moovv-fit/issue/CLINIC-43) | [triage-interface](../repos/apps/web/.agents/specs/triage-interface/) | `apps/web` | — | `M` | 🚧 In Progress |
 | 0.2 | [CLINIC-45](https://linear.app/moovv-fit/issue/CLINIC-45) | [plan-review-workbench](../repos/apps/web/.agents/specs/plan-review-workbench/) | `apps/web` | CLINIC-43 | `L` | 🚧 In Progress |
-| 0.3 | [CORE-85](https://linear.app/moovv-fit/issue/CORE-85) | [clinical-red-flag-triage](../repos/apps/mobile/.agents/specs/clinical-red-flag-triage/) | `apps/mobile` | — | `M` | 🚧 In Progress |
+| 0.3 | [CORE-85](https://linear.app/moovv-fit/issue/CORE-85) | [clinical-red-flag-triage](../repos/apps/mobile/.agents/specs/clinical-red-flag-triage/) | `apps/mobile` | — | `M` | ✅ Done |
 
 > **Rationale**: CLINIC-43 and CLINIC-45 enable physio plan review workflow (PDR-001 HITL gate). CORE-85 enforces clinical safety boundaries (PDR-001 exclusions: pregnancy, acute fractures).
 > **Spec PRs Created**: Web PR #190 (CLINIC-43), PR #191 (CLINIC-45); Mobile PR #13 (CORE-85)
+> **CORE-85 Merged**: Clinical red-flag triage hard stops implemented for pregnancy and acute fractures.
 
 ### Phase 1: Revenue & Payment Foundation
 *Critical path for international expansion and financial compliance.*
@@ -77,7 +78,7 @@
 ```
 CLINIC-43 (triage-interface) ──► CLINIC-45 (plan-review-workbench)
 
-CORE-85 (clinical-red-flag-triage) ──► (standalone clinical safety)
+CORE-85 (clinical-red-flag-triage) ✅ ──► (standalone clinical safety)
 
 CORE-122 (payment-gateway) ──► CORE-135 (financial-ledger)
 
