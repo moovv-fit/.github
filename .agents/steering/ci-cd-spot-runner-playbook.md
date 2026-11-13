@@ -147,6 +147,61 @@ gh run view <RUN_ID> --repo moovv-fit/moovv-fit-backend-node --log-failed
 
 ---
 
+## 🤖 Agent Hooks on Spot Runners
+
+Kiro agent sessions on ephemeral spot runners set `KIRO_SPOT=1` to distinguish CI/codegen contexts from interactive developer sessions.
+
+### Hook Type Guidelines
+
+| Hook Purpose | Type | Spot Behavior |
+|--------------|------|---------------|
+| Prompt injection (reminders, context) | `agent` | Fires in both modes (acceptable) |
+| Actual work (linting, external tools) | `command` | Guard with `KIRO_SPOT` check |
+
+**Why this matters:**
+- `agent`-type hooks inject prompts into model context directly
+- `command`-type hooks with `echo` only work on triggers that forward stdout (`SessionStart`, `UserPromptSubmit`, `PreTaskExec`, `PreCompact`, `PostCompact`)
+- Triggers like `PostFileSave`, `Stop`, `PostToolUse` do NOT forward stdout — `echo`-based prompt injection silently fails
+
+### Command Hook Pattern
+
+For hooks that do actual work (file I/O, external API calls), skip on spot runners:
+
+```json
+{
+  "version": "v1",
+  "hooks": [{
+    "name": "Quality Guard",
+    "trigger": "PostFileSave",
+    "matcher": "\\.(ts|tsx)$",
+    "action": {
+      "type": "command",
+      "command": "[ \"$KIRO_SPOT\" = \"1\" ] && exit 0; /mnt/workspace/tooling/bin/agent-router route-steering"
+    }
+  }]
+}
+```
+
+### Agent Hook Pattern
+
+For hooks that inject prompts/reminders, use `agent` type (fires in both modes):
+
+```json
+{
+  "version": "v1",
+  "hooks": [{
+    "name": "Session End Reminder",
+    "trigger": "Stop",
+    "action": {
+      "type": "agent",
+      "prompt": "Before ending, ensure all changes are committed with proper Linear issue references."
+    }
+  }]
+}
+```
+
+---
+
 ## 🛡️ Sentry CI/CD & Production Observability
 
 1. **Organization-Level Configuration**:
