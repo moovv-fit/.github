@@ -34,3 +34,6 @@
 [submodule "repos/infra/kiro-spot"]
 	path = repos/infra/kiro-spot
 	url = git@github.com:moovv-fit/moovv-fit-kiro-spot.git
+[submodule "repos/platform/exercise-validator"]
+	path = repos/platform/exercise-validator
+	url = git@github.com:moovv-fit/self-test-qa-portal.git

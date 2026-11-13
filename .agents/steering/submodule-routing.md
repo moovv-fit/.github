@@ -20,6 +20,7 @@ description: "Quick reference for navigating to the right submodule for any task
 | Landing page | `repos/apps/landing` | `cd repos/apps/landing` |
 | AWS infrastructure | `repos/infra/cdk` | `cd repos/infra/cdk` |
 | UI components | `repos/platform/design-system` | `cd repos/platform/design-system` |
+| Exercise Validation | `repos/platform/exercise-validator` | `cd repos/platform/exercise-validator` |
 | E2E testing | `repos/platform/simulator` | `cd repos/platform/simulator` |
 | Technical docs | `repos/docs/technical` | `cd repos/docs/technical` |
 | Product specs | `repos/docs/product` | `cd repos/docs/product` |
@@ -36,6 +37,7 @@ description: "Quick reference for navigating to the right submodule for any task
 | `apps/landing` | JavaScript / HTML / CSS | Vanilla JS / CloudFront | - |
 | `infra/cdk` | TypeScript | AWS CDK v2 | pnpm |
 | `platform/design-system` | TypeScript | Svelte 5 (Runes) / Tailwind v4 | pnpm |
+| `platform/exercise-validator` | JavaScript | Node 22 / Express | npm |
 | `platform/simulator` | TypeScript | Node 22 / Zod / undici / ws | pnpm |
 | `docs/technical` | TypeScript | SvelteKit 2 / Svelte 5 / Tailwind v4 | pnpm |
 | `docs/product` | Markdown | PDRs / Clinical Invariants | - |
@@ -52,7 +54,8 @@ repos/apps/mobile/AGENTS.md                           # Mobile Flutter patterns
 repos/apps/web/AGENTS.md                              # Web React 19 patterns
 repos/apps/landing/AGENTS.md                          # Landing HTML5 patterns
 repos/infra/cdk/AGENTS.md                             # Infra CDK patterns
-repos/platform/design-system/AGENTS.md                 # Design system Svelte 5 patterns
+repos/platform/design-system/AGENTS.md                # Design system Svelte 5 patterns
+repos/platform/exercise-validator/AGENTS.md           # Exercise content stakeholder validation
 repos/platform/simulator/AGENTS.md                    # Simulator E2E patterns
 repos/docs/technical/AGENTS.md                        # Technical documentation patterns
 repos/docs/product/AGENTS.md                          # Product context & clinical invariants
