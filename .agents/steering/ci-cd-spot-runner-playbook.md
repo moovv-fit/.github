@@ -8,9 +8,10 @@
 
 1. **Zero Quota Waste (macOS Preservation)**:
    - Free/hosted GitHub Actions minutes are strictly reserved for macOS iOS builds (`runs-on: macos-15`) in `repos/apps/mobile`.
-   - All Linux workloads (CI, SAST, unit tests, integration tests, E2E) MUST use self-hosted ephemeral Spot instances:
+   - All Linux workloads (CI, SAST, unit tests, integration tests, E2E) MUST use self-hosted ephemeral instances:
      - General Linux compute: `runs-on: [self-hosted, spot-compute, "run-${{ github.run_id }}"]`
      - Web UI/Playwright compute: `runs-on: [self-hosted, spot-web, "run-${{ github.run_id }}"]`
+     - **Critical deploys (CDK)**: `runs-on: [self-hosted, ondemand-compute, "run-${{ github.run_id }}"]`
 2. **FIFO Runner Theft Prevention (Run-Specific Labels)**:
    - GitHub's FIFO scheduler assigns runners to the oldest queued job matching the requested labels.
    - Without run-specific labels, a runner launched for Job B can be "stolen" by older Job A, leaving Job B orphaned.
@@ -26,6 +27,10 @@
      - Lambda dispatcher reads from SSM with 1-hour caching.
      - No code deployment needed when AMIs rotate.
    - Instances boot in ~12 seconds and terminate (`shutdown -h now`) immediately after job execution.
+   - **On-Demand vs Spot Selection**:
+     - `spot-compute`, `spot-web`: Spot instances (~70-80% cost savings, may be reclaimed)
+     - `ondemand-compute`: On-demand instances (full price, no reclamation risk)
+     - Use `ondemand-compute` for long-running critical jobs (CDK deploys 15-20 min) where reclamation would block releases
 4. **No Duplicate CI on Merge (Rule 1)**:
    - Merging a PR into `main` must NEVER trigger duplicate CI test runs.
    - Pushes to `main` run the release pipeline (`release-pipeline.yml` for mobile, `deploy.yml` for other repos).
