@@ -20,7 +20,7 @@
    - JIT token expiry (5 minutes) handles cleanup of orphaned runner registrations.
 3. **Ephemeral Spot Runners**:
    - Provisioned JIT via the AWS Lambda dispatcher stack (`moovv-fit-github-spot-runner`) in `ap-south-1`.
-   - Multi-region Golden AMIs pre-baked with Node 22, pnpm, Docker, Python 3.12, Semgrep, Flutter, Kiro CLI, gh CLI, and Linear CLI.
+   - Multi-region Golden AMIs pre-baked with Node 26, pnpm, Docker, Python 3.12, Semgrep, Flutter 3.50, Kiro CLI, gh CLI, and Linear CLI.
    - **AMI IDs managed via SSM Parameter Store** (single source of truth):
      - SSM Path: `/moovv-fit/spot-runner/ami/{region}`
      - The bake script (`scripts/bake_runner_ami.py`) updates SSM after successful bakes.
@@ -31,9 +31,75 @@
      - `spot-compute`, `spot-web`: Spot instances (~70-80% cost savings, may be reclaimed)
      - `ondemand-compute`: On-demand instances (full price, no reclamation risk)
      - Use `ondemand-compute` for long-running critical jobs (CDK deploys 15-20 min) where reclamation would block releases
+   - **Runner Reuse for Sequential Jobs** (CORE-233):
+     - `spot-reuse`, `ondemand-reuse`: Persistent runners that stay alive between sequential jobs in the same workflow
+     - Requires `chain-${{ github.repository_id }}-${{ github.run_id }}` label for uniqueness
+     - Rolling idle timeout (10 min) resets after each job completes
+     - Hard stop (spot: 2hr, on-demand: 1hr) prevents cost overruns
 4. **No Duplicate CI on Merge (Rule 1)**:
    - Merging a PR into `main` must NEVER trigger duplicate CI test runs.
    - Pushes to `main` run the release pipeline (`release-pipeline.yml` for mobile, `deploy.yml` for other repos).
+
+---
+
+## 🏷️ Runner Label Reference (CORE-232, CORE-233)
+
+### Label Matrix
+
+| Label | Instance Lifecycle | Market Type | Use Case |
+|-------|-------------------|-------------|----------|
+| `spot-compute` | Ephemeral (JIT) | Spot | CI, unit tests, short stateless jobs |
+| `spot-web` | Ephemeral (JIT) | Spot | Playwright E2E, web builds |
+| `ondemand-compute` | Ephemeral (JIT) | On-demand | Long CDK deploys (15-20 min) |
+| `spot-reuse` | Persistent (idle TTL) | Spot | Sequential jobs, warm cache, tolerates reclaim |
+| `ondemand-reuse` | Persistent (idle TTL) | On-demand | Sequential deploys, warm cache, guaranteed completion |
+
+### Ephemeral Runners (Default)
+Single-use runners that terminate immediately after one job:
+
+```yaml
+# Standard CI job
+ci:
+  runs-on: [self-hosted, spot-compute, "run-${{ github.run_id }}"]
+
+# Long-running deploy (no reclaim risk)
+deploy:
+  runs-on: [self-hosted, ondemand-compute, "run-${{ github.run_id }}"]
+```
+
+### Reuse Runners (Sequential Jobs)
+Persistent runners for sequential jobs in the same workflow run:
+
+```yaml
+# Deploy staging, then reuse warm runner for production
+deploy-staging:
+  runs-on: [self-hosted, ondemand-reuse, "chain-${{ github.repository_id }}-${{ github.run_id }}"]
+
+deploy-production:
+  needs: deploy-staging
+  runs-on: [self-hosted, ondemand-reuse, "chain-${{ github.repository_id }}-${{ github.run_id }}"]
+```
+
+**Benefits of reuse:**
+- pnpm cache already warm (~50s → ~5s)
+- CDK context and assets cached
+- Docker layers cached
+- No duplicate boot overhead
+
+**Chain ID requirement:**
+- Format: `chain-{repository_id}-{run_id}`
+- Ensures uniqueness per workflow run per repository
+- Dispatcher validates: `*-reuse` requires `chain-*`, and vice versa
+
+### Timeout Behavior (Reuse Runners)
+
+| Runner Type | Idle Timeout | Hard Stop |
+|-------------|--------------|-----------|
+| `spot-reuse` | 10 min rolling | 2 hours |
+| `ondemand-reuse` | 10 min rolling | 1 hour |
+
+- **Idle timeout**: Resets after each job completes. Runner terminates if idle for 10 min with no job.
+- **Hard stop**: Absolute max lifetime regardless of activity (on-demand is shorter due to ~3x cost).
 
 ---
 
