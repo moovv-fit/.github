@@ -1,0 +1,17 @@
+# Context ignore for master orchestration repo
+node_modules/
+.worktrees/
+*.log
+.git/
+repos/**/node_modules/
+repos/**/.worktrees/
+repos/**/dist/
+repos/**/build/
+repos/**/.svelte-kit/
+repos/**/.dart_tool/
+repos/**/.build/
+repos/**/coverage/
+repos/**/pnpm-lock.yaml
+repos/**/package-lock.json
+repos/**/yarn.lock
+repos/**/Podfile.lock

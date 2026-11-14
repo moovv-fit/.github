@@ -1,5 +1,5 @@
 ---
-inclusion: auto
+inclusion: manual
 name: CLI Tools
 description: "Standard CLI tool configuration and usage patterns for AWS, Linear, and GitHub across Moovv Fit."
 ---

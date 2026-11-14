@@ -1,5 +1,5 @@
 ---
-inclusion: auto
+inclusion: manual
 name: Worktree Workflow
 description: "Mandatory worktree-based development workflow for all feature work across Moovv Fit submodules."
 ---

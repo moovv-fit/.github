@@ -1,5 +1,5 @@
 ---
-inclusion: auto
+inclusion: manual
 name: Spec Lifecycle
 description: "Spec naming, completion criteria, PDR absorption, and cleanup workflow."
 ---

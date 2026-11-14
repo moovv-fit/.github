@@ -4,10 +4,10 @@
     {
       "name": "Spec Completion Check",
       "trigger": "PostTaskExec",
-      "description": "When a spec task is marked complete, checks if all tasks in the spec are done and prompts for PDR absorption",
+      "description": "When a spec task is marked complete, prompts for PDR absorption check",
       "action": {
-        "type": "agent",
-        "prompt": "A spec task was just marked complete. Check if ALL tasks in the spec's tasks.md are now checked `[x]`. \n\nIf all tasks are complete:\n1. Announce: \"🎉 Spec complete! All tasks in {spec-name} are done.\"\n2. Ask: \"Ready to absorb this spec into a PDR? Run: `python3 scripts/absorb-spec-to-pdr.py {spec-name}`\"\n\nIf tasks remain:\n- Silently continue (don't interrupt workflow)"
+        "type": "command",
+        "command": "bash -c 'echo \"[SPEC CHECK] If all tasks in spec tasks.md are [x], absorb into PDR via: python3 scripts/absorb-spec-to-pdr.py <spec-name>\"; exit 0'"
       }
     }
   ]
