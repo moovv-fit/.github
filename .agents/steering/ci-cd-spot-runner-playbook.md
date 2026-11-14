@@ -28,7 +28,45 @@
    - Instances boot in ~12 seconds and terminate (`shutdown -h now`) immediately after job execution.
 4. **No Duplicate CI on Merge (Rule 1)**:
    - Merging a PR into `main` must NEVER trigger duplicate CI test runs.
-   - Pushes to `main` run only Release-Please and environment CD (`deploy.yml`).
+   - Pushes to `main` run the release pipeline (`release-pipeline.yml` for mobile, `deploy.yml` for other repos).
+
+---
+
+## 📱 Mobile Release Pipeline
+
+The mobile repo (`moovv-fit/moovv-fit-mobile`) uses a progressive validation pipeline on merge to `main`:
+
+```
+merge to main → release-please (tag) → web deploy → Maestro E2E → Firebase deploy
+                                                                        │
+                                                           (manual) → Store upload
+```
+
+| Stage | Runner | Duration | Gate |
+|-------|--------|----------|------|
+| Release-Please | `spot-compute` | ~30s | Auto |
+| Web Deploy | `spot-compute` | ~2-3 min | Auto |
+| Maestro E2E | `spot-web` | ~5 min | **Blocking** |
+| Firebase Android | `spot-compute` | ~8 min | Auto |
+| Firebase iOS | `macos-15` | ~15 min | Auto |
+| Store Upload | Manual dispatch | ~5 min | **Manual** |
+
+### Manual Store Submission (After Firebase QA)
+```bash
+# Android → Play Store
+gh workflow run deploy.yml --repo moovv-fit/moovv-fit-mobile --ref main \
+  -f environment=production \
+  -f platform=android \
+  -f upload_to_store=true \
+  -f distribution_channel=store
+
+# iOS → App Store Connect
+gh workflow run deploy.yml --repo moovv-fit/moovv-fit-mobile --ref main \
+  -f environment=production \
+  -f platform=ios \
+  -f upload_to_store=true \
+  -f distribution_channel=store
+```
 
 ---
 
@@ -106,6 +144,71 @@ gh run view <RUN_ID> --repo moovv-fit/moovv-fit-backend-node --log-failed
 * **GitHub Summary**: Detailed Markdown summary in `$GITHUB_STEP_SUMMARY`.
 * **JUnit Reports**: Populated under the GitHub Checks tab.
 * **Artifacts**: S3 sync for failed HTML reports (`s3://moovv-fit-release-assets/ci/e2e-reports/`).
+  ```bash
+  # Inspect failed artifacts from S3 (requires active SSO session):
+  aws s3 ls s3://moovv-fit-release-assets/ci/e2e-reports/ --profile moovv-fit-ujwal-admin
+  ```
+
+### AWS Cloud Credentials & Profile
+When managing Spot runner AMIs, dispatcher Lambdas, or querying SSM parameters:
+- **SSO Profile**: `moovv-fit-ujwal-admin` (interactive) or `moovv-fit-worker` (CI/Spot)
+- **Region**: `ap-south-1`
+- **Re-authenticate**: `aws sso login --profile moovv-fit-ujwal-admin --use-device-code` (see `aws-and-cloud-credentials.md`)
+
+---
+
+## 🤖 Agent Hooks on Spot Runners
+
+Kiro agent sessions on ephemeral spot runners set `KIRO_SPOT=1` to distinguish CI/codegen contexts from interactive developer sessions.
+
+### Hook Type Guidelines
+
+| Hook Purpose | Type | Spot Behavior |
+|--------------|------|---------------|
+| Prompt injection (reminders, context) | `agent` | Fires in both modes (acceptable) |
+| Actual work (linting, external tools) | `command` | Guard with `KIRO_SPOT` check |
+
+**Why this matters:**
+- `agent`-type hooks inject prompts into model context directly
+- `command`-type hooks with `echo` only work on triggers that forward stdout (`SessionStart`, `UserPromptSubmit`, `PreTaskExec`, `PreCompact`, `PostCompact`)
+- Triggers like `PostFileSave`, `Stop`, `PostToolUse` do NOT forward stdout — `echo`-based prompt injection silently fails
+
+### Command Hook Pattern
+
+For hooks that do actual work (file I/O, external API calls), skip on spot runners:
+
+```json
+{
+  "version": "v1",
+  "hooks": [{
+    "name": "Quality Guard",
+    "trigger": "PostFileSave",
+    "matcher": "\\.(ts|tsx)$",
+    "action": {
+      "type": "command",
+      "command": "[ \"$KIRO_SPOT\" = \"1\" ] && exit 0; /mnt/workspace/tooling/bin/agent-router route-steering"
+    }
+  }]
+}
+```
+
+### Agent Hook Pattern
+
+For hooks that inject prompts/reminders, use `agent` type (fires in both modes):
+
+```json
+{
+  "version": "v1",
+  "hooks": [{
+    "name": "Session End Reminder",
+    "trigger": "Stop",
+    "action": {
+      "type": "agent",
+      "prompt": "Before ending, ensure all changes are committed with proper Linear issue references."
+    }
+  }]
+}
+```
 
 ---
 

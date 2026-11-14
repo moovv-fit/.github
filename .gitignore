@@ -14,7 +14,9 @@ Thumbs.db
 # Agent session data (local only)
 .agents/sessions/
 .agents/tasks/
+.agents/prompts/
 .agents/shared
+.agents/settings/
 
 # Logs
 *.log
@@ -29,3 +31,9 @@ node_modules/
 # Local dev
 .local/
 repos/legacy/
+
+# Workflow artifacts
+semantic-review/
+
+# Worktrees
+.worktrees/

@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Spec Index Sync",
+      "trigger": "SessionStart",
+      "description": "Syncs symlinks from submodule specs to master .agents/specs/ directory on session start",
+      "action": {
+        "type": "command",
+        "command": "python3 /mnt/workspace/src/moovv-fit/scripts/sync-spec-symlinks.py",
+        "timeout": 30
+      }
+    }
+  ]
+}
