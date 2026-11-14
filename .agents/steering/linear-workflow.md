@@ -1,5 +1,5 @@
 ---
-inclusion: auto
+inclusion: manual
 name: Linear Issue Tracking & Agent Workflow
 description: "Guidelines and CLI automation patterns for tracking tasks, capturing on-the-fly backlog items, and synchronizing commits with Linear across all agents."
 ---

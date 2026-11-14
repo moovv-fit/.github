@@ -7,8 +7,8 @@
       "description": "Reminds to document architecture decisions when editing submodule source",
       "matcher": "repos/.*/src/",
       "action": {
-        "type": "agent",
-        "prompt": "A source file in a submodule was modified. If this change affects architecture patterns, API contracts, or cross-repo dependencies, consider creating or updating an ADR in docs/architecture/adr/."
+        "type": "command",
+        "command": "bash -c 'echo \"[NOTICE] Submodule source modified. Ensure architecture decisions are captured in docs/architecture/adr/ if applicable.\"; exit 0'"
       }
     }
   ]

@@ -1,5 +1,5 @@
 ---
-inclusion: auto
+inclusion: manual
 name: Commit Conventions
 description: "Standardized commit message format with Linear issue references for all Moovv Fit repositories."
 ---
